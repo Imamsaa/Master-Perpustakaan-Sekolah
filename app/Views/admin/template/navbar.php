@@ -2,15 +2,301 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
+
+        <!-- MENU DASHBOARD -->
+
         <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="<?= base_url('pustakawan'); ?>" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
             Dashboard
             </p>
         </a>
         </li>
+
+        <!-- MENU SISWA -->
+
         <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-graduation-cap"></i>
+            <p>
+            Master Siswa
+            <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="../charts/chartjs.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Kelas</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/flot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Siswa</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/inline.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Cetak Kartu Siswa</p>
+            </a>
+            </li>
+            <!-- <li class="nav-item">
+            <a href="../charts/uplot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>uPlot</p>
+            </a>
+            </li> -->
+        </ul>
+        </li>
+
+        <!-- MENU BUKU -->
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-solid fa-book"></i>
+            <p>
+            Master Buku
+            <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="../charts/chartjs.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Penerbit Buku</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/flot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Rak Buku</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/inline.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Jenis Buku</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/uplot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Buku</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/uplot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Cetak Barcode Buku</p>
+            </a>
+            </li>
+        </ul>
+        </li>
+
+        <!-- MENU TRANSAKSI -->
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-solid fa-pen"></i>
+            <p>
+            Transaksi
+            <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="../charts/chartjs.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Peminjaman</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/flot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Pengembalian</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/inline.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Denda</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/uplot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Laporan</p>
+            </a>
+            </li>
+        </ul>
+        </li>
+
+        <!-- MENU SEKOLAH -->
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-solid fa-school"></i>
+            <p>
+            Sekolah
+            <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="../charts/chartjs.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Sekolah</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/flot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Perpustakaan</p>
+            </a>
+            </li>
+            <!-- <li class="nav-item">
+            <a href="../charts/inline.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Inline</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/uplot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>uPlot</p>
+            </a>
+            </li> -->
+        </ul>
+        </li>
+
+        <!-- MENU SEKOLAH -->
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-solid fa-envelope"></i>
+            <p>
+            Pesan
+            <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="../charts/chartjs.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Setting Pesan Email</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/flot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Setting Pesan WA</p>
+            </a>
+            </li>
+            <!-- <li class="nav-item">
+            <a href="../charts/inline.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Inline</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/uplot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>uPlot</p>
+            </a>
+            </li> -->
+        </ul>
+        </li>
+
+        <!-- MENU PROFIL -->
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-solid fa-user"></i>
+            <p>
+            Profil
+            <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="../charts/chartjs.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Ubah Profil</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/flot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Ubah Password</p>
+            </a>
+            </li>
+            <!-- <li class="nav-item">
+            <a href="../charts/inline.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Inline</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/uplot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>uPlot</p>
+            </a>
+            </li> -->
+        </ul>
+        </li>
+
+        <!-- MENU PENGGUNA -->
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-solid fa-users"></i>
+            <p>
+            Pustakawan
+            <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="../charts/chartjs.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Pustakawan</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/flot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Pengajuan Pustakawan</p>
+            </a>
+            </li>
+            <!-- <li class="nav-item">
+            <a href="../charts/inline.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Inline</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../charts/uplot.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>uPlot</p>
+            </a>
+            </li> -->
+        </ul>
+        </li>
+
+        <!-- LOGOUT -->
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-power-off"></i>
+            <p>
+            Logout
+            </p>
+        </a>
+        </li>
+        <!-- <li class="nav-item">
         <a href="../widgets.html" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
@@ -18,6 +304,65 @@
             <span class="right badge badge-danger">New</span>
             </p>
         </a>
+        </li> -->
+        <!-- <li class="nav-item menu-open">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+            Layout Options
+            <i class="fas fa-angle-left right"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="../layout/top-nav.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Top Navigation</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Top Navigation + Sidebar</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../layout/boxed.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Boxed</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../layout/fixed-sidebar.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Fixed Sidebar</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../layout/fixed-sidebar-custom.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Fixed Sidebar <small>+ Custom Area</small></p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../layout/fixed-topnav.html" class="nav-link active">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Fixed Navbar</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../layout/fixed-footer.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Fixed Footer</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="../layout/collapsed-sidebar.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Collapsed Sidebar</p>
+            </a>
+            </li>
+        </ul>
         </li>
         <li class="nav-item menu-open">
         <a href="#" class="nav-link active">
@@ -586,8 +931,8 @@
             </a>
             </li>
         </ul>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
         <a href="#" class="nav-link">
             <i class="fas fa-circle nav-icon"></i>
             <p>Level 1</p>
@@ -611,6 +956,6 @@
             <i class="nav-icon far fa-circle text-info"></i>
             <p>Informational</p>
         </a>
-        </li>
+        </li> -->
     </ul>
     </nav>

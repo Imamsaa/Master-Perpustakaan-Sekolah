@@ -33,3 +33,9 @@ $routes->get('/pustakawan/tahun/ubah', 'Admin\Tahun::ubah');
 
 $routes->get('/pustakawan/siswa/cetak', 'Admin\Cetak::index');
 $routes->get('/pustakawan/siswa/cetak/ya', 'Admin\Cetak::cetak');
+
+// PENERBIT
+
+$routes->get('/pustakawan/penerbit', 'Admin\Penerbit::index');
+$routes->get('/pustakawan/penerbit/tambah', 'Admin\Penerbit::tambah');
+$routes->get('/pustakawan/penerbit/ubah', 'Admin\Penerbit::ubah');

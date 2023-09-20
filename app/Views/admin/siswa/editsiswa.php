@@ -40,7 +40,7 @@
               <form>
                 <div class="card-body">
                   <div class="row mb-2">
-                    <div class="col-md-3 col-sm-12">
+                    <div class="col-md-3 my-2 col-sm-12">
                       <img src="<?= base_url('admin/img/siswa_default.jpg'); ?>" alt="Foto Siswa" class="img-thumbnail">
                     </div>
                     <div class="col-md-9 col-sm-12">

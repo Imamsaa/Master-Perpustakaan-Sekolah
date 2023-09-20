@@ -66,3 +66,9 @@ $routes->get('/pustakawan/peminjaman', 'Admin\Peminjaman::index');
 $routes->get('/pustakawan/pengembalian', 'Admin\Pengembalian::index');
 // $routes->get('/pustakawan/buku/tambah', 'Admin\Buku::tambah');
 // $routes->get('/pustakawan/buku/ubah', 'Admin\Buku::ubah');
+
+// DENDA
+
+$routes->get('/pustakawan/denda', 'Admin\Denda::index');
+$routes->get('/pustakawan/denda/tambah', 'Admin\Denda::tambah');
+$routes->get('/pustakawan/denda/ubah', 'Admin\Denda::ubah');

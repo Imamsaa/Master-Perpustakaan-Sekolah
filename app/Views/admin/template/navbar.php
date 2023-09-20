@@ -152,15 +152,15 @@
         </a>
         <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="../charts/chartjs.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/sekolah'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Data Sekolah</p>
+                <p>Profil Sekolah</p>
             </a>
             </li>
             <li class="nav-item">
-            <a href="../charts/flot.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/perpustakaan'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Data Perpustakaan</p>
+                <p>Perpustakaan</p>
             </a>
             </li>
             <!-- <li class="nav-item">

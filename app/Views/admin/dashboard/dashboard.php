@@ -12,7 +12,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?= base_url('pustakawan'); ?>">/</a></li>
+              <li class="breadcrumb-item"><a href="#">/Pustakawan</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -31,7 +31,7 @@
               <div class="inner">
                 <h3>150</h3>
 
-                <p>New Orders</p>
+                <p>Jumlah Pengunjung hari ini</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -46,7 +46,7 @@
               <div class="inner">
                 <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                <p>Bounce Rate</p>
+                <p>Jumlah Aktif</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -61,7 +61,7 @@
               <div class="inner">
                 <h3>44</h3>
 
-                <p>User Registrations</p>
+                <p>Jumlah Siswa</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -76,7 +76,7 @@
               <div class="inner">
                 <h3>65</h3>
 
-                <p>Unique Visitors</p>
+                <p>Jumlah Buku</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -85,6 +85,94 @@
             </div>
           </div>
           <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">PENGUNJUNG HARI INI</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>NO</th>
+                    <th>NIS</th>
+                    <th>NAMA</th>
+                    <th>KELAS</th>
+                    <th>WAKTU</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2121</td>
+                    <td>Imam Safii</td>
+                    <td>XIIPA</td>
+                    <td>12:22</td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>NO</th>
+                    <th>NIS</th>
+                    <th>NAMA</th>
+                    <th>KELAS</th>
+                    <th>WAKTU</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">PRESENTASE PENGUNJUNG PER KELAS</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example3" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>NO</th>
+                    <th>KELAS</th>
+                    <th>TOTAL</th>
+                    <th>PRESENTASE</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>XI IPA</td>
+                    <td>211</td>
+                    <td>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>NO</th>
+                    <th>KELAS</th>
+                    <th>TOTAL</th>
+                    <th>PRESENTASE</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

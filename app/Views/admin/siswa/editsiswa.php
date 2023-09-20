@@ -63,6 +63,10 @@
                       <input type="text" name="nis" class="form-control" id="nis" placeholder="" readonly>
                   </div>
                   <div class="form-group">
+                    <label for="nisn">NISN Siswa</label>
+                    <input type="text" name="nisn" class="form-control" id="nisn" placeholder="">
+                  </div>
+                  <div class="form-group">
                     <label for="nama">Nama Siswa</label>
                     <input type="text" name="nama" class="form-control" id="nama" placeholder="">
                   </div>
@@ -76,6 +80,24 @@
                         <option>option 5</option>
                       </select>
                     </div>
+                    <div class="form-group">
+                      <label for="tahun">Pilih Tahun Ajaran</label>
+                      <select id="tahun" name="tahun" class="form-control">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                        <option>option 4</option>
+                        <option>option 5</option>
+                      </select>
+                    </div>
+                  <div class="form-group">
+                    <label for="nomorwa">Nomor WhastApp</label>
+                    <input type="text" name="nomorwa" class="form-control" id="nomorwa" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Siswa</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="">
+                  </div>
                   <div class="form-group">
                     <label for="alamat">Alamat Siswa</label>
                     <textarea name="alamat" class="form-control" id="alamat" rows="3"></textarea>

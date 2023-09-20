@@ -26,6 +26,12 @@
         </a>
         <ul class="nav nav-treeview">
             <li class="nav-item">
+            <a href="<?= base_url('pustakawan/tahun'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Tahun</p>
+            </a>
+            </li>
+            <li class="nav-item">
             <a href="<?= base_url('pustakawan/kelas'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Kelas</p>
@@ -38,7 +44,7 @@
             </a>
             </li>
             <li class="nav-item">
-            <a href="../charts/inline.html" class="nav-link">
+            <a target="_blank" href="<?= base_url('pustakawan/siswa/cetak'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cetak Kartu Siswa</p>
             </a>

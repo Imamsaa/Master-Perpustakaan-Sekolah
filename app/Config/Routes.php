@@ -39,3 +39,9 @@ $routes->get('/pustakawan/siswa/cetak/ya', 'Admin\Cetak::cetak');
 $routes->get('/pustakawan/penerbit', 'Admin\Penerbit::index');
 $routes->get('/pustakawan/penerbit/tambah', 'Admin\Penerbit::tambah');
 $routes->get('/pustakawan/penerbit/ubah', 'Admin\Penerbit::ubah');
+
+// Rak Buku
+
+$routes->get('/pustakawan/rak', 'Admin\Rak::index');
+$routes->get('/pustakawan/rak/tambah', 'Admin\Rak::tambah');
+$routes->get('/pustakawan/rak/ubah', 'Admin\Rak::ubah');

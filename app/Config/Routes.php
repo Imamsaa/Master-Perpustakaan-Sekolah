@@ -22,10 +22,14 @@ $routes->get('/pustakawan/kelas/ubah', 'Admin\Kelas::ubah');
 $routes->get('/pustakawan/siswa', 'Admin\Siswa::index');
 $routes->get('/pustakawan/siswa/tambah', 'Admin\Siswa::tambah');
 $routes->get('/pustakawan/siswa/ubah', 'Admin\Siswa::ubah');
-$routes->get('/pustakawan/siswa/cetak', 'Admin\Siswa::cetak');
 
 // TAHUN
 
 $routes->get('/pustakawan/tahun', 'Admin\Tahun::index');
 $routes->get('/pustakawan/tahun/tambah', 'Admin\Tahun::tambah');
 $routes->get('/pustakawan/tahun/ubah', 'Admin\Tahun::ubah');
+
+// CETAK
+
+$routes->get('/pustakawan/siswa/cetak', 'Admin\Cetak::index');
+$routes->get('/pustakawan/siswa/cetak/ya', 'Admin\Cetak::cetak');

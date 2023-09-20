@@ -44,7 +44,7 @@
             </a>
             </li>
             <li class="nav-item">
-            <a target="_blank" href="<?= base_url('pustakawan/siswa/cetak'); ?>" class="nav-link">
+            <a href="<?= base_url('pustakawan/siswa/cetak'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cetak Kartu Siswa</p>
             </a>

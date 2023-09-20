@@ -30,14 +30,6 @@ class Siswa extends BaseController
         return view('admin/siswa/editsiswa', $data);
     }
 
-    public function cetak(): string
-    {
-        $data = [
-            'title' => 'Cetak Kartu Siswa'
-        ];
-        return view('admin/siswa/cetakkartu', $data);
-    }
-
     public function hapus()
     {
         // isi kode disini

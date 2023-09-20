@@ -59,3 +59,10 @@ $routes->get('/pustakawan/jenis/ubah', 'Admin\Jenis::ubah');
 $routes->get('/pustakawan/buku', 'Admin\Buku::index');
 $routes->get('/pustakawan/buku/tambah', 'Admin\Buku::tambah');
 $routes->get('/pustakawan/buku/ubah', 'Admin\Buku::ubah');
+
+// Peminjaman
+
+$routes->get('/pustakawan/peminjaman', 'Admin\Peminjaman::index');
+$routes->get('/pustakawan/pengembalian', 'Admin\Pengembalian::index');
+// $routes->get('/pustakawan/buku/tambah', 'Admin\Buku::tambah');
+// $routes->get('/pustakawan/buku/ubah', 'Admin\Buku::ubah');

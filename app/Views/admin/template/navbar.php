@@ -114,13 +114,13 @@
         </a>
         <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="../charts/chartjs.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/peminjaman'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Peminjaman</p>
             </a>
             </li>
             <li class="nav-item">
-            <a href="../charts/flot.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/pengembalian'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Pengembalian</p>
             </a>

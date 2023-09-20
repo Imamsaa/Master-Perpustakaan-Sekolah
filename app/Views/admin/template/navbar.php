@@ -88,13 +88,13 @@
             </a>
             </li>
             <li class="nav-item">
-            <a href="../charts/uplot.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/buku'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Buku</p>
             </a>
             </li>
             <li class="nav-item">
-            <a href="../charts/uplot.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/buku/cetak'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Cetak Barcode Buku</p>
             </a>
@@ -106,7 +106,7 @@
 
         <li class="nav-item">
         <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-solid fa-pen"></i>
+            <i class="nav-icon fas fa-solid fa-book-open"></i>
             <p>
             Transaksi
             <i class="right fas fa-angle-left"></i>

@@ -32,7 +32,9 @@ $routes->get('/pustakawan/tahun/ubah', 'Admin\Tahun::ubah');
 // CETAK
 
 $routes->get('/pustakawan/siswa/cetak', 'Admin\Cetak::index');
+$routes->get('/pustakawan/buku/cetak', 'Admin\Cetak::buku');
 $routes->get('/pustakawan/siswa/cetak/ya', 'Admin\Cetak::cetak');
+$routes->get('/pustakawan/buku/cetak/ya', 'Admin\Cetak::barcode');
 
 // PENERBIT
 
@@ -51,3 +53,9 @@ $routes->get('/pustakawan/rak/ubah', 'Admin\Rak::ubah');
 $routes->get('/pustakawan/jenis', 'Admin\Jenis::index');
 $routes->get('/pustakawan/jenis/tambah', 'Admin\Jenis::tambah');
 $routes->get('/pustakawan/jenis/ubah', 'Admin\Jenis::ubah');
+
+// Buku
+
+$routes->get('/pustakawan/buku', 'Admin\Buku::index');
+$routes->get('/pustakawan/buku/tambah', 'Admin\Buku::tambah');
+$routes->get('/pustakawan/buku/ubah', 'Admin\Buku::ubah');

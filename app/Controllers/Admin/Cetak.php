@@ -21,4 +21,20 @@ class Cetak extends BaseController
         ];
         return view('admin/cetak/cetakkartu', $data);
     }
+
+    public function buku(): string
+    {
+        $data = [
+            'title' => 'Daftar Barcode Buku'
+        ];
+        return view('admin/cetak/tablebarcode', $data);
+    }
+
+    public function barcode(): string
+    {
+        $data = [
+            'title' => 'Cetak Barcode Buku'
+        ];
+        return view('admin/cetak/cetakbarcode', $data);
+    }
 }

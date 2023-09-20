@@ -12,7 +12,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">/Pustakawan</a></li>
+              <li class="breadcrumb-item"><a href="<?= base_url('pustakawan'); ?>">Pustakawan</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -44,9 +44,9 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>53</h3>
 
-                <p>Jumlah Aktif</p>
+                <p>Jumlah Peminjaman</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>

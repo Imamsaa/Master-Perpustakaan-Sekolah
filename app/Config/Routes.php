@@ -99,3 +99,15 @@ $routes->get('/pustakawan/email', 'Admin\Email::index');
 
 $routes->get('/pustakawan/profil', 'Admin\Profil::index');
 $routes->get('/pustakawan/password', 'Admin\Profil::password');
+
+// USERS
+
+$routes->get('/pustakawan/user', 'Admin\Users::index');
+$routes->get('/pustakawan/user/tambah', 'Admin\Users::tambah');
+$routes->get('/pustakawan/user/ubah', 'Admin\Users::ubah');
+
+// USERS
+
+$routes->get('/pustakawan/pengajuan', 'Admin\Pengajuan::index');
+// $routes->get('/pustakawan/user/tambah', 'Admin\Users::tambah');
+// $routes->get('/pustakawan/user/ubah', 'Admin\Users::ubah');

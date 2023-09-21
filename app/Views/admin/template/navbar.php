@@ -265,13 +265,13 @@
         </a>
         <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="../charts/chartjs.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/user'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Pustakawan</p>
             </a>
             </li>
             <li class="nav-item">
-            <a href="../charts/flot.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/pengajuan'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Pengajuan Pustakawan</p>
             </a>
@@ -297,7 +297,7 @@
         <a href="#" class="nav-link">
             <i class="nav-icon fas fa-power-off"></i>
             <p>
-            Logout
+            Keluar
             </p>
         </a>
         </li>

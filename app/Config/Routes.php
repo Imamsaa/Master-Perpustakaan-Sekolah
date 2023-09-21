@@ -86,3 +86,11 @@ $routes->get('/pustakawan/sekolah', 'Admin\Sekolah::index');
 // SEKOLAH
 
 $routes->get('/pustakawan/perpustakaan', 'Admin\Perpustakaan::index');
+
+// WHASTAPP
+
+$routes->get('/pustakawan/whastapp', 'Admin\Whastapp::index');
+
+// WHASTAPP
+
+$routes->get('/pustakawan/email', 'Admin\Email::index');

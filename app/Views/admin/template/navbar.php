@@ -184,13 +184,13 @@
         </a>
         <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="../charts/chartjs.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/email'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Setting Pesan Email</p>
             </a>
             </li>
             <li class="nav-item">
-            <a href="../charts/flot.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/whastapp'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Setting Pesan WA</p>
             </a>

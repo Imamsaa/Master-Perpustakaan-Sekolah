@@ -183,6 +183,11 @@
             </p>
         </a>
         <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="<?= base_url('pustakawan/kirimpesan'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Kirim Pesan</p>
+            </a>
             <li class="nav-item">
             <a href="<?= base_url('pustakawan/email'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -222,13 +227,13 @@
         </a>
         <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="../charts/chartjs.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/profil'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Ubah Profil</p>
             </a>
             </li>
             <li class="nav-item">
-            <a href="../charts/flot.html" class="nav-link">
+            <a href="<?= base_url('pustakawan/password'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Ubah Password</p>
             </a>

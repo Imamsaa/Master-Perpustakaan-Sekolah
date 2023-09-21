@@ -91,6 +91,11 @@ $routes->get('/pustakawan/perpustakaan', 'Admin\Perpustakaan::index');
 
 $routes->get('/pustakawan/whastapp', 'Admin\Whastapp::index');
 
-// WHASTAPP
+// EMAIL
 
 $routes->get('/pustakawan/email', 'Admin\Email::index');
+
+// PROFIL
+
+$routes->get('/pustakawan/profil', 'Admin\Profil::index');
+$routes->get('/pustakawan/password', 'Admin\Profil::password');

@@ -19,7 +19,9 @@ $routes->get('/pustakawan', 'Admin\Dashboard::index');
 
 $routes->get('/pustakawan/kelas', 'Admin\Kelas::index');
 $routes->get('/pustakawan/kelas/tambah', 'Admin\Kelas::tambah');
-$routes->get('/pustakawan/kelas/ubah', 'Admin\Kelas::ubah');
+$routes->get('/pustakawan/kelas/ubah/(:any)', 'Admin\Kelas::ubah/$1');
+$routes->post('/pustakawan/kelas/save', 'Admin\Kelas::save');
+$routes->post('/pustakawan/kelas/update', 'Admin\Kelas::update');
 
 // SISWA
 
@@ -31,7 +33,10 @@ $routes->get('/pustakawan/siswa/ubah', 'Admin\Siswa::ubah');
 
 $routes->get('/pustakawan/tahun', 'Admin\Tahun::index');
 $routes->get('/pustakawan/tahun/tambah', 'Admin\Tahun::tambah');
-$routes->get('/pustakawan/tahun/ubah', 'Admin\Tahun::ubah');
+$routes->get('/pustakawan/tahun/ubah/(:any)', 'Admin\Tahun::ubah/$1');
+$routes->post('/pustakawan/tahun/update', 'Admin\Tahun::update');
+$routes->post('/pustakawan/tahun/save', 'Admin\Tahun::save');
+$routes->DELETE('/pustakawan/tahun/delete/(:any)', 'Admin\Tahun::delete/$1');
 
 // CETAK
 

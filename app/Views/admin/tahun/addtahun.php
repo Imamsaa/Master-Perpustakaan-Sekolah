@@ -37,23 +37,24 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/tahun/save'); ?>" method="post">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="kode">Kode Tahun</label>
-                      <input type="text" name="kode" class="form-control" id="kode" placeholder="">
+                      <label for="kode_tahun">Kode Tahun</label>
+                      <input type="text" value="<?= old('kode_tahun'); ?>" name="kode_tahun" class="form-control" id="kode_tahun" placeholder="" required>
                   </div>
                   <div class="form-group">
-                    <label for="nama">Nama Tahun</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_tahun">Nama Tahun</label>
+                    <input type="text" value="<?= old('nama_tahun'); ?>" name="nama_tahun" class="form-control" id="nama_tahun" placeholder="" required>
                   </div>
                   <div class="form-group">
-                    <label for="awal">Mulai Aktif</label>
-                    <input type="date" name="awal" class="form-control" id="awal" placeholder="">
+                    <label for="aktif">Mulai Aktif</label>
+                    <input type="date" value="<?= old('aktif'); ?>" name="aktif" class="form-control" id="aktif" placeholder="" required>
                   </div>
                   <div class="form-group">
-                    <label for="akhir">Kadaluarsa Pada</label>
-                    <input type="date" name="akhir" class="form-control" id="akhir" placeholder="">
+                    <label for="kadaluarsa">Kadaluarsa Pada</label>
+                    <input type="date" value="<?= old('kadaluarsa'); ?>" name="kadaluarsa" class="form-control" id="kadaluarsa" placeholder="" required>
                   </div>
                 </div>
                 <!-- /.card-body -->

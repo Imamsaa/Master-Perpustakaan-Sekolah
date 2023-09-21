@@ -37,15 +37,16 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
-                <div class="card-body">
+              <form action="<?= base_url('pustakawan/kelas/save'); ?>" method="post">
+              <?= csrf_field(); ?>  
+              <div class="card-body">
                   <div class="form-group">
-                      <label for="kode">Kode Kelas</label>
-                      <input type="text" name="kode" class="form-control" id="kode" placeholder="">
+                      <label for="kode_kelas">Kode Kelas</label>
+                      <input type="text" value="<?= old('kode_kelas'); ?>" name="kode_kelas" class="form-control" id="kode_kelas" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="nama">Nama Kelas</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_kelas">Nama Kelas</label>
+                    <input type="text" value="<?= old('nama_kelas'); ?>" name="nama_kelas" class="form-control" id="nama_kelas" placeholder="">
                   </div>
                 </div>
                 <!-- /.card-body -->

@@ -48,17 +48,22 @@
                   </tr>
                   </thead>
                   <tbody>
+                  <?php $no = 1; foreach($tahun as $row) : ?>
                   <tr>
-                    <td>1</td>
-                    <td>2020</td>
-                    <td>2019/2020</td>
-                    <td>2019:08:02</td>
-                    <td>2022:08:02</td>
+                    <td><?= $no; ?></td>
+                    <td><?= $row['kode_tahun']; ?></td>
+                    <td><?= $row['nama_tahun']; ?></td>
+                    <td><?= date("d-m-Y", strtotime($row['aktif'])); ?></td>
+                    <td><?= date("d-m-Y", strtotime($row['kadaluarsa'])) ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/tahun/ubah'); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        <a href="<?= base_url('pustakawan/tahun/ubah/'.$row['kode_tahun']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <form action="<?= base_url('pustakawan/tahun/delete/'.$row['kode_tahun']); ?>" method="POST" class="d-inline">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        </form>
                     </td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>

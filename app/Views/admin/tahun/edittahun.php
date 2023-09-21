@@ -37,23 +37,24 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
-                <div class="card-body">
+              <form action="<?= base_url('pustakawan/tahun/update'); ?>" method="post">
+              <?= csrf_field(); ?>  
+              <div class="card-body">
                 <div class="form-group">
-                      <label for="kode">Kode Tahun</label>
-                      <input type="text" name="kode" class="form-control" id="kode" placeholder="" readonly>
+                      <label for="kode_tahun">Kode Tahun</label>
+                      <input type="text" value="<?= (old('kode_tahun')) ? old('kode_tahun') : $tahun['kode_tahun']; ?>" name="kode_tahun" class="form-control" id="kode_tahun" placeholder="" readonly>
                   </div>
                   <div class="form-group">
-                    <label for="nama">Nama Tahun</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_tahun">Nama Tahun</label>
+                    <input type="text" value="<?= (old('nama_tahun')) ? old('nama_tahun') : $tahun['nama_tahun']; ?>" name="nama_tahun" class="form-control" id="nama_tahun" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="awal">Mulai Aktif</label>
-                    <input type="date" name="awal" class="form-control" id="awal" placeholder="">
+                    <label for="aktif">Mulai Aktif</label>
+                    <input type="date" value="<?= (old('aktif')) ? old('aktif') : date('Y-m-d', strtotime($tahun['aktif'])); ?>" name="aktif" class="form-control" id="aktif" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="akhir">Kadaluarsa Pada</label>
-                    <input type="date" name="akhir" class="form-control" id="akhir" placeholder="">
+                    <label for="kadaluarsa">Kadaluarsa Pada</label>
+                    <input type="date" value="<?= (old('kadaluarsa')) ? old('kadaluarsa') : date('Y-m-d', strtotime($tahun['kadaluarsa'])); ?>" name="kadaluarsa" class="form-control" id="kadaluarsa" placeholder="">
                   </div>
                 </div>
                 <!-- /.card-body -->

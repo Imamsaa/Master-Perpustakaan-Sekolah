@@ -48,15 +48,20 @@
                   </tr>
                   </thead>
                   <tbody>
+                  <?php $no = 1; foreach($kelas as $row) : ?>
                   <tr>
-                    <td>1</td>
-                    <td>K21</td>
-                    <td>XII MIPA</td>
+                    <td><?= $no; ?></td>
+                    <td><?= $row['kode_kelas']; ?></td>
+                    <td><?= $row['nama_kelas']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/kelas/ubah'); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        <a href="<?= base_url('pustakawan/kelas/ubah/'.$row['kode_kelas']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <form action="<?= base_url('pustakawan/kelas/delete'.$row['kode_kelas']); ?>" method="post" class="d-inline">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        </form>
                     </td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>

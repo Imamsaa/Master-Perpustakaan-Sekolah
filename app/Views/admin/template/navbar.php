@@ -126,12 +126,6 @@
             </a>
             </li>
             <li class="nav-item">
-            <a href="<?= base_url('pustakawan/denda'); ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Denda</p>
-            </a>
-            </li>
-            <li class="nav-item">
             <a href="<?= base_url('pustakawan/laporan'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Laporan</p>

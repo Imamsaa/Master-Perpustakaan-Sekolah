@@ -79,6 +79,10 @@ $routes->get('/pustakawan/laporan', 'Admin\Laporan::index');
 // $routes->get('/pustakawan/denda/tambah', 'Admin\Denda::tambah');
 // $routes->get('/pustakawan/denda/ubah', 'Admin\Denda::ubah');
 
-// LAPORAN
+// SEKOLAH
 
 $routes->get('/pustakawan/sekolah', 'Admin\Sekolah::index');
+
+// SEKOLAH
+
+$routes->get('/pustakawan/perpustakaan', 'Admin\Perpustakaan::index');

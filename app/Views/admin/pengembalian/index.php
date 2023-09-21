@@ -39,6 +39,10 @@
                       <label for="kodebuku">Scan Barcode Buku</label>
                       <input type="text" name="kodebuku" class="form-control" id="kodebuku" placeholder="">
                 </div>
+                <div class="form-group">
+                      <label for="kodesiswa">Scan Barcode Siswa</label>
+                      <input type="text" name="kodesiswa" class="form-control" id="kodesiswa" placeholder="">
+                  </div>
               </div>
               <!-- /.card-body -->
               <div class="card-footer">

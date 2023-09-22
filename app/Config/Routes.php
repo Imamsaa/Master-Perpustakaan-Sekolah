@@ -58,7 +58,10 @@ $routes->DELETE('/pustakawan/penerbit/delete/(:any)', 'Admin\Penerbit::delete/$1
 
 $routes->get('/pustakawan/rak', 'Admin\Rak::index');
 $routes->get('/pustakawan/rak/tambah', 'Admin\Rak::tambah');
-$routes->get('/pustakawan/rak/ubah', 'Admin\Rak::ubah');
+$routes->get('/pustakawan/rak/ubah/(:any)', 'Admin\Rak::ubah/$1');
+$routes->post('/pustakawan/rak/save', 'Admin\Rak::save');
+$routes->post('/pustakawan/rak/update', 'Admin\Rak::update');
+$routes->DELETE('/pustakawan/rak/delete/(:any)', 'Admin\Rak::delete/$1');
 
 // Rak Buku
 

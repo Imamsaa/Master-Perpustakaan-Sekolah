@@ -37,15 +37,16 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/rak/update'); ?>" method="POST">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="kode">Kode Rak Buku</label>
-                      <input type="text" name="kode" class="form-control" id="kode" placeholder="" readonly>
+                      <label for="kode_rak">Kode Rak Buku</label>
+                      <input type="text" value="<?= (old('kode_rak')) ? old('kode_rak') : $rak['kode_rak']; ?>" name="kode_rak" class="form-control" id="kode_rak" placeholder="" readonly>
                   </div>
                   <div class="form-group">
-                    <label for="nama">Nama Rak Buku</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_rak">Nama Rak Buku</label>
+                    <input type="text" value="<?= (old('nama_rak')) ? old('nama_rak') : $rak['nama_rak']; ?>" name="nama_rak" class="form-control" id="nama_rak" placeholder="">
                   </div>
                 </div>
                 <!-- /.card-body -->

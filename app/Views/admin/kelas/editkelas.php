@@ -35,12 +35,6 @@
                     <h3>Ubah Kelas</h3>
                 </div>
               </div>
-              <?php
-              if (session()->getFlashdata('errors')) {
-                echo session()->getFlashdata('errors')->getError(); 
-                # code...
-              } 
-              ?>
               <!-- /.card-header -->
               <!-- form start -->
               <form action="<?= base_url('pustakawan/kelas/update'); ?>" method="POST">

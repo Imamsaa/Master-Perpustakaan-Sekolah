@@ -36,15 +36,15 @@ class Kelas extends BaseController
 
     function save()
     {
-        if (!$this->validate($this->kelasModel->getvalidationRules())) {
-            session()->setFlashdata('errors',$this->validator);
-            return redirect()->to(base_url('pustakawan/kelas/tambah'))->withInput();
-        }elseif($this->kelasModel->save($this->request->getVar()) == true){
+        if($this->kelasModel->save($this->request->getVar()) == true){
             session()->setFlashdata('session',[
                 'status'    => 'success',
                 'message'   => 'Kelas Berhasil Ditambahkan'
             ]);
             return redirect()->to(base_url('pustakawan/kelas'));
+        }elseif (!$this->validate($this->kelasModel->getvalidationRules())) {
+            session()->setFlashdata('errors',$this->validator);
+            return redirect()->to(base_url('pustakawan/kelas/tambah'))->withInput();
         }else{
             session()->setFlashdata('session',[
                 'status'    => 'error',

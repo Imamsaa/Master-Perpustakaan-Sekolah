@@ -37,15 +37,16 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/penerbit/update'); ?>" method="POST">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="kode">Kode Penerbit</label>
-                      <input type="text" name="kode" class="form-control" id="kode" placeholder="" readonly>
+                      <label for="kode_penerbit">Kode Penerbit</label>
+                      <input type="text" value="<?= (old('kode_penerbit')) ? old('kode_penerbit') : $penerbit['kode_penerbit']; ?>" name="kode_penerbit" class="form-control" id="kode_penerbit" placeholder="" readonly>
                   </div>
                   <div class="form-group">
-                    <label for="nama">Nama Penerbit</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_penerbit">Nama Penerbit</label>
+                    <input type="text" value="<?= (old('nama_penerbit')) ? old('nama_penerbit') : $penerbit['nama_penerbit']; ?>" name="nama_penerbit" class="form-control" id="nama_penerbit" placeholder="">
                   </div>
                 </div>
                 <!-- /.card-body -->

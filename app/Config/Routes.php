@@ -49,7 +49,10 @@ $routes->get('/pustakawan/buku/cetak/ya', 'Admin\Cetak::barcode');
 
 $routes->get('/pustakawan/penerbit', 'Admin\Penerbit::index');
 $routes->get('/pustakawan/penerbit/tambah', 'Admin\Penerbit::tambah');
-$routes->get('/pustakawan/penerbit/ubah', 'Admin\Penerbit::ubah');
+$routes->get('/pustakawan/penerbit/ubah/(:any)', 'Admin\Penerbit::ubah/$1');
+$routes->post('/pustakawan/penerbit/save', 'Admin\Penerbit::save');
+$routes->post('/pustakawan/penerbit/update', 'Admin\Penerbit::update');
+$routes->DELETE('/pustakawan/penerbit/delete/(:any)', 'Admin\Penerbit::delete/$1');
 
 // Rak Buku
 

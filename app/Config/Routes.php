@@ -108,6 +108,7 @@ $routes->get('/pustakawan/perpustakaan', 'Admin\Perpustakaan::index');
 // WHASTAPP
 
 $routes->get('/pustakawan/whastapp', 'Admin\Whastapp::index');
+$routes->post('/pustakawan/whastapp/save', 'Admin\Whastapp::save');
 
 // EMAIL
 

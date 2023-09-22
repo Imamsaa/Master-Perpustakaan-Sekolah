@@ -36,19 +36,20 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/whastapp/save'); ?>" method="POST">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="nis">Link Endpoint</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="endpoint">Link Endpoint</label>
+                      <input type="text" value="<?= (old('endpoint')) ? old('endpoint') : $whastapp['endpoint']; ?>" name="endpoint" class="form-control" id="endpoint" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="nis">Nomor Pengirim</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="pengirim">Nomor Pengirim</label>
+                      <input type="text" value="<?= (old('pengirim')) ? old('pengirim') : $whastapp['pengirim']; ?>" name="pengirim" class="form-control" id="pengirim" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="alamat">Isi Pesan</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="3"></textarea>
+                    <label for="message">Isi Pesan</label>
+                    <textarea name="message" class="form-control" id="message" rows="3"><?= (old('message')) ? old('message') : $whastapp['message']; ?></textarea>
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>

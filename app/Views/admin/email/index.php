@@ -36,35 +36,36 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/email/save'); ?>" method="post">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="nis">Server SMTP</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="smtp">Server SMTP</label>
+                      <input type="text" value="<?= (old('smtp')) ? old('smtp') : $email['smtp']; ?>" name="smtp" class="form-control" id="smtp" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="nis">Email Pengirim</label>
-                      <input type="email" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="email">Email Pengirim</label>
+                      <input type="email" value="<?= (old('email')) ? old('email') : $email['email']; ?>" name="email" class="form-control" id="email" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="nis">Password Email Pengirim</label>
-                      <input type="password" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="password_email">Password Email Pengirim</label>
+                      <input type="password" value="<?= (old('password_email')) ? old('password_email') : $email['password_email']; ?>" name="password_email" class="form-control" id="password_email" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="nis">Port</label>
-                      <input type="number" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="port">Port</label>
+                      <input type="number" value="<?= (old('port')) ? old('port') : $email['port']; ?>" name="port" class="form-control" id="port" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="nis">Nama Pengirim</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="nama">Nama Pengirim</label>
+                      <input type="text" value="<?= (old('nama')) ? old('nama') : $email['nama']; ?>" name="nama" class="form-control" id="nama" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="nis">Subject</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="subject">Subject</label>
+                      <input type="text" value="<?= (old('subject')) ? old('subject') : $email['subject']; ?>" name="subject" class="form-control" id="subject" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="alamat">Isi Pesan</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="3"></textarea>
+                    <label for="message">Isi Pesan</label>
+                    <textarea name="message" class="form-control" id="message" rows="3"><?= (old('message')) ? old('message') : $email['message']; ?></textarea>
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>

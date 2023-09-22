@@ -112,6 +112,7 @@ $routes->get('/pustakawan/whastapp', 'Admin\Whastapp::index');
 // EMAIL
 
 $routes->get('/pustakawan/email', 'Admin\Email::index');
+$routes->post('/pustakawan/email/save', 'Admin\Email::save');
 
 // PROFIL
 

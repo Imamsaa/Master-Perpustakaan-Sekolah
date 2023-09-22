@@ -26,7 +26,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- ROW -->
-        <div class="row mb-2">
+        <div class="row">
             <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-success">
@@ -37,15 +37,21 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/jenis/save'); ?>" method="post">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="kode">Kode Jenis Buku</label>
-                      <input type="text" name="kode" class="form-control" id="kode" placeholder="">
+                      <label for="kode_jenis">Kode Jenis Buku</label>
+                      <input type="text" value="<?= old('kode_jenis'); ?>" name="kode_jenis" class="form-control" id="kode_jenis" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="nama">Nama Jenis Buku</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_jenis">Nama Jenis Buku</label>
+                    <input type="text" value="<?= old('nama_jenis'); ?>" name="nama_jenis" class="form-control" id="nama_jenis" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="kode_warna">Kode Warna</label>
+                    <input type="color" value="<?= (old('kode_warna')) ? old('kode_warna') : '#000000'; ?>" name="kode_warna" class="form-control col-md-3 mb-2" id="kode_warna" placeholder="">
+                    <label for="kode_warna" class="label col-md-7">Kode warna digunakan sebagai penanda jenis buku pada barcode buku</label>
                   </div>
                 </div>
                 <!-- /.card-body -->

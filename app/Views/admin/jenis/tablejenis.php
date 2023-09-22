@@ -44,25 +44,33 @@
                     <th>NO</th>
                     <th>KODE JENIS</th>
                     <th>JENIS BUKU</th>
+                    <th>KODE WARNA</th>
                     <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
+                  <?php $no = 1; foreach($jenis as $row) : ?>
                   <tr>
-                    <td>1</td>
-                    <td>R15</td>
-                    <td>Karya Ilmiah</td>
+                    <td><?= $no; ?></td>
+                    <td><?= $row['kode_jenis']; ?></td>
+                    <td><?= $row['nama_jenis']; ?></td>
+                    <td><span style="color:<?= $row['kode_warna']; ?>;"><?= $row['kode_warna']; ?></span></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/jenis/ubah'); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        <a href="<?= base_url('pustakawan/jenis/ubah/'.$row['kode_jenis']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <form action="<?= base_url('pustakawan/jenis/delete/'.$row['kode_jenis']); ?>" method="post" class="d-inline">
+                          <input type="hidden" name="_method" value="DELETE">
+                          <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        </form>
                     </td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>NO</th>
                     <th>KODE JENIS</th>
                     <th>JENIS BUKU</th>
+                    <th>KODE WARNA</th>
                     <th>ACTION</th>
                   </tr>
                   </tfoot>

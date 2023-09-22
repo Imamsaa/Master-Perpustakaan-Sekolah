@@ -63,11 +63,14 @@ $routes->post('/pustakawan/rak/save', 'Admin\Rak::save');
 $routes->post('/pustakawan/rak/update', 'Admin\Rak::update');
 $routes->DELETE('/pustakawan/rak/delete/(:any)', 'Admin\Rak::delete/$1');
 
-// Rak Buku
+// Jenis Buku
 
 $routes->get('/pustakawan/jenis', 'Admin\Jenis::index');
 $routes->get('/pustakawan/jenis/tambah', 'Admin\Jenis::tambah');
-$routes->get('/pustakawan/jenis/ubah', 'Admin\Jenis::ubah');
+$routes->get('/pustakawan/jenis/ubah/(:any)', 'Admin\Jenis::ubah/$1');
+$routes->post('/pustakawan/jenis/save', 'Admin\Jenis::save');
+$routes->post('/pustakawan/jenis/update', 'Admin\Jenis::update');
+$routes->DELETE('/pustakawan/jenis/delete/(:any)', 'Admin\Jenis::delete/$1');
 
 // Buku
 

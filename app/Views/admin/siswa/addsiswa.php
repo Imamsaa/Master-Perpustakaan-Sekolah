@@ -72,15 +72,15 @@
                     </div>
                   <div class="form-group">
                     <label for="wa">Nomor WhastApp</label>
-                    <input type="text" name="wa" class="form-control" id="wa" placeholder="">
+                    <input type="text" value="<?= old('wa'); ?>" name="wa" class="form-control" id="wa" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="email">Email Siswa</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="">
+                    <input type="email" value="<?= old('email'); ?>" name="email" class="form-control" id="email" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="alamat_siswa">Alamat Siswa</label>
-                    <textarea name="alamat_siswa" class="form-control" id="alamat_siswa" rows="3"></textarea>
+                    <textarea name="alamat_siswa" class="form-control" id="alamat_siswa" rows="3"><?= old('alamat_siswa'); ?></textarea>
                   </div>
                   <div class="form-group">
                     <label for="foto">Unggah Foto Siswa</label>

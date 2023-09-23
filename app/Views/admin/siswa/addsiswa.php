@@ -37,7 +37,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/siswa/save'); ?>" method="post">
+              <form action="<?= base_url('pustakawan/siswa/save'); ?>" method="post" enctype="multipart/form-data">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">

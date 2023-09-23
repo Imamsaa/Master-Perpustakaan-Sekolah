@@ -45,6 +45,75 @@ class Siswa extends BaseController
         return view('admin/siswa/addsiswa', $data);
     }
 
+    function save()
+    {
+        $validate = [
+            'nis' => [
+                'rules' => 'is_unique[siswa.nis]',
+                'errors' => [
+                    'is_unique' => 'Nis Sudah dipakai'
+                ],
+            ],
+            'nisn' => [
+                'rules' => 'is_unique[siswa.nisn]',
+                'errors' => [
+                    'is_unique' => 'Nisn Sudah dipakai'
+                ],
+            ],
+            'foto' => [
+                'rules' => 'max_size[foto,1024]|ext_in[foto,png,jpg,jpeg]|is_image[foto]',
+                'errors' => [
+                    'max_size' => 'Ukuran file terlalu besar',
+                    'ext_in' => 'Moson Masukan file Gambar',
+                    'is_image' => 'Moson Masukan file Gambar Yang benar'
+                ],
+            ],
+        ];
+
+        if (!$this->validate($validate)) {
+            session()->setFlashdata('errors',$this->validator);
+            return redirect()->to(base_url('pustakawan/siswa/tambah'))->withInput();
+        }
+
+        $foto = $this->request->getFile('foto');
+
+        if ($foto->getError() == 4 ) {
+            $name = "siswa_default.jpg";
+        }else{
+            $name = $foto->getRandomName();
+        }
+        $siswa = $this->request->getvar();
+
+        if ($foto->isvalid() && !$foto->hasMoved()) {
+            $foto->move('admin/img/siswa',$name);
+        }
+        
+        if ($this->siswaModel->save([
+            'nis' => $siswa['nis'],
+            'nisn' => $siswa['nisn'],
+            'nama_siswa' => $siswa['nama_siswa'],
+            'kode_kelas' => $siswa['kode_kelas'],
+            'kode_tahun' => $siswa['kode_tahun'],
+            'wa' => $siswa['wa'],
+            'email' => $siswa['email'],
+            'alamat_siswa' => $siswa['alamat_siswa'],
+            'foto' => $name
+        ]) == true
+        ) {
+            session()->setFlashdata('session',[
+                'status' => 'success',
+                'message' => 'Data Siswa Berhasil disimpan'
+            ]);
+            return redirect()->to(base_url('pustakawan/siswa'));
+        }else{
+            session()->setFlashdata('session',[
+                'status' => 'error',
+                'message' => 'Data Siswa Gagal disimpan'
+            ]);
+            return redirect()->to(base_url('pustakawan/siswa/tambah'))->withInput();
+        }
+    }
+
     public function ubah(): string
     {
         $data = [

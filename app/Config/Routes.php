@@ -29,6 +29,7 @@ $routes->get('/pustakawan/siswa', 'Admin\Siswa::index');
 $routes->get('/pustakawan/siswa/tambah', 'Admin\Siswa::tambah');
 $routes->get('/pustakawan/siswa/ubah/(:any)', 'Admin\Siswa::ubah/$1');
 $routes->post('/pustakawan/siswa/save', 'Admin\Siswa::save');
+$routes->post('/pustakawan/siswa/update', 'Admin\Siswa::update');
 
 // TAHUN
 

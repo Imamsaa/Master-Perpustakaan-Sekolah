@@ -4,15 +4,21 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\SiswaModel;
+use App\Models\KelasModel;
+use App\Models\TahunModel;
 
 class Siswa extends BaseController
 {
     protected $siswaModel;
+    protected $kelasModel;
+    protected $tahunModel;
     protected $db;
 
     function __construct()
     {
         $this->siswaModel = new SiswaModel();
+        $this->kelasModel = new KelasModel();
+        $this->tahunModel = new TahunModel();
         $this->db = \Config\Database::connect();
     }
 
@@ -29,8 +35,12 @@ class Siswa extends BaseController
 
     public function tambah(): string
     {
+        $kelas = $this->kelasModel->findAll();
+        $tahun = $this->tahunModel->findAll();
         $data = [
-            'title' => 'Tambah Siswa'
+            'title' => 'Tambah Siswa',
+            'kelas' => $kelas,
+            'tahun' => $tahun
         ];
         return view('admin/siswa/addsiswa', $data);
     }

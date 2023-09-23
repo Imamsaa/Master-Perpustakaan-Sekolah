@@ -41,7 +41,7 @@
                 <div class="card-body">
                   <div class="row mb-2">
                     <div class="col-md-3 my-2 col-sm-12">
-                      <img src="<?= base_url('admin/img/cover_default.png'); ?>" alt="Foto Buku" class="img-thumbnail">
+                      <img src="<?= base_url('admin/img/buku/cover_default.png'); ?>" alt="Foto Buku" class="img-thumbnail">
                     </div>
                     <div class="col-md-9 col-sm-12">
                       <div class="form-group">

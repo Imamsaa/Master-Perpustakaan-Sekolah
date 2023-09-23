@@ -50,17 +50,22 @@
                   </tr>
                   </thead>
                   <tbody>
+                    <?php $no =1; foreach($buku as $row) :  ?>
                   <tr>
-                    <td>1</td>
-                    <td>Lord Of The Rings</td>
-                    <td>12</td>
-                    <td>Semesta</td>
-                    <td>Karya Ilmiyah</td>
+                    <td><?= $no; ?></td>
+                    <td><?= $row['judul_buku']; ?></td>
+                    <td><?= $row['stok']; ?></td>
+                    <td><?= $row['nama_rak']; ?></td>
+                    <td><?= $row['nama_jenis']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/buku/ubah'); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        <a href="<?= base_url('pustakawan/buku/ubah/'.$row['kode_buku']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <form action="<?= base_url('pustakawan/buku/delete'.$row['kode_buku']); ?>" method="post" class="d-inline">
+                          <input type="hidden" name="_method" value="DELETE">
+                          <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        </form>
                     </td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>

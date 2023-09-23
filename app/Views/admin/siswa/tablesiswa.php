@@ -49,16 +49,18 @@
                   </tr>
                   </thead>
                   <tbody>
+                    <?php $no = 1; foreach($siswa as $row) : ?>
                   <tr>
-                    <td>1</td>
-                    <td>2121</td>
-                    <td>Imam Safi'i</td>
-                    <td>XII MIPA</td>
+                    <td><?= $no; ?></td>
+                    <td><?= $row['nis']; ?></td>
+                    <td><?= $row['nama_siswa']; ?></td>
+                    <td><?= $row['nama_kelas']; ?></td>
                     <td>
                         <a href="<?= base_url('pustakawan/siswa/ubah'); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
                         <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
                     </td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>

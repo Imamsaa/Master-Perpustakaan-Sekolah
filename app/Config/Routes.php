@@ -101,9 +101,10 @@ $routes->get('/pustakawan/laporan', 'Admin\Laporan::index');
 
 $routes->get('/pustakawan/sekolah', 'Admin\Sekolah::index');
 
-// SEKOLAH
+// PERPUSTAKAAN
 
 $routes->get('/pustakawan/perpustakaan', 'Admin\Perpustakaan::index');
+$routes->post('/pustakawan/perpustakaan/save', 'Admin\Perpustakaan::save');
 
 // WHASTAPP
 

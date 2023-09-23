@@ -36,19 +36,19 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/perpustakaan/save'); ?>" method="post">
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="nis">Nama Perpustakaan</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="nama_perpus">Nama Perpustakaan</label>
+                      <input type="text" value="<?= (old('nama_perpus')) ? old('nama_perpus') : $perpus['nama_perpus']; ?>" name="nama_perpus" class="form-control" id="nama_perpus" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="nis">Slogan Perpustakaan</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="slogan_perpus">Slogan Perpustakaan</label>
+                      <input type="text" value="<?= (old('slogan_perpus')) ? old('slogan_perpus') : $perpus['slogan_perpus']; ?>" name="slogan_perpus" class="form-control" id="slogan_perpus" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="alamat">Peraturan Perpustakaan (Optional)</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="3"></textarea>
+                    <label for="peraturan_perpus">Peraturan Perpustakaan (Optional)</label>
+                    <textarea name="peraturan_perpus" class="form-control" id="peraturan_perpus" rows="3"><?= (old('peraturan_perpus')) ? old('peraturan_perpus') : $perpus['peraturan_perpus']; ?></textarea>
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>

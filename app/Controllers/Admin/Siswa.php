@@ -192,8 +192,24 @@ class Siswa extends BaseController
         }
     }
 
-    public function hapus()
+    public function delete($nis)
     {
-        // isi kode disini
+        $nama = $this->siswaModel->select('foto')->where('nis',$nis)->first('foto');
+        if ($this->siswaModel->where('nis',$nis)->delete() == true ) {
+            if($nama['foto'] != 'siswa_default.jpg'){
+                unlink('admin/img/siswa/'.$nama['foto']);
+            }
+            session()->setFlashdata('session',[
+                'status'    => 'success',
+                'message'   => 'Data Siswa Berhasil Dihapus'
+            ]);
+            return redirect()->to(base_url('pustakawan/siswa'));
+        }else{
+            session()->setFlashdata('session',[
+                'status'    => 'error',
+                'message'   => 'Data Siswa Gagal Dihapus'
+            ]);
+            return redirect()->to(base_url('pustakawan/siswa'));
+        }
     }
 }

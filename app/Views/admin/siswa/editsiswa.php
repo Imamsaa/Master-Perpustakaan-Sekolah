@@ -37,11 +37,12 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/siswa/update'); ?>" method="post" enctype="multipart/form-data">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="row mb-2">
                     <div class="col-md-3 my-2 col-sm-12">
-                      <img src="<?= base_url('admin/img/siswa_default.jpg'); ?>" alt="Foto Siswa" class="img-thumbnail">
+                      <img src="<?= base_url('admin/img/siswa/'.$siswa['foto']); ?>" alt="Foto Siswa" class="img-thumbnail">
                     </div>
                     <div class="col-md-9 col-sm-12">
                       <div class="form-group">
@@ -60,47 +61,45 @@
                   </div>
                   <div class="form-group">
                       <label for="nis">NIS Siswa</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="" readonly>
+                      <input type="text" value="<?= (old('nis')) ? old('nis') : $siswa['nis']; ?>" name="nis" class="form-control" id="nis" placeholder="" readonly>
                   </div>
                   <div class="form-group">
                     <label for="nisn">NISN Siswa</label>
-                    <input type="text" name="nisn" class="form-control" id="nisn" placeholder="">
+                    <input type="text" value="<?= (old('nisn')) ? old('nisn') : $siswa['nisn']; ?>" name="nisn" class="form-control" id="nisn" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="nama">Nama Siswa</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_siswa">Nama Siswa</label>
+                    <input type="text" value="<?= (old('nama_siswa')) ? old('nama_siswa') : $siswa['nama_siswa']; ?>" name="nama_siswa" class="form-control" id="nama_siswa" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="kelas">Pilih Kelas</label>
-                      <select id="kelas" name="kelas" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                      <label for="kode_kelas">Pilih Kelas</label>
+                      <select id="kode_kelas" name="kode_kelas" class="form-control">
+                        <option></option>
+                        <?php foreach($kelas as $k) : ?>
+                        <option value="<?= $k['kode_kelas']; ?>" <?= (old('kode_kelas') == $siswa['kode_kelas'] || $k['kode_kelas'] == $siswa['kode_kelas']) ? 'selected' : ''; ?> ><?= $k['nama_kelas']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                     </div>
                     <div class="form-group">
-                      <label for="tahun">Pilih Tahun Ajaran</label>
-                      <select id="tahun" name="tahun" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                      <label for="kode_tahun">Pilih Tahun Ajaran</label>
+                      <select id="kode_tahun" name="kode_tahun" class="form-control">
+                        <option></option>
+                        <?php foreach($tahun as $t) : ?>
+                        <option value="<?= $t['kode_tahun'] ?>" <?= ($t['kode_tahun'] == $siswa['kode_tahun'] OR old('kode_tahun') == $siswa['kode_tahun']) ? 'selected' : ''; ?> ><?= $t['nama_tahun']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                     </div>
                   <div class="form-group">
-                    <label for="nomorwa">Nomor WhastApp</label>
-                    <input type="text" name="nomorwa" class="form-control" id="nomorwa" placeholder="">
+                    <label for="wa">Nomor WhastApp</label>
+                    <input type="text" value="<?= (old('wa')) ? old('wa') : $siswa['wa']; ?>" name="wa" class="form-control" id="wa" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="email">Email Siswa</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="">
+                    <input type="email" value="<?= (old('email')) ? old('email') : $siswa['email']; ?>" name="email" class="form-control" id="email" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="alamat">Alamat Siswa</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="3"></textarea>
+                    <label for="alamat_siswa">Alamat Siswa</label>
+                    <textarea name="alamat_siswa" class="form-control" id="alamat_siswa" rows="3"><?= (old('alamat_siswa')) ? old('alamat_siswa') : $siswa['alamat_siswa']; ?></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->

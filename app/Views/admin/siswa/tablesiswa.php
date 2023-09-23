@@ -56,7 +56,7 @@
                     <td><?= $row['nama_siswa']; ?></td>
                     <td><?= $row['nama_kelas']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/siswa/ubah'); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <a href="<?= base_url('pustakawan/siswa/ubah/'.$row['nis']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
                         <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
                     </td>
                   </tr>

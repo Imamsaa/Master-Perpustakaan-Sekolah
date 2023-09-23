@@ -23,7 +23,8 @@ class Siswa extends BaseController
     }
 
     public function index(): string
-    {       
+    {
+        session();
         $builder = $this->db->table('siswa');
         $siswa = $builder->join('kelas','kelas.kode_kelas = siswa.kode_kelas')->get();
         $data = [
@@ -35,6 +36,7 @@ class Siswa extends BaseController
 
     public function tambah(): string
     {
+        session();
         $kelas = $this->kelasModel->findAll();
         $tahun = $this->tahunModel->findAll();
         $data = [
@@ -114,10 +116,17 @@ class Siswa extends BaseController
         }
     }
 
-    public function ubah(): string
+    public function ubah($nis): string
     {
+        session();
+        $kelas = $this->kelasModel->findAll();
+        $tahun = $this->tahunModel->findAll();
+        $siswa = $this->siswaModel->where('nis',$nis)->first();
         $data = [
-            'title' => 'Ubah Siswa'
+            'title' => 'Ubah Siswa',
+            'siswa' => $siswa,
+            'kelas' => $kelas,
+            'tahun' => $tahun
         ];
         return view('admin/siswa/editsiswa', $data);
     }

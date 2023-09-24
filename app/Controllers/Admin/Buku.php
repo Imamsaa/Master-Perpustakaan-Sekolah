@@ -90,7 +90,7 @@ class Buku extends BaseController
 
         // Kita cek apakah user melakukan uploadfile atau tidak jika tidak kita isi dengan cover default
         if ($sampul->getError() == 4 ) {
-            $name = "cover_default.jpg";
+            $name = "cover_default.png";
         }else{
             $name = $sampul->getRandomName();
         }
@@ -103,6 +103,13 @@ class Buku extends BaseController
             $sampul->move('admin/img/buku',$name);
         }
 
+        if ($buku['stok'] <= 0 ) {
+            session()->setFlashdata('session',[
+                'status' => 'error',
+                'message' => 'Stok buku tidak boleh kosong'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku/tambah'))->withInput();
+        }
         // Kita Buat perulangan untuk insert data buku sebanyak stok buku
         $pertambahan = 0;
         for ($i=1; $i <= $buku['stok'] ; $i++) { 
@@ -194,7 +201,11 @@ class Buku extends BaseController
                 'status' => 'success',
                 'message' => 'Buku Berhasil di hapus'
             ]);
-            return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));
+            if ($this->bukuModel->where('slug',$slug)->countAllResults(false) > 0) {
+                return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));   
+            }else{
+                return redirect()->to(base_url('pustakawan/buku'));
+            }
         }else{
             session()->setFlashdata('session',[
                 'status' => 'error',

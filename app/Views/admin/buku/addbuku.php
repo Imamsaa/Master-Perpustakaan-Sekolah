@@ -93,7 +93,7 @@
                   </div> -->
                   <div class="form-group">
                     <label for="deskripsi_buku">Deskripsi Singkat Buku (Optional)</label>
-                    <textarea name="deskripsi_buku" value="<?= old('deskripsi_buku'); ?>" class="form-control" id="deskripsi_buku" rows="3"></textarea>
+                    <textarea name="deskripsi_buku" class="form-control" id="deskripsi_buku" rows="3"><?= old('deskripsi_buku'); ?></textarea>
                   </div>
                   <div class="form-group">
                     <label for="foto">Unggah Sampul Buku (Optional)</label>

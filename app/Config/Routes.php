@@ -81,6 +81,7 @@ $routes->get('/pustakawan/buku', 'Admin\Buku::index');
 $routes->get('/pustakawan/buku/tambah', 'Admin\Buku::tambah');
 $routes->get('/pustakawan/buku/ubah/(:any)', 'Admin\Buku::ubah/$1');
 $routes->post('/pustakawan/buku/save', 'Admin\Buku::save');
+$routes->get('/pustakawan/buku/deletebuku/(:any)/(:any)', 'Admin\Buku::deleteBuku/$1/$2');
 
 // Peminjaman
 

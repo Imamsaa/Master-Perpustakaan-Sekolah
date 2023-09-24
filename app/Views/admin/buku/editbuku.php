@@ -59,10 +59,7 @@
                       <td><?= $tab['nama_rak']; ?></td>
                       <td><?= $tab['nama_jenis']; ?></td>
                       <td>
-                          <form action="" method="post" class="d-inline">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
-                          </form>
+                        <a href="<?= base_url('pustakawan/buku/deletebuku/'.$tab['slug'].'/'.$tab['kode_buku']); ?>" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php $no++; endforeach; ?>

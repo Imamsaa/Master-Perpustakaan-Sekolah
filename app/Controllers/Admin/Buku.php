@@ -187,6 +187,22 @@ class Buku extends BaseController
         return view('admin/buku/editbuku', $data);
     }
 
+    function deleteBuku($slug,$kode_buku)
+    {
+        if ($this->bukuModel->where('kode_buku',$kode_buku)->delete() == true) {
+            session()->setFlashdata('session',[
+                'status' => 'success',
+                'message' => 'Buku Berhasil di hapus'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));
+        }else{
+            session()->setFlashdata('session',[
+                'status' => 'error',
+                'message' => 'Buku gagal di hapus'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));
+        }
+    }
     public function hapus()
     {
         // isi kode disini

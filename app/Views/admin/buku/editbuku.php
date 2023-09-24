@@ -32,16 +32,77 @@
             <div class="card card-primary">
               <div class="card-header">
                 <div class="card-title">
-                    <h3>Ubah Buku</h3>
+                    <h3>Daftar Stok Buku</h3>
                 </div>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form>
                 <div class="card-body">
+                  <table id="example1" class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                      <th>NO</th>
+                      <th>KODE</th>
+                      <th>JUDUL</th>
+                      <th>RAK</th>
+                      <th>JENIS</th>
+                      <th>ACTION</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <?php $no = 1; foreach($table as $tab) : ?>
+                    <tr>
+                      <td><?= $no; ?></td>
+                      <td><?= $tab['kode_buku']; ?></td>
+                      <td><?= $tab['judul_buku']; ?></td>
+                      <td><?= $tab['nama_rak']; ?></td>
+                      <td><?= $tab['nama_jenis']; ?></td>
+                      <td>
+                          <form action="" method="post" class="d-inline">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                          </form>
+                      </td>
+                    </tr>
+                    <?php $no++; endforeach; ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                      <th>NO</th>
+                      <th>KODE</th>
+                      <th>JUDUL</th>
+                      <th>RAK</th>
+                      <th>JENIS</th>
+                      <th>ACTION</th>
+                    </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!--/.col (left) -->
+        </div>
+        <!-- ROW -->
+        <div class="row">
+            <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <div class="card-title">
+                    <h3>Ubah Buku</h3>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form action="<?= base_url('pustakawan/buku/update'); ?>" method="post" enctype="multipart/form-data">
+              <?= csrf_field(); ?>
+                <div class="card-body">
                   <div class="row mb-2">
                     <div class="col-md-3 my-2 col-sm-12">
-                      <img src="<?= base_url('admin/img/buku/cover_default.png'); ?>" alt="Foto Buku" class="img-thumbnail">
+                      <img src="<?= base_url('admin/img/buku/'.$buku['sampul']); ?>" alt="Foto Buku" class="img-thumbnail">
                     </div>
                     <div class="col-md-9 col-sm-12">
                       <div class="form-group">
@@ -59,62 +120,55 @@
                     </div>
                   </div>
                   <div class="form-group">
-                      <label for="judul">Judul Buku</label>
-                      <input type="text" name="judul" class="form-control" id="judul" placeholder="">
+                      <label for="judul_buku">Judul Buku</label>
+                      <input type="text" value="<?= (old('judul_buku')) ? old('judul_buku') : $buku['judul_buku']; ?>" name="judul_buku" class="form-control" id="judul_buku" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="isbn">Nomor ISBN Buku (Optional)</label>
-                    <input type="text" name="isbn" class="form-control" id="isbn" placeholder="">
+                    <input type="text" value="<?= (old('isbn')) ? old('isbn') : $buku['isbn']; ?>" name="isbn" class="form-control" id="isbn" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="stok">Stok Buku</label>
-                    <input type="number" name="stok" class="form-control" id="stok" placeholder="">
-                  </div>
-                  <div class="form-group">
-                    <label for="tahun">Tahun Buku (Optional)</label>
-                    <input type="text" name="tahun" class="form-control" id="tahun" placeholder="">
+                    <label for="tahun_buku">Tahun Buku (Optional)</label>
+                    <input type="text" value="<?= (old('tahun_buku')) ? old('tahun_buku') : $buku['tahun_buku']; ?>" name="tahun_buku" class="form-control" id="tahun_buku" placeholder="">
                   </div>
                   <div class="form-group">
                       <label for="kode_penerbit">Penerbit</label>
                       <select id="kode_penerbit" name="kode_penerbit" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                        <option></option>
+                        <?php foreach($penerbit as $p) : ?>
+                        <option value="<?= $p['kode_penerbit']; ?>" <?= ($p['kode_penerbit'] == $buku['kode_penerbit']) ? 'selected' : ''; ?>><?= $p['nama_penerbit']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                     </div>
                     <div class="form-group">
                       <label for="kode_rak">Rak Buku</label>
                       <select id="kode_rak" name="kode_rak" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                        <option></option>
+                        <?php foreach($rak as $r) : ?>
+                        <option value="<?= $r['kode_rak']; ?>" <?= ($r['kode_rak'] == $buku['kode_rak']) ? 'selected' : ''; ?>><?= $r['nama_rak']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                     </div>
                     <div class="form-group">
                       <label for="kode_jenis">Jenis Buku</label>
                       <select id="kode_jenis" name="kode_jenis" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                        <option></option>
+                        <?php foreach($jenis as $j) : ?>
+                        <option value="<?= $j['kode_jenis']; ?>" <?= ($j['kode_jenis'] == $buku['kode_jenis']) ? 'selected' : ''; ?>><?= $j['nama_jenis']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                     </div>
                   <div class="form-group">
-                    <label for="nomorwa">Jumlah halaman (Optional)</label>
-                    <input type="text" name="nomorwa" class="form-control" id="nomorwa" placeholder="">
+                    <label for="halaman">Jumlah halaman (Optional)</label>
+                    <input type="text" value="<?= (old('halaman')) ? old('halaman') : $buku['halaman']; ?>" name="halaman" class="form-control" id="halaman" placeholder="">
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Buku</label>
                     <input type="email" name="email" class="form-control" id="email" placeholder="">
                   </div> -->
                   <div class="form-group">
-                    <label for="deskripsi">Deskripsi Singkat Buku (Optional)</label>
-                    <textarea name="deskripsi" class="form-control" id="deskripsi" rows="3"></textarea>
+                    <label for="deskripsi_buku">Deskripsi Singkat Buku (Optional)</label>
+                    <textarea name="deskripsi_buku" class="form-control" id="deskripsi_buku" rows="3"><?= (old('deskripsi_buku')) ? old('deskripsi_buku') : $buku['deskripsi_buku']; ?></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->

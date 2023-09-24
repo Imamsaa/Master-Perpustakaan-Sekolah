@@ -162,10 +162,27 @@ class Buku extends BaseController
         }
     }
 
-    public function ubah(): string
+    public function ubah($slug): string
     {
+        session();
+        $builder = $this->db->table('buku');
+        $table = $builder
+        ->join('jenis_buku','jenis_buku.kode_jenis = buku.kode_jenis')
+        ->join('rak','rak.kode_rak = buku.kode_rak')
+        ->where('slug',$slug)
+        ->get()
+        ->getResultArray();
+        $buku = $this->bukuModel->where('slug',$slug)->first();
+        $penerbit = $this->penerbitModel->findAll();
+        $rak = $this->rakModel->findAll();
+        $jenis = $this->jenisModel->findAll();
         $data = [
-            'title' => 'Ubah Buku'
+            'title' => 'Ubah Buku',
+            'table' => $table,
+            'buku'  => $buku,
+            'penerbit' => $penerbit,
+            'rak'   => $rak,
+            'jenis' => $jenis
         ];
         return view('admin/buku/editbuku', $data);
     }

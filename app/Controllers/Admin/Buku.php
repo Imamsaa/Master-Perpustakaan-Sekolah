@@ -130,6 +130,7 @@ class Buku extends BaseController
             $bulkBuku[] = [
                 'kode_buku' => $kode_buku,
                 'judul_buku' => $buku['judul_buku'],
+                'slug' => url_title($buku['judul_buku'],'-',true),
                 'isbn' => $buku['isbn'],
                 'tahun_buku' => $buku['tahun_buku'],
                 'kode_penerbit' => $buku['kode_penerbit'],

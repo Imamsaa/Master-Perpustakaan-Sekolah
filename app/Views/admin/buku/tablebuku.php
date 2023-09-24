@@ -58,8 +58,8 @@
                     <td><?= $row['nama_rak']; ?></td>
                     <td><?= $row['nama_jenis']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/buku/ubah/'.$row['kode_buku']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <form action="<?= base_url('pustakawan/buku/delete'.$row['kode_buku']); ?>" method="post" class="d-inline">
+                        <a href="<?= base_url('pustakawan/buku/ubah/'.$row['slug']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <form action="<?= base_url('pustakawan/buku/delete'.$row['slug']); ?>" method="post" class="d-inline">
                           <input type="hidden" name="_method" value="DELETE">
                           <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
                         </form>

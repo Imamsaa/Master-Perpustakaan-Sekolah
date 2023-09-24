@@ -37,65 +37,63 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/buku/save'); ?>" method="POST" enctype="multipart/form-data">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="judul">Judul Buku</label>
-                      <input type="text" name="judul" class="form-control" id="judul" placeholder="">
+                      <label for="judul_buku">Judul Buku</label>
+                      <input type="text" value="<?= old('judul_buku'); ?>" name="judul_buku" class="form-control" id="judul_buku" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="isbn">Nomor ISBN Buku (Optional)</label>
-                    <input type="text" name="isbn" class="form-control" id="isbn" placeholder="">
+                    <input type="text" value="<?= old('isbn'); ?>" name="isbn" class="form-control" id="isbn" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="stok">Stok Buku</label>
-                    <input type="number" name="stok" class="form-control" id="stok" placeholder="">
+                    <input type="number" value="<?= old('stok'); ?>" name="stok" class="form-control" id="stok" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="tahun">Tahun Buku (Optional)</label>
-                    <input type="text" name="tahun" class="form-control" id="tahun" placeholder="">
+                    <label for="tahun_buku">Tahun Buku (Optional)</label>
+                    <input type="text" value="<?= old('tahun_buku'); ?>" name="tahun_buku" class="form-control" id="tahun_buku" placeholder="">
                   </div>
                   <div class="form-group">
                       <label for="kode_penerbit">Penerbit</label>
                       <select id="kode_penerbit" name="kode_penerbit" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                        <option></option>
+                        <?php foreach($penerbit as $p) : ?>
+                        <option value="<?= $p['kode_penerbit']; ?>" <?= (old('kode_penerbit') == $p['kode_penerbit']) ? 'selected' : ''; ?>><?= $p['nama_penerbit']; ?></option>
+                        <?php endforeach; ?>
                       </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="kode_rak">Rak Buku</label>
-                      <select id="kode_rak" name="kode_rak" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                  </div>
+                  <div class="form-group">
+                    <label for="kode_rak">Rak Buku</label>
+                    <select id="kode_rak" name="kode_rak" class="form-control">
+                      <option></option>
+                      <?php foreach($rak as $r) : ?>
+                      <option value="<?= $r['kode_rak']; ?>" <?= (old('kode_rak') == $r['kode_rak']) ? 'selected' : ''; ?>><?= $r['nama_rak']; ?></option>
+                      <?php endforeach; ?>
                       </select>
-                    </div>
+                  </div>
                     <div class="form-group">
                       <label for="kode_jenis">Jenis Buku</label>
                       <select id="kode_jenis" name="kode_jenis" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                        <option></option>
+                        <?php foreach($jenis as $j) : ?>
+                        <option value="<?= $j['kode_jenis']; ?>" <?= (old('kode_jenis') == $j['kode_jenis']) ? 'selected' : ''; ?>><?= $j['nama_jenis']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                     </div>
                   <div class="form-group">
-                    <label for="nomorwa">Jumlah halaman (Optional)</label>
-                    <input type="text" name="nomorwa" class="form-control" id="nomorwa" placeholder="">
+                    <label for="halaman">Jumlah halaman (Optional)</label>
+                    <input type="text" value="<?= old('halaman'); ?>" name="halaman" class="form-control" id="halaman" placeholder="">
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Buku</label>
                     <input type="email" name="email" class="form-control" id="email" placeholder="">
                   </div> -->
                   <div class="form-group">
-                    <label for="deskripsi">Deskripsi Singkat Buku (Optional)</label>
-                    <textarea name="deskripsi" class="form-control" id="deskripsi" rows="3"></textarea>
+                    <label for="deskripsi_buku">Deskripsi Singkat Buku (Optional)</label>
+                    <textarea name="deskripsi_buku" value="<?= old('deskripsi_buku'); ?>" class="form-control" id="deskripsi_buku" rows="3"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="foto">Unggah Sampul Buku (Optional)</label>

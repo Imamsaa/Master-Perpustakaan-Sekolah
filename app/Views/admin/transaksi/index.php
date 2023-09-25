@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Profil Perpustakaan</h1>
+            <h1 class="m-0">Pengaturan Transaksi</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?= base_url('pustakawan'); ?>">Pustakawan</a></li>
-              <li class="breadcrumb-item">Perpustakaan</li>
+              <li class="breadcrumb-item">Transaksi</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -31,7 +31,7 @@
             <div class="card card-primary">
               <div class="card-header">
                 <div class="card-title">
-                    <h3>Ubah Profil Perpustakaan</h3>
+                    <h3>Ubah Pengaturan Transaksi</h3>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -39,16 +39,12 @@
               <form action="<?= base_url('pustakawan/transaksi/update'); ?>" method="post">
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="nama_perpus">Nama Perpustakaan</label>
-                      <input type="text" value="" name="nama_perpus" class="form-control" id="nama_perpus" placeholder="">
+                      <label for="denda">Batas Peminjaman</label>
+                      <input type="number" value="<?= (old('denda')) ? old('denda') : $set['denda']; ?>" value="" name="denda" class="form-control" id="denda" placeholder="Dalam hari...">
                   </div>
                   <div class="form-group">
-                      <label for="slogan_perpus">Slogan Perpustakaan</label>
-                      <input type="text" value="" name="slogan_perpus" class="form-control" id="slogan_perpus" placeholder="">
-                  </div>
-                  <div class="form-group">
-                    <label for="peraturan_perpus">Peraturan Perpustakaan (Optional)</label>
-                    <textarea name="peraturan_perpus" class="form-control" id="peraturan_perpus" rows="3"></textarea>
+                      <label for="terlambat">Denda keterlambatan</label>
+                      <input type="text" value="<?= (old('terlambat')) ? old('terlambat') : $set['terlambat']; ?>" value="" name="terlambat" class="form-control" id="terlambat" placeholder="">
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>
@@ -102,8 +98,8 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Profil Perpustakaan</button>
-                  <a href="<?= base_url('pustakawan/perpustakaan'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
+                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Pengaturan Transaksi</button>
+                  <a href="<?= base_url('pustakawan/transaksi'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>
             </div>

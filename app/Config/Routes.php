@@ -90,19 +90,15 @@ $routes->DELETE('/pustakawan/buku/delete/(:any)', 'Admin\Buku::delete/$1');
 
 $routes->get('/pustakawan/peminjaman', 'Admin\Peminjaman::index');
 $routes->get('/pustakawan/pengembalian', 'Admin\Pengembalian::index');
+$routes->get('/pustakawan/transaksi', 'Admin\Transaksi::index');
+$routes->post('/pustakawan/transaksi/update', 'Admin\Transaksi::update');
 // $routes->get('/pustakawan/buku/tambah', 'Admin\Buku::tambah');
 // $routes->get('/pustakawan/buku/ubah', 'Admin\Buku::ubah');
 
-// DENDA
-
-$routes->get('/pustakawan/denda', 'Admin\Denda::index');
-$routes->get('/pustakawan/denda/tambah', 'Admin\Denda::tambah');
-$routes->get('/pustakawan/denda/ubah', 'Admin\Denda::ubah');
 
 // LAPORAN
 
 $routes->get('/pustakawan/laporan', 'Admin\Laporan::index');
-$routes->get('/pustakawan/transaksi', 'Admin\Transaksi::index');
 // $routes->get('/pustakawan/denda/tambah', 'Admin\Denda::tambah');
 // $routes->get('/pustakawan/denda/ubah', 'Admin\Denda::ubah');
 

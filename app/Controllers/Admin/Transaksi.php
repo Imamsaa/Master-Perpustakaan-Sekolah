@@ -3,48 +3,48 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-// use App\Models\PerpusModel;
+use App\Models\SettransaksiModel;
 
 class Transaksi extends BaseController
 {
-    // protected $perpusModel;
+    protected $settransModel;
 
-    // function __construct()
-    // {
-    //     $this->perpusModel = new PerpusModel();    
-    // }
+    function __construct()
+    {
+        $this->settransModel = new SettransaksiModel();    
+    }
 
     public function index(): string
     {
-        // session();
-        // $perpus = $this->perpusModel->first();
+        session();
+        $set = $this->settransModel->first();
         $data = [
-            'title' => 'Pengaturan Transaksi'
-            // 'perpus' => $perpus
+            'title' => 'Pengaturan Transaksi',
+            'set' => $set
         ];
         return view('admin/transaksi/index', $data);
     }
 
-    // function save()
-    // {
-    //     $perpus = $this->request->getVar();
-    //     if ($this->perpusModel->where('id',1)->set([
-    //         'nama_perpus'   => $perpus['nama_perpus'],
-    //         'slogan_perpus' => $perpus['slogan_perpus'],
-    //         'peraturan_perpus'  => $perpus['peraturan_perpus']
-    //     ])->update() == true
-    //     ) {
-    //         session()->setFlashdata('session',[
-    //             'status'    => 'success',
-    //             'message'   => 'Data Perpustakaan Berhasil Di Ubah'
-    //         ]);
-    //         return redirect()->to(base_url('pustakawan/perpustakaan'));
-    //     }else{
-    //         session()->setFlashdata('session',[
-    //             'status'    => 'error',
-    //             'message'   => 'Data Perpustakaan Gagal Di Ubah'
-    //         ]);
-    //         return redirect()->to(base_url('pustakawan/perpustakaan'))->withInput();
-    //     }
-    // }
+    function update()
+    {
+        $set = $this->request->getVar();
+        // dd($set);
+        if ($this->settransModel->where('id',1)->set([
+            'terlambat'   => $set['terlambat'],
+            'denda' => $set['denda']
+        ])->update() == true
+        ) {
+            session()->setFlashdata('session',[
+                'status'    => 'success',
+                'message'   => 'Data Berhasil Di Ubah'
+            ]);
+            return redirect()->to(base_url('pustakawan/transaksi'));
+        }else{
+            session()->setFlashdata('session',[
+                'status'    => 'error',
+                'message'   => 'Data Gagal Di Ubah'
+            ]);
+            return redirect()->to(base_url('pustakawan/transaksi'))->withInput();
+        }
+    }
 }

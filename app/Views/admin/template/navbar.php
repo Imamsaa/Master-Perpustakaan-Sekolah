@@ -126,6 +126,12 @@
             </a>
             </li>
             <li class="nav-item">
+            <a href="<?= base_url('pustakawan/transaksi'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Pengaturan Transaksi</p>
+            </a>
+            </li>
+            <li class="nav-item">
             <a href="<?= base_url('pustakawan/laporan'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Laporan</p>

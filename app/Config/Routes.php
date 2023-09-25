@@ -102,6 +102,7 @@ $routes->get('/pustakawan/denda/ubah', 'Admin\Denda::ubah');
 // LAPORAN
 
 $routes->get('/pustakawan/laporan', 'Admin\Laporan::index');
+$routes->get('/pustakawan/transaksi', 'Admin\Transaksi::index');
 // $routes->get('/pustakawan/denda/tambah', 'Admin\Denda::tambah');
 // $routes->get('/pustakawan/denda/ubah', 'Admin\Denda::ubah');
 

@@ -108,6 +108,7 @@ $routes->get('/pustakawan/laporan', 'Admin\Laporan::index');
 // SEKOLAH
 
 $routes->get('/pustakawan/sekolah', 'Admin\Sekolah::index');
+$routes->post('/pustakawan/sekolah/update', 'Admin\Sekolah::update');
 
 // PERPUSTAKAAN
 

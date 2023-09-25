@@ -36,18 +36,19 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/sekolah/update'); ?>" method="POST" enctype="multipart/form-data">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="row mb-2">
                     <div class="col-md-3 my-2 col-sm-12">
-                      <img src="<?= base_url('admin/img/siswa_default.jpg'); ?>" alt="Foto Siswa" class="img-thumbnail">
+                      <img src="<?= base_url('admin/img/'.$sekolah['logo']); ?>" alt="Logo Sekolah" class="img-thumbnail">
                     </div>
                     <div class="col-md-9 col-sm-12">
                       <div class="form-group">
-                        <label for="foto">Unggah Logo Sekolah</label>
+                        <label for="logo">Unggah Logo Sekolah</label>
                         <div class="input-group">
                           <div class="custom-file">
-                            <input name="foto" type="file" class="custom-file-input" id="foto">
+                            <input name="logo" type="file" class="custom-file-input" id="logo">
                             <label class="custom-file-label" for="foto">Pilih file gambar</label>
                           </div>
                           <div class="input-group-append">
@@ -58,20 +59,20 @@
                     </div>
                   </div>
                   <div class="form-group">
-                      <label for="nis">Nama Sekolah</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="nama_sekolah">Nama Sekolah</label>
+                      <input type="text" value="<?= (old('nama_sekolah')) ? old('nama_sekolah') : $sekolah['nama_sekolah']; ?>" name="nama_sekolah" class="form-control" id="nama_sekolah" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="nis">Slogan Sekolah</label>
-                      <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                      <label for="slogan_sekolah">Slogan Sekolah</label>
+                      <input type="text" value="<?= (old('slogan_sekolah')) ? old('slogan_sekolah') : $sekolah['slogan_sekolah']; ?>" name="slogan_sekolah" class="form-control" id="slogan_sekolah" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email Sekolah</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="">
+                    <label for="email_sekolah">Email Sekolah</label>
+                    <input type="email" value="<?= (old('email_sekolah')) ? old('email_sekolah') : $sekolah['email_sekolah']; ?>" name="email_sekolah" class="form-control" id="email_sekolah" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="alamat">Alamat Sekolah</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="3"></textarea>
+                    <label for="alamat_sekolah">Alamat Sekolah</label>
+                    <textarea name="alamat_sekolah" class="form-control" id="alamat_sekolah" rows="3"><?= (old('alamat_sekolah')) ? old('alamat_sekolah') : $sekolah['alamat_sekolah']; ?></textarea>
                   </div>
                   <!-- <div class="form-group">
                     <label for="nisn">NISN Siswa</label>

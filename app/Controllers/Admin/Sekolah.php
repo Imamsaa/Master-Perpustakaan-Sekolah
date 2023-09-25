@@ -73,7 +73,11 @@ class Sekolah extends BaseController
                 'status' => 'success',
                 'message' => 'Data Sekolah Berhasil Diubah'
             ]);
-            unlink('admin/img/'.$sekolah['logo']);
+            if ($logo->getError() == 4 ) {
+            
+            }else{
+                unlink('admin/img/'.$sekolah['logo']);
+            }
             return redirect()->to(base_url('pustakawan/sekolah'));
         }else{
             session()->setFlashdata('session',[

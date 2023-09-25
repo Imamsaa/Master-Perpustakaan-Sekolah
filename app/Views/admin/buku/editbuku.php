@@ -31,14 +31,23 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <div class="card-title">
-                    <h3>Daftar Stok Buku</h3>
+                <div class="row card-title">
+                      <h3>Daftar Stok Buku</h3>
                 </div>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
                 <div class="card-body">
+                <form action="<?= base_url('pustakawan/buku/stok'); ?>" method="post" class="d-inline">
+                        <div class="form-group row">
+                          <div class="col-md-9">
+                            <!-- <label class="sr-only" for="inlineFormInput">Name</label> -->
+                            <input type="hidden" name="slug" value="<?= $buku['slug']; ?>">
+                            <input type="number" name="stok" class="form-control mb-1" id="inlineFormInput" placeholder="Tambahkan Stok">
+                          </div>
+                            <button type="submit" class="btn mb-1 col-md-3 btn-success"><i class="fas fa-solid fa-plus"></i> Tambah Stok</button>
+                        </div>
+                      </form>
                   <table id="example1" class="table table-bordered table-hover">
                     <thead>
                     <tr>
@@ -76,7 +85,6 @@
                     </tfoot>
                   </table>
                 </div>
-              </form>
             </div>
             <!-- /.card -->
           </div>

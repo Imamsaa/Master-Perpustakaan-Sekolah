@@ -274,9 +274,9 @@ class Buku extends BaseController
         
         // Melakukan Validasi dengan fungsi $this->validate()
         if (!$this->validate($validate)) {
-            dd($this->validator->getErrors());
-            // session()->setFlashdata('errors',$this->validator);
-            // return redirect()->to(base_url('pustakawan/buku/ubah/'.$bukulama['slug']))->withInput();
+            // dd($this->validator->getErrors());
+            session()->setFlashdata('errors',$this->validator);
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$bukulama['slug']))->withInput();
         }
         
         // Apabila berhasil tanpa error sekarang kita ambil request filenya
@@ -307,8 +307,84 @@ class Buku extends BaseController
         }
     }
 
-    public function hapus()
+    function delete($slug)
     {
-        // isi kode disini
+        $buku = $this->bukuModel->first();
+        if ($this->bukuModel->where('slug',$slug)->delete() == true) {
+            session()->setFlashdata('session',[
+                'status' => 'success',
+                'message' => 'Buku Berhasil Dihapus'
+            ]);
+            unlink('admin/img/buku/'.$buku['sampul']);
+            return redirect()->to(base_url('pustakawan/buku'));
+        }else{
+            session()->setFlashdata('session',[
+                'status' => 'error',
+                'message' => 'Buku Gagal Dihapus'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku'));
+        }
+    }
+
+    function stok()
+    {
+        $req = $this->request->getVar();
+        $buku = $this->bukuModel->where('slug',$req['slug'])->first();
+        // dd($buku);
+        $pertambahan = 0;
+        for ($i=1; $i <= $req['stok'] ; $i++) { 
+
+            // kita buat kode bawaan kita untuk identifikasi buku
+            $kode_depan = $buku['kode_penerbit'][0].$buku['kode_rak'][0].$buku['kode_jenis'][0];
+            
+            // kita ambil nomor urut terakhir dari database buku
+            $kode = $this->bukuModel->selectMax('kode_buku', 'max_buku')->first();
+
+            // apabila belum ada data buku maka kita set nomornya jadi 0
+            if ($kode == null) {
+                $kode = 'B000000';
+            }
+
+            // kita ambil nomor urutnya dan mengubbahnya menjadi integer
+            $urutan = (int) substr($kode['max_buku'], 1, 4);
+
+            // Kita kombinasikan nomor buku dengan kode bawaan kita
+            $urutan++;
+            $urutanAkhir = $urutan + $pertambahan;
+            $kode_buku = 'B'. sprintf("%04s", $urutanAkhir) . $kode_depan;
+
+            // kita buat array untuk insert data buku
+            $bulkBuku[] = [
+                'kode_buku' => $kode_buku,
+                'judul_buku' => $buku['judul_buku'],
+                'slug' => $buku['slug'],
+                'isbn' => $buku['isbn'],
+                'tahun_buku' => $buku['tahun_buku'],
+                'kode_penerbit' => $buku['kode_penerbit'],
+                'kode_rak' => $buku['kode_rak'],
+                'kode_jenis' => $buku['kode_jenis'],
+                'halaman' => $buku['halaman'],
+                'deskripsi_buku' => $buku['deskripsi_buku'],
+                'sampul' => $buku['sampul']
+            ];
+            $pertambahan++;
+        }
+
+        $builder = $this->db->table('buku');
+
+        // kita lakukan insert sekaligus pengecekan
+        if ($builder->insertBatch($bulkBuku) == true) {
+           session()->setFlashdata('session',[
+            'status' => 'success',
+            'message' => 'Berhasil Menambahkan data buku'
+           ]);
+           return redirect()->to(base_url('pustakawan/buku/ubah/'.$req['slug']));
+        } else{
+            session()->setFlashdata('session',[
+                'status' => 'success',
+                'message' => 'Berhasil Menambahkan data buku'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$req['slug']));
+        }
     }
 }

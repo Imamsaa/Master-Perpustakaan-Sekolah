@@ -196,14 +196,16 @@ class Buku extends BaseController
 
     function deleteBuku($slug,$kode_buku)
     {
+        $buku = $this->bukuModel->where('kode_buku', $kode_buku)->first();
         if ($this->bukuModel->where('kode_buku',$kode_buku)->delete() == true) {
             session()->setFlashdata('session',[
                 'status' => 'success',
                 'message' => 'Buku Berhasil di hapus'
             ]);
-            if ($this->bukuModel->where('slug',$slug)->countAllResults(false) > 0) {
+            if ($this->bukuModel->where('slug',$slug)->countAllResults() > 0) {
                 return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));   
             }else{
+                unlink('admin/img/buku/'.$buku['sampul']);
                 return redirect()->to(base_url('pustakawan/buku'));
             }
         }else{
@@ -214,6 +216,97 @@ class Buku extends BaseController
             return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));
         }
     }
+
+    function update()
+    {
+        // Membuat validasi untuk input file
+        $validate = [
+            'sampul' => [
+                'rules' => 'max_size[sampul,1024]|ext_in[sampul,png,jpg,jpeg]|is_image[sampul]',
+                'errors' => [
+                    'max_size' => 'Ukuran file terlalu besar',
+                    'ext_in' => 'Moson Masukan file Gambar',
+                    'is_image' => 'Moson Masukan file Gambar Yang benar'
+                ],
+            ],
+        ];
+        
+        $buku = $this->request->getVar();
+        $bukulama = $this->bukuModel->where('kode_buku', $buku['kode_buku'])->first();
+        $caribuku = $this->bukuModel->findAll();
+        $sampul = $this->request->getFile('sampul');
+        $slug = url_title($buku['judul_buku'],'-',true);
+
+        if ($buku['judul_buku'] == $bukulama['judul_buku']) {
+            $judul = $buku['judul_buku'];
+        }else{
+            foreach ($caribuku as $v) {
+                if ($v['judul_buku'] == $bukulama['judul_buku']) {
+                    session()->setFlashdata('session',[
+                        'status' => 'error',
+                        'message' => 'Judul Buku Telah Dipakai'
+                    ]);
+                    return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));        
+                }else {
+                    $judul = $buku['judul_buku'];
+                }
+            }
+        }
+        
+        if ($sampul->getError() == 4 ) {
+            $name = "cover_default.png";
+        }else{
+            $name = $sampul->getRandomName();
+        }
+
+        $bukubaru = [
+            'judul_buku' => $buku['judul_buku'],
+            'slug' => $slug,
+            'isbn' => $buku['isbn'],
+            'tahun_buku' => $buku['tahun_buku'],
+            'kode_penerbit' => $buku['kode_penerbit'],
+            'kode_rak' => $buku['kode_rak'],
+            'kode_jenis' => $buku['kode_jenis'],
+            'halaman' => $buku['halaman'],
+            'deskripsi_buku' => $buku['deskripsi_buku'],
+            'sampul' => $name
+        ];
+        
+        // Melakukan Validasi dengan fungsi $this->validate()
+        if (!$this->validate($validate)) {
+            dd($this->validator->getErrors());
+            // session()->setFlashdata('errors',$this->validator);
+            // return redirect()->to(base_url('pustakawan/buku/ubah/'.$bukulama['slug']))->withInput();
+        }
+        
+        // Apabila berhasil tanpa error sekarang kita ambil request filenya
+
+        // Kita cek apakah user melakukan uploadfile atau tidak jika tidak kita isi dengan cover default
+
+        // Setelah melakukan validasi pada file, kita ambil request form terlebih dahulu
+
+        // lalu kita pindah file gambar yang di input ke folder admin/img/buku
+        if ($sampul->isvalid() && !$sampul->hasMoved()) {
+            $sampul->move('admin/img/buku',$name);
+        }
+
+
+        if($this->bukuModel->where('slug',$bukulama['slug'])->set($bukubaru)->update() == true )
+        {
+            session()->setFlashdata('session',[
+                'status' => 'success',
+                'message' => 'Buku Berhasil Diubah'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));
+        }else{
+            session()->setFlashdata('session',[
+                'status' => 'error',
+                'message' => 'Buku Gagal Diubah'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug))->withInput();
+        }
+    }
+
     public function hapus()
     {
         // isi kode disini

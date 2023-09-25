@@ -59,7 +59,7 @@
                       <td><?= $tab['nama_rak']; ?></td>
                       <td><?= $tab['nama_jenis']; ?></td>
                       <td>
-                        <a href="<?= base_url('pustakawan/buku/deletebuku/'.$tab['slug'].'/'.$tab['kode_buku']); ?>" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></a>
+                        <a href="<?= base_url('pustakawan/buku/deletebuku/'.$tab['slug'].'/'.$tab['kode_buku']); ?>" class="btn btn-danger" ><i class="fas fa-solid fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php $no++; endforeach; ?>
@@ -117,8 +117,9 @@
                     </div>
                   </div>
                   <div class="form-group">
-                      <label for="judul_buku">Judul Buku</label>
-                      <input type="text" value="<?= (old('judul_buku')) ? old('judul_buku') : $buku['judul_buku']; ?>" name="judul_buku" class="form-control" id="judul_buku" placeholder="">
+                    <label for="judul_buku">Judul Buku</label>
+                    <input type="text" value="<?= (old('judul_buku')) ? old('judul_buku') : $buku['judul_buku']; ?>" name="judul_buku" class="form-control" id="judul_buku" placeholder="">
+                    <input type="hidden" name="kode_buku" value="<?= $buku['kode_buku']; ?>">
                   </div>
                   <div class="form-group">
                     <label for="isbn">Nomor ISBN Buku (Optional)</label>

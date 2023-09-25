@@ -26,7 +26,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-4">
+            <div class="col-lg-3 col-sm-12">
             <div class="card">
               <div class="card-header">
                 <div class="card-title">
@@ -34,24 +34,26 @@
                 </div>
               </div>
               <!-- /.card-header -->
+              <form action="<?= base_url('pustakawan/peminjaman/save'); ?>" method="post">
               <div class="card-body">
-                <div class="form-group">
-                      <label for="kodebuku">Scan Barcode Buku</label>
-                      <input type="text" name="kodebuku" class="form-control" id="kodebuku" placeholder="">
-                </div>
-                <div class="form-group">
-                      <label for="kodesiswa">Scan Barcode Siswa</label>
-                      <input type="text" name="kodesiswa" class="form-control" id="kodesiswa" placeholder="">
+                  <div class="form-group">
+                    <label for="kode_buku">Barcode/Kode Buku</label>
+                    <input type="text" name="kode_buku" class="form-control" id="kode_buku" placeholder="">
                   </div>
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                  <button type="submit" class="btn btn-primary btn-block my-1">Submit Peminjaman</button>
+                  <div class="form-group">
+                    <label for="nis">Barcode/NIS Siswa</label>
+                    <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                  </div>
                 </div>
-            </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block my-1">PINJAM</button>
+                </div>
+              </div>
+            </form>
             <!-- /.card -->
             </div>
-          <div class="col-8">
+          <div class="col-lg-9 col-sm-12">
             <div class="card">
               <div class="card-header">
                 <div class="card-title">
@@ -59,34 +61,45 @@
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
+              <div class="table-responsive card-body">
+                <table id="example1" class="table table-sm table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
-                    <th>NAMA SISWA</th>
-                    <th>JUDUL BUKU</th>
-                    <th>TANGGAL PINJAM</th>
+                    <th>NIS</th>
+                    <th>NAMA</th>
+                    <th>KODE</th>
+                    <th>JUDUL</th>
+                    <th>PINJAM</th>
                     <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
+                  <?php $no = 1; foreach($pinjam as $p) : ?>
                   <tr>
-                    <td>1</td>
-                    <td>Imam Safii</td>
-                    <td>Lord Of The Rings</td>
-                    <td>10:8:2023</td>
-                    <td>
-                        <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-ban"> Batal</i></button>
+                    <td><?= $no; ?></td>
+                    <td><?= $p['nis']; ?></td>
+                    <td><?= $p['nama_siswa']; ?></td>
+                    <td><?= $p['kode_buku']; ?></td>
+                    <td><?= $p['judul_buku']; ?></td>
+                    <td><?= $p['pinjam']; ?></td>
+                    <td class="text-center">
+                      <form action="<?= base_url('pustakawan/peminjaman/delete/'.$p['id']); ?>" method="post" class="d-inline">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-sm btn-danger" ><i class="fas fa-solid fa-ban"> Batal</i></button>
+                      </form>
                     </td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>NO</th>
-                    <th>NAMA SISWA</th>
-                    <th>JUDUL BUKU</th>
-                    <th>TANGGAL PINJAM</th>
+                    <th>NIS</th>
+                    <th>NAMA</th>
+                    <th>KODE</th>
+                    <th>JUDUL</th>
+                    <th>PINJAM</th>
                     <th>ACTION</th>
                   </tr>
                   </tfoot>

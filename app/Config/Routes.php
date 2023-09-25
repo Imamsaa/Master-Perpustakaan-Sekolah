@@ -90,6 +90,8 @@ $routes->DELETE('/pustakawan/buku/delete/(:any)', 'Admin\Buku::delete/$1');
 
 $routes->get('/pustakawan/peminjaman', 'Admin\Peminjaman::index');
 $routes->get('/pustakawan/pengembalian', 'Admin\Pengembalian::index');
+$routes->get('/pustakawan/pengembalian/(:any)', 'Admin\Pengembalian::index/$1');
+$routes->post('/pustakawan/pengembalian/update', 'Admin\Pengembalian::update');
 $routes->get('/pustakawan/transaksi', 'Admin\Transaksi::index');
 $routes->post('/pustakawan/transaksi/update', 'Admin\Transaksi::update');
 $routes->post('/pustakawan/peminjaman/save', 'Admin\Peminjaman::save');

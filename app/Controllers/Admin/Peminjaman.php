@@ -15,6 +15,7 @@ class Peminjaman extends BaseController
 
     function __construct()
     {
+        date_default_timezone_set('Asia/Jakarta');
         $this->transModel = new TransaksiModel();
         $this->bukuModel = new BukuModel();
         $this->siswaModel = new SiswaModel();   
@@ -29,7 +30,7 @@ class Peminjaman extends BaseController
         ->where('status','pinjam')->findAll();
         $data = [
             'title' => 'Peminjaman Buku',
-            'pinjam' => $pinjam
+            'pinjam' => $pinjam,
         ];
         return view('admin/peminjaman/index', $data);
     }
@@ -60,7 +61,8 @@ class Peminjaman extends BaseController
             if ($this->transModel->save([
                 'nis' => $req['nis'],
                 'kode_buku' => $req['kode_buku'],
-                'status' => 'pinjam'
+                'status' => 'pinjam',
+                'pinjam' => date('Y-m-d')
             ]) == true ) 
             {
                 session()->setFlashdata('session',[

@@ -39,12 +39,12 @@
               <form action="<?= base_url('pustakawan/transaksi/update'); ?>" method="post">
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="denda">Batas Peminjaman</label>
-                      <input type="number" value="<?= (old('denda')) ? old('denda') : $set['denda']; ?>" value="" name="denda" class="form-control" id="denda" placeholder="Dalam hari...">
+                      <label for="terlambat">Batas Peminjaman</label>
+                      <input type="number" value="<?= (old('terlambat')) ? old('terlambat') : $set['terlambat']; ?>" value="" name="terlambat" class="form-control" id="terlambat" placeholder="Dalam hari...">
                   </div>
                   <div class="form-group">
-                      <label for="terlambat">Denda keterlambatan</label>
-                      <input type="text" value="<?= (old('terlambat')) ? old('terlambat') : $set['terlambat']; ?>" value="" name="terlambat" class="form-control" id="terlambat" placeholder="">
+                      <label for="denda">Denda keterlambatan</label>
+                      <input type="text" value="<?= (old('denda')) ? old('denda') : $set['denda']; ?>" value="" name="denda" class="form-control" id="denda" placeholder="">
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>

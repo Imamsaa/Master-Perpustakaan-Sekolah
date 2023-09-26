@@ -136,6 +136,7 @@ $routes->get('/pustakawan/password', 'Admin\Profil::password');
 
 $routes->get('/pustakawan/user', 'Admin\Users::index');
 $routes->get('/pustakawan/user/tambah', 'Admin\Users::tambah');
+$routes->post('/pustakawan/user/tambah/save', 'Admin\Users::save');
 $routes->get('/pustakawan/user/ubah', 'Admin\Users::ubah');
 
 // USERS

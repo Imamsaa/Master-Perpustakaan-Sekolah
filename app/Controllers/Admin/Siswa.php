@@ -87,7 +87,7 @@ class Siswa extends BaseController
         $siswa = $this->request->getvar();
 
         if ($foto->isvalid() && !$foto->hasMoved()) {
-            $foto->move('admin/img/siswa',$name);
+            $foto->move('admin/img/siswa/',$name);
         }
         
         if ($this->siswaModel->save([

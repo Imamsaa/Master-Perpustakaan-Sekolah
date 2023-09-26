@@ -38,39 +38,43 @@
               <!-- /.card-header -->
               <!-- form start -->
               <div class="card-body">
-                <form>
+                <form action="<?= base_url('pustakawan/user/tambah/save'); ?>" method="POST" enctype="multipart/form-data">
+                <?= csrf_field(); ?>
                   <div class="form-group">
-                    <label for="nama">Nama Pengguna</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_user">Nama Pengguna</label>
+                    <input type="text" value="<?= old('nama_user'); ?>" name="nama_user" class="form-control" id="nama_user" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="nomorwa">Nomor WhastApp</label>
-                    <input type="text" name="nomorwa" class="form-control" id="nomorwa" placeholder="">
+                    <label for="nomor_wa">Nomor WhastApp</label>
+                    <input type="text" value="<?= old('nomor_wa'); ?>" name="nomor_wa" class="form-control" id="nomor_wa" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email Pengguna</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="">
+                    <label for="email_user">Email Pengguna</label>
+                    <input type="email" value="<?= old('email_user'); ?>" name="email_user" class="form-control" id="email_user" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="tahun">Wewenang Pengguna</label>
-                      <select id="tahun" name="tahun" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                    <label for="password">Password Pengguna</label>
+                    <input type="password" value="<?= old('password'); ?>" name="password" class="form-control" id="email_user" placeholder="">
+                  </div>
+                  <div class="form-group">
+                      <label for="id_level">Level Pengguna</label>
+                      <select id="id_level" name="id_level" class="form-control">
+                        <option></option>
+                        <?php foreach($levels as $l) : ?>
+                        <option value="<?= $l['id_level']; ?>" <?= (old('id_level') == $l['id_level']) ? 'selected' : ''; ?> ><?= $l['nama_level']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                     </div>
                   <div class="form-group">
-                    <label for="alamat">Alamat Pengguna</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="3"></textarea>
+                    <label for="alamat_user">Alamat Pengguna</label>
+                    <textarea name="alamat_user" class="form-control" id="alamat_user" rows="3"><?= old('alamat_user'); ?></textarea>
                   </div>
                   <div class="form-group">
-                    <label for="foto">Unggah Foto Pengguna</label>
+                    <label for="foto_user">Unggah Foto Pengguna</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input name="foto" type="file" class="custom-file-input" id="foto">
-                        <label class="custom-file-label" for="foto">Pilih file gambar</label>
+                        <input name="foto_user" type="file" class="custom-file-input" id="foto_user">
+                        <label class="custom-file-label" for="foto_user">Pilih file gambar</label>
                       </div>
                       <div class="input-group-append">
                         <span class="input-group-text">Upload</span>

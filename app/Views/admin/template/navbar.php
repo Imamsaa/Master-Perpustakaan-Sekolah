@@ -276,12 +276,12 @@
                 <p>Data Pustakawan</p>
             </a>
             </li>
-            <li class="nav-item">
-            <a href="<?= base_url('pustakawan/pengajuan'); ?>" class="nav-link">
+            <!-- <li class="nav-item">
+            <a href="" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Pengajuan Pustakawan</p>
             </a>
-            </li>
+            </li> -->
             <!-- <li class="nav-item">
             <a href="../charts/inline.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>

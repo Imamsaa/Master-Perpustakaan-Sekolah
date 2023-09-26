@@ -49,16 +49,18 @@
                   </tr>
                   </thead>
                   <tbody>
+                    <?php $no =1; foreach($users as $u) : ?>
                   <tr>
-                    <td>1</td>
-                    <td>Imam Safi'i</td>
-                    <td>imamsafii2222022@gmail.com</td>
-                    <td>ADMIN</td>
+                    <td><?= $no; ?></td>
+                    <td><?= $u['nama_user']; ?></td>
+                    <td><?= $u['email_user']; ?></td>
+                    <td><?= $u['nama_level']; ?></td>
                     <td>
                         <a href="<?= base_url('pustakawan/user/ubah'); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
                         <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
                     </td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>

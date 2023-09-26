@@ -37,19 +37,19 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/user/ubah/update'); ?>" method="POST" enctype="multipart/form-data">
                 <div class="card-body">
                   <div class="row mb-2">
                     <div class="col-md-3 my-2 col-sm-12">
-                      <img src="<?= base_url('admin/img/pustakawan_default.jpg'); ?>" alt="Foto Pengguna" class="img-thumbnail">
+                      <img src="<?= base_url('admin/img/pustakawan/'.$user['foto_user']); ?>" alt="Foto Pengguna" class="img-thumbnail">
                     </div>
                     <div class="col-md-9 col-sm-12">
                       <div class="form-group">
-                        <label for="foto">Unggah Foto Penguna</label>
+                        <label for="foto_user">Unggah Foto Penguna</label>
                         <div class="input-group">
                           <div class="custom-file">
-                            <input name="foto" type="file" class="custom-file-input" id="foto">
-                            <label class="custom-file-label" for="foto">Pilih file gambar</label>
+                            <input name="foto_user" type="file" class="custom-file-input" id="foto_user">
+                            <label class="custom-file-label" for="foto_user">Pilih file gambar</label>
                           </div>
                           <div class="input-group-append">
                             <span class="input-group-text">Upload</span>
@@ -59,30 +59,38 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="nama">Nama Pengguna</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_user">Nama Pengguna</label>
+                    <input type="hidden" name="id_user" value="<?= $user['id_user']; ?>">
+                    <input type="text" value="<?= (old('nama_user')) ? old('nama_user') : $user['nama_user']; ?>" name="nama_user" class="form-control" id="nama_user" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="nomorwa">Nomor WhastApp</label>
-                    <input type="text" name="nomorwa" class="form-control" id="nomorwa" placeholder="">
+                    <label for="username">Username Pengguna</label>
+                    <input type="text" value="<?= (old('username')) ? old('username') : $user['username']; ?>" name="username" class="form-control" id="username" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email Pengguna</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="">
+                    <label for="nomor_wa">Nomor WhastApp</label>
+                    <input type="text" value="<?= (old('nomor_wa')) ? old('nomor_wa') : $user['nomor_wa']; ?>" name="nomor_wa" class="form-control" id="nomor_wa" placeholder="">
                   </div>
                   <div class="form-group">
-                      <label for="tahun">Wewenang Pengguna</label>
-                      <select id="tahun" name="tahun" class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                    <label for="email_user">Email Pengguna</label>
+                    <input type="email" value="<?= (old('email_user')) ? old('email_user') : $user['email_user']; ?>" name="email_user" class="form-control" id="email_user" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password Pengguna</label>
+                    <input type="text" name="password" class="form-control" id="password" placeholder="">
+                  </div>
+                  <div class="form-group">
+                      <label for="id_level">Level Pengguna</label>
+                      <select id="id_level" name="id_level" class="form-control">
+                        <option></option>
+                        <?php foreach($level as $l) : ?>
+                        <option value="<?= $l['id_level']; ?>" <?= ($l['id_level'] == $user['id_level']) ? 'selected' : ''; ?> ><?= $l['nama_level']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                     </div>
                   <div class="form-group">
-                    <label for="alamat">Alamat Pengguna</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="3"></textarea>
+                    <label for="alamat_user">Alamat Pengguna</label>
+                    <textarea name="alamat_user" class="form-control" id="alamat_user" rows="3"><?= (old('alamat_user')) ? old('alamat_user') : $user['alamat_user']; ?></textarea>
                   </div>
                 <!-- /.card-body -->
 

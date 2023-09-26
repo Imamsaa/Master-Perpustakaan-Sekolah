@@ -43,6 +43,7 @@
                   <tr>
                     <th>NO</th>
                     <th>NAMA</th>
+                    <th>USERNAME</th>
                     <th>EMAIL</th>
                     <th>WEWENANG</th>
                     <th>ACTION</th>
@@ -53,10 +54,11 @@
                   <tr>
                     <td><?= $no; ?></td>
                     <td><?= $u['nama_user']; ?></td>
+                    <td><?= $u['username']; ?></td>
                     <td><?= $u['email_user']; ?></td>
                     <td><?= $u['nama_level']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/user/ubah'); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <a href="<?= base_url('pustakawan/user/ubah/'.$u['username']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
                         <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
                     </td>
                   </tr>
@@ -66,6 +68,7 @@
                   <tr>
                     <th>NO</th>
                     <th>NAMA</th>
+                    <th>USERNAME</th>
                     <th>EMAIL</th>
                     <th>WEWENANG</th>
                     <th>ACTION</th>

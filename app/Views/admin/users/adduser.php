@@ -45,6 +45,10 @@
                     <input type="text" value="<?= old('nama_user'); ?>" name="nama_user" class="form-control" id="nama_user" placeholder="">
                   </div>
                   <div class="form-group">
+                    <label for="username">Username Pengguna</label>
+                    <input type="text" value="<?= old('username'); ?>" name="username" class="form-control" id="username" placeholder="">
+                  </div>
+                  <div class="form-group">
                     <label for="nomor_wa">Nomor WhastApp</label>
                     <input type="text" value="<?= old('nomor_wa'); ?>" name="nomor_wa" class="form-control" id="nomor_wa" placeholder="">
                   </div>

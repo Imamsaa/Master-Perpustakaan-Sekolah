@@ -118,7 +118,7 @@ $routes->get('/pustakawan/perpustakaan', 'Admin\Perpustakaan::index');
 $routes->post('/pustakawan/perpustakaan/save', 'Admin\Perpustakaan::save');
 
 // WHASTAPP
-
+$routes->get('/pustakawan/kirimpesan', 'Admin\Pesan::index');
 $routes->get('/pustakawan/whastapp', 'Admin\Whastapp::index');
 $routes->post('/pustakawan/whastapp/save', 'Admin\Whastapp::save');
 

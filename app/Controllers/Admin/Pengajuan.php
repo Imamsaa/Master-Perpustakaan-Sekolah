@@ -6,15 +6,22 @@ use App\Controllers\BaseController;
 
 class Pengajuan extends BaseController
 {
-    public function index(): string
+    public function index()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
-            'title' => 'Daftar Pengajuan Pengguna'
+            'title' => 'Daftar Pengajuan Pengguna',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/pengajuan/index', $data);
     }
 
-    // public function tambah(): string
+    // public function tambah()
     // {
     //     $data = [
     //         'title' => 'Tambah Pustakawan'
@@ -22,7 +29,7 @@ class Pengajuan extends BaseController
     //     return view('admin/users/adduser', $data);
     // }
 
-    // public function ubah(): string
+    // public function ubah()
     // {
     //     $data = [
     //         'title' => 'Ubah Pustakawan'

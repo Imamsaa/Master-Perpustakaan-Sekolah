@@ -15,22 +15,37 @@ class Tahun extends BaseController
         $this->tahunModel = new TahunModel();
     }
 
-    public function index(): string
+    public function index()
     {   
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $dataTahun = $this->tahunModel->findAll();
         $data = [
             'title' => 'Daftar Tahun Ajaran',
-            'tahun' => $dataTahun
+            'tahun' => $dataTahun,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus
         ];
         return view('admin/tahun/tabletahun', $data);
     }
 
-    public function tambah(): string
+    public function tambah()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
-            'title' => 'Tambah Tahun Ajaran'
+            'title' => 'Tambah Tahun Ajaran',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/tahun/addtahun', $data);
     }
@@ -55,13 +70,21 @@ class Tahun extends BaseController
         }
     }
 
-    public function ubah($kode_tahun): string
+    public function ubah($kode_tahun)
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $tahun = $this->tahunModel->where('kode_tahun',$kode_tahun)->first();
         $data = [
             'title' => 'Ubah Tahun Ajaran',
-            'tahun' => $tahun
+            'tahun' => $tahun,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/tahun/edittahun', $data);
     }
@@ -69,8 +92,7 @@ class Tahun extends BaseController
     function update()
     {
         $tahun = $this->request->getVar();
-        if(
-            $this->tahunModel->where('kode_tahun',$tahun['kode_tahun'])->set([
+        if($this->tahunModel->where('kode_tahun',$tahun['kode_tahun'])->set([
                 'nama_tahun'    => $tahun['nama_tahun'],
                 'aktif'         => $tahun['aktif'],
                 'kadaluarsa'    => $tahun['kadaluarsa']

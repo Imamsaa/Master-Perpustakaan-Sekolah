@@ -21,9 +21,14 @@ class Peminjaman extends BaseController
         $this->siswaModel = new SiswaModel();   
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $pinjam = $this->transModel
         ->join('siswa','siswa.nis = transaksi.nis')
         ->join('buku','buku.kode_buku = transaksi.kode_buku')
@@ -31,6 +36,9 @@ class Peminjaman extends BaseController
         $data = [
             'title' => 'Peminjaman Buku',
             'pinjam' => $pinjam,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/peminjaman/index', $data);
     }

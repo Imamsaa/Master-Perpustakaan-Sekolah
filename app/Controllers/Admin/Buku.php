@@ -25,8 +25,11 @@ class Buku extends BaseController
         $this->db = \Config\Database::connect();
     }
 
-    public function index(): string
+    public function index()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         // QUERY SELECT
         $builder = $this->db->table('buku');
         $builder->select('*,COUNT(judul_buku) stok')
@@ -38,14 +41,20 @@ class Buku extends BaseController
 
         $data = [
             'title' => 'Daftar Buku',
-            'buku'  => $buku
+            'buku'  => $buku,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/buku/tablebuku', $data);
     }
 
-    public function tambah(): string
+    public function tambah()
     {
         session();
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $penerbit = $this->penerbitModel->findAll();
         $rak = $this->rakModel->findAll();
         $jenis = $this->jenisModel->findAll();
@@ -53,7 +62,10 @@ class Buku extends BaseController
             'title' => 'Tambah Buku',
             'penerbit' => $penerbit,
             'rak' => $rak,
-            'jenis' => $jenis
+            'jenis' => $jenis,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/buku/addbuku', $data);
     }
@@ -169,9 +181,12 @@ class Buku extends BaseController
         }
     }
 
-    public function ubah($slug): string
+    public function ubah($slug)
     {
         session();
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $builder = $this->db->table('buku');
         $table = $builder
         ->join('jenis_buku','jenis_buku.kode_jenis = buku.kode_jenis')
@@ -189,7 +204,10 @@ class Buku extends BaseController
             'buku'  => $buku,
             'penerbit' => $penerbit,
             'rak'   => $rak,
-            'jenis' => $jenis
+            'jenis' => $jenis,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/buku/editbuku', $data);
     }

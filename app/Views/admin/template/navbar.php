@@ -151,12 +151,14 @@
             </p>
         </a>
         <ul class="nav nav-treeview">
+            <?php if($aku['level'] == 'admin') : ?>
             <li class="nav-item">
             <a href="<?= base_url('pustakawan/sekolah'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Profil Sekolah</p>
             </a>
             </li>
+            <?php endif; ?>
             <li class="nav-item">
             <a href="<?= base_url('pustakawan/perpustakaan'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -194,6 +196,7 @@
                 <i class="far fa-circle nav-icon"></i>
                 <p>Kirim Pesan</p>
             </a>
+            <?php if($aku['level'] == 'admin') : ?>
             <li class="nav-item">
             <a href="<?= base_url('pustakawan/email'); ?>" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -206,6 +209,7 @@
                 <p>Setting Pesan WA</p>
             </a>
             </li>
+            <?php endif; ?>
             <!-- <li class="nav-item">
             <a href="../charts/inline.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -260,7 +264,7 @@
         </li>
 
         <!-- MENU PENGGUNA -->
-
+        <?php if($aku['level'] == 'admin') : ?>
         <li class="nav-item">
         <a href="#" class="nav-link">
             <i class="nav-icon fas fa-solid fa-users"></i>
@@ -296,11 +300,11 @@
             </li> -->
         </ul>
         </li>
-
+        <?php endif; ?>
         <!-- LOGOUT -->
 
         <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="<?= base_url('logout'); ?>" class="nav-link">
             <i class="nav-icon fas fa-power-off"></i>
             <p>
             Keluar

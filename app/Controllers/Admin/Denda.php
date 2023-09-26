@@ -6,26 +6,44 @@ use App\Controllers\BaseController;
 
 class Denda extends BaseController
 {
-    public function index(): string
+    public function index()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $data = [
-            'title' => 'Daftar Denda'
+            'title' => 'Daftar Denda',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/denda/tabledenda', $data);
     }
 
-    public function tambah(): string
+    public function tambah()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $data = [
-            'title' => 'Tambah Denda'
+            'title' => 'Tambah Denda',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/denda/adddenda', $data);
     }
 
-    public function ubah(): string
+    public function ubah()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $data = [
-            'title' => 'Ubah Denda'
+            'title' => 'Ubah Denda',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/denda/editdenda', $data);
     }

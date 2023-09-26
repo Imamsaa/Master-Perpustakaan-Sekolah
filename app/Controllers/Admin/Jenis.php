@@ -14,22 +14,38 @@ class Jenis extends BaseController
         $this->jenisModel = new JenisModel();    
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $jenis = $this->jenisModel->findAll();
         $data = [
             'title' => 'Daftar Janis Buku',
-            'jenis' => $jenis
+            'jenis' => $jenis,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/jenis/tablejenis', $data);
     }
 
-    public function tambah(): string
+    public function tambah()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
-            'title' => 'Tambah Jenis Buku'
+            'title' => 'Tambah Jenis Buku',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/jenis/addjenis', $data);
     }
@@ -54,13 +70,21 @@ class Jenis extends BaseController
         }
     }
 
-    public function ubah($kode_jenis): string
+    public function ubah($kode_jenis)
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $jenis = $this->jenisModel->where('kode_jenis',$kode_jenis)->first();
         $data = [
             'title' => 'Ubah Jenis Buku',
-            'jenis' => $jenis
+            'jenis' => $jenis,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/jenis/editjenis', $data);
     }

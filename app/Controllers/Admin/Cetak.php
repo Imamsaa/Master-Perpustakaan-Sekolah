@@ -6,34 +6,58 @@ use App\Controllers\BaseController;
 
 class Cetak extends BaseController
 {
-    public function index(): string
+    public function index()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $data = [
-            'title' => 'Cetak Kartu Siswa'
+            'title' => 'Cetak Kartu Siswa',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/cetak/tablecetakkelas', $data);
     }
 
-    public function cetak(): string
+    public function cetak()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $data = [
-            'title' => 'Cetak Kartu Siswa'
+            'title' => 'Cetak Kartu Siswa',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/cetak/cetakkartu', $data);
     }
 
-    public function buku(): string
+    public function buku()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $data = [
-            'title' => 'Daftar Barcode Buku'
+            'title' => 'Daftar Barcode Buku',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/cetak/tablebarcode', $data);
     }
 
-    public function barcode(): string
+    public function barcode()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $data = [
-            'title' => 'Cetak Barcode Buku'
+            'title' => 'Cetak Barcode Buku',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/cetak/cetakbarcode', $data);
     }

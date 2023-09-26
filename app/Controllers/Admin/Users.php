@@ -17,26 +17,42 @@ class Users extends BaseController
         $this->usersModel = new UsersModel();    
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $users = $this->usersModel
         ->join('levels', 'levels.id_level = users.id_level')
         ->findAll();
         $data = [
             'title' => 'Daftar Pustakawan',
-            'users' => $users
+            'users' => $users,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/users/tableuser', $data);
     }
 
-    public function tambah(): string
+    public function tambah()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $levels = $this->levelsModel->findAll();
         $data = [
             'title' => 'Tambah Pustakawan',
-            'levels' => $levels
+            'levels' => $levels,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/users/adduser', $data);
     }
@@ -113,9 +129,14 @@ class Users extends BaseController
         }
     }
 
-    public function ubah($username): string
+    public function ubah($username)
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $user = $this->usersModel
         ->join('levels','levels.id_level = users.id_level')
         ->where('username',$username)
@@ -124,7 +145,10 @@ class Users extends BaseController
         $data = [
             'title' => 'Ubah Pustakawan',
             'user' => $user,
-            'level' => $level
+            'level' => $level,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/users/edituser', $data);
     }

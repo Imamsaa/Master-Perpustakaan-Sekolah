@@ -17,9 +17,14 @@ class Pesan extends BaseController
         $this->setTrans = new SettransaksiModel();    
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $kirim = [];
         $set = $this->setTrans->first();
         // $pinjam = $this->trans->where('status','pinjam')->findAll();
@@ -57,7 +62,10 @@ class Pesan extends BaseController
 
         $data = [
             'title' => 'Kirim Pesan',
-            'pesan' => $kirim
+            'pesan' => $kirim,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/pesan/index',$data);
     }

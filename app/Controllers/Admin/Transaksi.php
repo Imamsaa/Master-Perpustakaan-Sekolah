@@ -14,13 +14,21 @@ class Transaksi extends BaseController
         $this->settransModel = new SettransaksiModel();    
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $set = $this->settransModel->first();
         $data = [
             'title' => 'Pengaturan Transaksi',
-            'set' => $set
+            'set' => $set,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/transaksi/index', $data);
     }

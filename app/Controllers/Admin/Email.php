@@ -14,19 +14,28 @@ class Email extends BaseController
         $this->emailModel = new EmailModel();    
     }
 
-    public function index(): string
+    public function index()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         session();
         $email = $this->emailModel->first();
         $data = [
             'title' => 'Atur Pesan Email',
-            'email' => $email
+            'email' => $email,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/email/index', $data);
     }
 
     function save()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
         $email = $this->request->getVar();
         if ($this->emailModel->where('id',1)->set([
             'smtp'  => $email['smtp'],

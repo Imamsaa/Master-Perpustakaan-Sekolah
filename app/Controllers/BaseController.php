@@ -8,6 +8,9 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use App\Models\SekolahModel;
+use App\Models\PerpusModel;
+use App\Models\UsersModel;
 
 /**
  * Class BaseController
@@ -54,5 +57,22 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+
+        //Data sekolah
+        $baseSekolah = new SekolahModel();
+        $basePerpus = new PerpusModel();
+        $baseAku = new UsersModel();
+        $this->sekolah = $baseSekolah->first();
+        $this->perpus = $basePerpus->first();
+        if (session()->get('login') == true) {
+            $user = session()->get('user');
+            $this->aku = $baseAku
+            ->join('levels', 'levels.id_level = users.id_level')
+            ->where('id_user',$user['id_user'])
+            ->first();
+        }
+
+        // $this->session = \Config\Services::session();
+        
     }
 }

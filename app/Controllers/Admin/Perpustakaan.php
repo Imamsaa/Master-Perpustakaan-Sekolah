@@ -14,13 +14,20 @@ class Perpustakaan extends BaseController
         $this->perpusModel = new PerpusModel();    
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $perpus = $this->perpusModel->first();
         $data = [
             'title' => 'Profil Perpustakaan',
-            'perpus' => $perpus
+            'perpus' => $perpus,
+            'sekolah' => $this->sekolah,
+            'aku' => $this->aku
         ];
         return view('admin/perpustakaan/index', $data);
     }

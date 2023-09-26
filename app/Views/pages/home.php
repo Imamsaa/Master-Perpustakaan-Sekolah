@@ -5,9 +5,9 @@
     <div class="col-md-8">
         <!-- Header dan Logo -->
         <div class="text-center">
-            <img src="<?= base_url('admin/img/sekolah.png'); ?>" alt="Logo SMAN 1 Wirosari" class="img-fluid" style="max-width: 120px; max-height: 120px;">
+            <img src="<?= base_url('admin/img/'.$sekolah['logo']); ?>" alt="<?= $sekolah['nama_sekolah']; ?>" class="img-fluid" style="max-width: 120px; max-height: 120px;">
             <div class="my-4"></div>
-            <span class="logo-text" style="font-size: 42px; font-weight: bold; color: white; font-family: 'Arial', sans-serif;">Perpustakaan SMAN 1 Wirosari</span>
+            <span class="logo-text" style="font-size: 42px; font-weight: bold; color: white; font-family: 'Arial', sans-serif;"><?= $sekolah['nama_sekolah']; ?></span>
         </div>
         <!-- Input teks -->
         <div class="input-container text-center">

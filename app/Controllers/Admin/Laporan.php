@@ -13,9 +13,14 @@ class Laporan extends BaseController
         $this->trans = new TransaksiModel();
     }
 
-    public function index(): string
+    public function index() 
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $lap = $this->trans
         ->join('siswa', 'siswa.nis = transaksi.nis')
         ->join('kelas','siswa.kode_kelas = kelas.kode_kelas')
@@ -27,7 +32,10 @@ class Laporan extends BaseController
         ->findAll();
         $data = [
             'title' => 'Laporan Transaksi',
-            'lap' => $lap
+            'lap' => $lap,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/laporan/tablelaporan', $data);
     }

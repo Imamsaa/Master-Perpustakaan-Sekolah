@@ -14,12 +14,18 @@ class Sekolah extends BaseController
         $this->sekolahModel = new SekolahModel();    
     }
 
-    public function index(): string
+    public function index()
     {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $sekolah = $this->sekolahModel->first();
         $data = [
             'title' => 'Profil Sekolah',
-            'sekolah' => $sekolah
+            'sekolah' => $sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/sekolah/index', $data);
     }

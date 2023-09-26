@@ -18,9 +18,14 @@ class Pengembalian extends BaseController
         $this->setTrans = new SettransaksiModel();   
     }
 
-    public function index($id = null): string
+    public function index($id = null)
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $set = $this->setTrans->first();
         $pinjam = $this->trans->where('status','pinjam')->findAll();
         $kembali = [];
@@ -54,7 +59,10 @@ class Pengembalian extends BaseController
         if ($id == null) {
             $data = [
                 'title' => 'Peminjaman Buku',
-                'kembali' => $kembali
+                'kembali' => $kembali,
+                'sekolah' => $this->sekolah,
+                'perpus' => $this->perpus,
+                'aku' => $this->aku
             ];
         }else{
             $pinjam = $this->trans->where('id',$id)->first();
@@ -75,7 +83,10 @@ class Pengembalian extends BaseController
                 'kembali' => $kembali,
                 'peminjam' => $peminjam,
                 'terlambat' => $hasil,
-                'denda' => $denda
+                'denda' => $denda,
+                'sekolah' => $this->sekolah,
+                'perpus' => $this->perpus,
+                'aku' => $this->aku
             ];
         }
         return view('admin/pengembalian/index', $data);

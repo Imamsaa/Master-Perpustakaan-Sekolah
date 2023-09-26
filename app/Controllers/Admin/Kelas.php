@@ -14,20 +14,33 @@ class Kelas extends BaseController
         $this->kelasModel = new KelasModel();   
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+        
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $dataKelas = $this->kelasModel->findAll();
         $data = [
             'title' => 'Daftar Kelas',
-            'kelas' => $dataKelas
+            'kelas' => $dataKelas,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/kelas/tablekelas', $data);
     }
 
-    public function tambah(): string
+    public function tambah()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
             'title' => 'Tambah Kelas'
         ];
@@ -54,13 +67,21 @@ class Kelas extends BaseController
         }
     }
 
-    public function ubah($kode_kelas): string
+    public function ubah($kode_kelas)
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $kelas = $this->kelasModel->where('kode_kelas',$kode_kelas)->first();
         $data = [
             'title' => 'Ubah Kelas',
-            'kelas' => $kelas
+            'kelas' => $kelas,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/kelas/editkelas', $data);
     }

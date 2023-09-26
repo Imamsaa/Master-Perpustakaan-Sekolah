@@ -14,21 +14,34 @@ class Penerbit extends BaseController
         $this->penerbitModel = new PenerbitModel;    
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $penerbit = $this->penerbitModel->findAll();
 
         $data = [
             'title' => 'Daftar Penerbit',
-            'penerbit' => $penerbit
+            'penerbit' => $penerbit,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/penerbit/tablepenerbit', $data);
     }
 
-    public function tambah(): string
+    public function tambah()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $data = [
             'title' => 'Tambah Penerbit'
         ];
@@ -55,13 +68,21 @@ class Penerbit extends BaseController
         }
     }
 
-    public function ubah($kode_penerbit): string
+    public function ubah($kode_penerbit)
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $penerbit = $this->penerbitModel->where('kode_penerbit',$kode_penerbit)->first();
         $data = [
             'title' => 'Ubah Penerbit',
-            'penerbit' => $penerbit
+            'penerbit' => $penerbit,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/penerbit/editpenerbit', $data);
     }

@@ -22,27 +22,43 @@ class Siswa extends BaseController
         $this->db = \Config\Database::connect();
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $builder = $this->db->table('siswa');
         $siswa = $builder->join('kelas','kelas.kode_kelas = siswa.kode_kelas')->get();
         $data = [
             'title' => 'Daftar Siswa',
-            'siswa' => $siswa->getResultArray()
+            'siswa' => $siswa->getResultArray(),
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/siswa/tablesiswa', $data);
     }
 
-    public function tambah(): string
+    public function tambah()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $kelas = $this->kelasModel->findAll();
         $tahun = $this->tahunModel->findAll();
         $data = [
             'title' => 'Tambah Siswa',
             'kelas' => $kelas,
-            'tahun' => $tahun
+            'tahun' => $tahun,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/siswa/addsiswa', $data);
     }
@@ -116,9 +132,14 @@ class Siswa extends BaseController
         }
     }
 
-    public function ubah($nis): string
+    public function ubah($nis)
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $kelas = $this->kelasModel->findAll();
         $tahun = $this->tahunModel->findAll();
         $siswa = $this->siswaModel->where('nis',$nis)->first();
@@ -126,7 +147,10 @@ class Siswa extends BaseController
             'title' => 'Ubah Siswa',
             'siswa' => $siswa,
             'kelas' => $kelas,
-            'tahun' => $tahun
+            'tahun' => $tahun,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/siswa/editsiswa', $data);
     }

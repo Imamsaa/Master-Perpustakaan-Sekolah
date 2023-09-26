@@ -14,22 +14,38 @@ class Rak extends BaseController
         $this->rakModel = new RakModel();    
     }
 
-    public function index(): string
+    public function index()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $rak = $this->rakModel->findAll();
         $data = [
             'title' => 'Daftar Rak Buku',
-            'rak'   => $rak
+            'rak'   => $rak,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/rak/tablerak', $data);
     }
 
-    public function tambah(): string
+    public function tambah()
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+        
         $data = [
-            'title' => 'Tambah Rak Buku'
+            'title' => 'Tambah Rak Buku',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/rak/addrak', $data);
     }
@@ -54,13 +70,21 @@ class Rak extends BaseController
         }
     }
 
-    public function ubah($kode_rak): string
+    public function ubah($kode_rak)
     {
         session();
+
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+
         $rak = $this->rakModel->where('kode_rak',$kode_rak)->first();
         $data = [
             'title' => 'Ubah Rak Buku',
-            'rak'   => $rak
+            'rak'   => $rak,
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/rak/editrak', $data);
     }

@@ -36,19 +36,20 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/profil/update'); ?>" method="post" enctype="multipart/form-data">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="row mb-2">
                     <div class="col-md-3 my-2 col-sm-12">
-                      <img src="<?= base_url('admin/img/siswa_default.jpg'); ?>" alt="Foto Siswa" class="img-thumbnail">
+                      <img src="<?= base_url('admin/img/pustakawan/'.$aku['foto_user']); ?>" alt="Foto Pustakawan" class="img-thumbnail">
                     </div>
                     <div class="col-md-9 col-sm-12">
                       <div class="form-group">
-                        <label for="foto">Unggah Foto Pustakawan</label>
+                        <label for="foto_user">Unggah Foto Pustakawan</label>
                         <div class="input-group">
                           <div class="custom-file">
-                            <input name="foto" type="file" class="custom-file-input" id="foto">
-                            <label class="custom-file-label" for="foto">Pilih file gambar</label>
+                            <input name="foto_user" type="file" class="custom-file-input" id="foto_user">
+                            <label class="custom-file-label" for="foto_user">Pilih file gambar</label>
                           </div>
                           <div class="input-group-append">
                             <span class="input-group-text">Upload</span>
@@ -66,8 +67,9 @@
                     <input type="text" name="nisn" class="form-control" id="nisn" placeholder="">
                   </div> -->
                   <div class="form-group">
-                    <label for="nama">Nama Pustakawan</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="nama_user">Nama Pustakawan</label>
+                    <input type="hidden" name="id_user" value="<?= $aku['id_user']; ?>">
+                    <input type="text" value="<?= (old('nama_user')) ? old('nama_user') : $aku['nama_user']; ?>" name="nama_user" class="form-control" id="nama_user" placeholder="">
                   </div>
                   <!-- <div class="form-group">
                       <label for="kelas">Pilih Kelas</label>
@@ -90,16 +92,16 @@
                       </select>
                     </div> -->
                   <div class="form-group">
-                    <label for="nomorwa">Nomor WhastApp</label>
-                    <input type="text" name="nomorwa" class="form-control" id="nomorwa" placeholder="">
+                    <label for="nomor_wa">Nomor WhastApp</label>
+                    <input type="text" value="<?= (old('nomor_wa')) ? old('nomor_wa') : $aku['nomor_wa']; ?>" name="nomor_wa" class="form-control" id="nomor_wa" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email Pustakawan</label>
-                    <input type="email" name="email" class="form-control" id="email" placeholder="">
+                    <label for="email_user">Email Pustakawan</label>
+                    <input type="email" value="<?= (old('email_user')) ? old('email_user') : $aku['email_user']; ?>" name="email_user" class="form-control" id="email_user" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="alamat">Alamat Pustakawan</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="3"></textarea>
+                    <label for="alamat_user">Alamat Pustakawan</label>
+                    <textarea name="alamat_user" class="form-control" id="alamat_user" rows="3"><?= (old('alamat_user')) ? old('alamat_user') : $aku['alamat_user'];?></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->

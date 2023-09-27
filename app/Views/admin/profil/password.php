@@ -36,7 +36,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('pustakawan/password/update'); ?>" method="post">
+              <?= csrf_field(); ?>
                 <div class="card-body">
                   <!-- <div class="row mb-2">
                     <div class="col-md-3 my-2 col-sm-12">
@@ -51,16 +52,16 @@
                     <input type="text" name="nisn" class="form-control" id="nisn" placeholder="">
                   </div> -->
                   <div class="form-group">
-                    <label for="nama">Masukan Password Lama</label>
-                    <input type="password" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="password">Masukan Password Lama</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="nama">Masukan Password Baru</label>
-                    <input type="password" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="pw1">Masukan Password Baru</label>
+                    <input type="password" name="pw1" class="form-control" id="pw1" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="nama">Masukan Ulang Password Baru</label>
-                    <input type="password" name="nama" class="form-control" id="nama" placeholder="">
+                    <label for="pw2">Masukan Ulang Password Baru</label>
+                    <input type="password" name="pw2" class="form-control" id="pw2" placeholder="">
                   </div>
                   <!-- <div class="form-group">
                       <label for="kelas">Pilih Kelas</label>

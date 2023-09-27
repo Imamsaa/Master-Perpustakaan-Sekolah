@@ -134,6 +134,7 @@ $routes->post('/pustakawan/email/save', 'Admin\Email::save');
 $routes->get('/pustakawan/profil', 'Admin\Profil::index');
 $routes->post('/pustakawan/profil/update', 'Admin\Profil::update');
 $routes->get('/pustakawan/password', 'Admin\Profil::password');
+$routes->post('/pustakawan/password/update', 'Admin\Profil::repassword');
 
 // USERS
 

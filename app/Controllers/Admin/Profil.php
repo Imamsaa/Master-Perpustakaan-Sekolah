@@ -119,4 +119,40 @@ class Profil extends BaseController
         ];
         return view('admin/profil/password', $data);
     }
+
+    public function repassword()
+    {
+        $pass = $this->request->getVar();
+        if (password_verify($pass['password'],$this->aku['password'])) {
+            if ($pass['pw1'] == $pass['pw2']) {
+                if ($this->userModel->where('id_user',$this->aku['id_user'])->set([
+                    'password' => password_hash($pass['pw1'],PASSWORD_BCRYPT)
+                ])->update() == true) {
+                    session()->setFlashdata('session',[
+                        'status' => 'success',
+                        'message' => 'Password Berhasil Diubah'
+                    ]);
+                    return redirect()->to(base_url('pustakawan'));
+                }else{
+                    session()->setFlashdata('session',[
+                        'status' => 'error',
+                        'message' => 'Password Gagal Diubah'
+                    ]);
+                    return redirect()->to(base_url('pustakawan'));
+                }
+            }else{
+                session()->setFlashdata('session',[
+                    'status' => 'error',
+                    'message' => 'Password Yang Anda Masukan Tidak Sama'
+                ]);
+                return redirect()->to(base_url('pustakawan/password'));
+            }
+        }else{
+            session()->setFlashdata('session',[
+                'status' => 'error',
+                'message' => 'Password Salah'
+            ]);
+            return redirect()->to(base_url('pustakawan/password'));
+        }
+    }
 }

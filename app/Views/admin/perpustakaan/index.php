@@ -47,8 +47,8 @@
                       <input type="text" value="<?= (old('slogan_perpus')) ? old('slogan_perpus') : $perpus['slogan_perpus']; ?>" name="slogan_perpus" class="form-control" id="slogan_perpus" placeholder="">
                   </div>
                   <div class="form-group">
-                    <label for="peraturan_perpus">Peraturan Perpustakaan (Optional)</label>
-                    <textarea name="peraturan_perpus" class="form-control" id="peraturan_perpus" rows="3"><?= (old('peraturan_perpus')) ? old('peraturan_perpus') : $perpus['peraturan_perpus']; ?></textarea>
+                    <label for="mytextarea">Peraturan Perpustakaan (Optional)</label>
+                    <textarea name="peraturan_perpus" class="form-control" id="mytextarea" rows="3"><?= (old('peraturan_perpus')) ? old('peraturan_perpus') : $perpus['peraturan_perpus']; ?></textarea>
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>

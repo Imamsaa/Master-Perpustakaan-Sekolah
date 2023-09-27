@@ -32,11 +32,13 @@ class Cetak extends BaseController
         if ($kode_kelas == null) {
             $siswa = $this->siswaModel
             ->join('kelas','kelas.kode_kelas = siswa.kode_kelas')
+            ->join('tahun_ajaran', 'tahun_ajaran.kode_tahun = siswa.kode_tahun')
             ->findAll();
             $data['siswa'] = $siswa;
         }else{
             $siswa = $this->siswaModel
             ->join('kelas','kelas.kode_kelas = siswa.kode_kelas')
+            ->join('tahun_ajaran', 'tahun_ajaran.kode_tahun = siswa.kode_tahun')
             ->where('siswa.kode_kelas', $kode_kelas)
             ->findAll();
             $data['siswa'] = $siswa;
@@ -48,6 +50,7 @@ class Cetak extends BaseController
     {
         $siswa = $this->siswaModel
         ->join('kelas','kelas.kode_kelas = siswa.kode_kelas')
+        ->join('tahun_ajaran', 'tahun_ajaran.kode_tahun = siswa.kode_tahun')
         ->where('siswa.kode_kelas',$kode_kelas)
         ->findAll();
 
@@ -96,7 +99,8 @@ class Cetak extends BaseController
             return view('admin/cetak/tampilkelas', $data);
         }else{
             $data['cetak'] = $this->siswaModel
-            ->join('kelas', 'siswa.kelas_kode = kelas.kode_kelas')
+            ->join('kelas', 'siswa.kode_kelas = kelas.kode_kelas')
+            ->join('tahun_ajaran', 'tahun_ajaran.kode_tahun = siswa.kode_tahun')
             ->where('siswa.kode_kelas', $kode_kelas)
             ->findAll();
             return view('admin/cetak/cetakkartu', $data);
@@ -123,7 +127,9 @@ class Cetak extends BaseController
             return view('admin/cetak/cetakkartu', $data);
         }else{
             $data['cetak'] = $this->siswaModel
-            ->where('nis', $nis)->first();
+            ->join('kelas','kelas.kode_kelas = siswa.kode_kelas')
+            ->join('tahun_ajaran', 'siswa.kode_tahun = tahun_ajaran.kode_tahun')
+            ->where('nis', $nis)->findAll();
             return view('admin/cetak/cetakkartu', $data);
         }
     }

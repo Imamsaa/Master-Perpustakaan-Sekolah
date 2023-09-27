@@ -13,4 +13,10 @@
   <link rel="stylesheet" href="<?= base_url('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css'); ?>">
+  <script src="<?= base_url('vendor/tinymce/tinymce/tinymce.min.js'); ?>" referrerpolicy="origin"></script>
+  <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
 </head>

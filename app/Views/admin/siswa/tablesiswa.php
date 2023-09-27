@@ -40,24 +40,24 @@
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
-                  <tr>
-                    <th>NO</th>
-                    <th>NIS</th>
-                    <th>NAMA</th>
-                    <th>KELAS</th>
-                    <th>ACTION</th>
-                  </tr>
+                    <tr>
+                      <th>NO</th>
+                      <th>NIS</th>
+                      <th>NAMA</th>
+                      <th>KELAS</th>
+                      <th>ACTION</th>
+                    </tr>
                   </thead>
                   <tbody>
                     <?php $no = 1; foreach($siswa as $row) : ?>
-                  <tr>
-                    <td><?= $no; ?></td>
-                    <td><?= $row['nis']; ?></td>
-                    <td><?= $row['nama_siswa']; ?></td>
-                    <td><?= $row['nama_kelas']; ?></td>
+                      <tr>
+                        <td><?= $no; ?></td>
+                        <td><?= $row['nis']; ?></td>
+                        <td><?= $row['nama_siswa']; ?></td>
+                        <td><?= $row['nama_kelas']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/siswa/ubah/'.$row['nis']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <form action="<?= base_url('pustakawan/siswa/delete/'.$row['nis']); ?>" method="post" class="d-inline">
+                      <a href="<?= base_url('pustakawan/siswa/ubah/'.$row['nis']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                      <form action="<?= base_url('pustakawan/siswa/delete/'.$row['nis']); ?>" method="post" class="d-inline">
                           <input type="hidden" name="_method" value="DELETE">
                           <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
                         </form>

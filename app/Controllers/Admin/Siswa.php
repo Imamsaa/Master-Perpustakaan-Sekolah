@@ -25,7 +25,8 @@ class Siswa extends BaseController
     public function index()
     {
         session();
-
+        // require 'vendor/autoload.php';
+        // echo $generator->getBarcode('081231723897', $generator::TYPE_CODE_128);
         if (session()->get('login') == null) {
             return redirect()->to(base_url('login'));
         }
@@ -87,12 +88,14 @@ class Siswa extends BaseController
                 ],
             ],
         ];
-
+        
         if (!$this->validate($validate)) {
             session()->setFlashdata('errors',$this->validator);
             return redirect()->to(base_url('pustakawan/siswa/tambah'))->withInput();
         }
-
+        
+        require 'vendor/autoload.php';
+        $generator = new \Picqer\Barcode\BarcodeGeneratorHTML();
         $foto = $this->request->getFile('foto');
 
         if ($foto->getError() == 4 ) {
@@ -105,7 +108,9 @@ class Siswa extends BaseController
         if ($foto->isvalid() && !$foto->hasMoved()) {
             $foto->move('admin/img/siswa/',$name);
         }
-        
+
+        $barcodeImage = $generator->getBarcode($siswa['nis'], $generator::TYPE_CODE_128);
+
         if ($this->siswaModel->save([
             'nis' => $siswa['nis'],
             'nisn' => $siswa['nisn'],
@@ -115,7 +120,8 @@ class Siswa extends BaseController
             'wa' => $siswa['wa'],
             'email' => $siswa['email'],
             'alamat_siswa' => $siswa['alamat_siswa'],
-            'foto' => $name
+            'foto' => $name,
+            'barcode_siswa' => $barcodeImage
         ]) == true
         ) {
             session()->setFlashdata('session',[

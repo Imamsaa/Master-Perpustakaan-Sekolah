@@ -43,9 +43,16 @@ $routes->post('/pustakawan/tahun/update', 'Admin\Tahun::update');
 $routes->post('/pustakawan/tahun/save', 'Admin\Tahun::save');
 $routes->DELETE('/pustakawan/tahun/delete/(:any)', 'Admin\Tahun::delete/$1');
 
-// CETAK
+// CETAK SISWA
 
-$routes->get('/pustakawan/siswa/cetak', 'Admin\Cetak::index');
+$routes->get('/pustakawan/siswa/cetaksiswa', 'Admin\Cetak::index');
+$routes->get('/pustakawan/siswa/cetaksiswa/(:any)', 'Admin\Cetak::index/$1');
+$routes->get('/pustakawan/siswa/cetakkelas', 'Admin\Cetak::kelas');
+$routes->get('/pustakawan/siswa/cetakkelas/(:any)', 'Admin\Cetak::cetakperkelas/$1');
+$routes->get('/pustakawan/cetak/siswa', 'Admin\Cetak::cetaksiswa');
+$routes->get('/pustakawan/cetak/siswa/(:any)', 'Admin\Cetak::cetaksiswa/$1');
+$routes->get('/pustakawan/cetak/kelas/(:any)', 'Admin\Cetak::cetakkelas/$1');
+
 $routes->get('/pustakawan/buku/cetak', 'Admin\Cetak::buku');
 $routes->get('/pustakawan/siswa/cetak/ya', 'Admin\Cetak::cetak');
 $routes->get('/pustakawan/buku/cetak/ya', 'Admin\Cetak::barcode');

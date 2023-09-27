@@ -32,6 +32,9 @@
               <div class="card-header">
                 <div class="card-title">
                     <h3>DAFTAR CETAK KARTU SISWA</h3>
+                    <a href="<?= base_url('pustakawan/siswa/cetaksiswa'); ?>" class="btn btn-primary my-1">TAMPILKAN SEMUA</a>
+                    <a href="<?= base_url('pustakawan/siswa/cetakkelas'); ?>" class="btn btn-primary my-1">TAMPILKAN PERKELAS</a>
+                    <a target="_blank" href="<?= base_url('pustakawan/cetak/siswa'); ?>" class="btn btn-primary my-1">CETAK SEMUA</a>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -40,26 +43,31 @@
                   <thead>
                   <tr>
                     <th>NO</th>
-                    <th>KODE</th>
-                    <th>NAMA KELAS</th>
+                    <th>NIS</th>
+                    <th>NAMA SISWA</th>
+                    <th>KELAS</th>
                     <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
+                    <?php $no = 1; foreach($siswa as $s) : ?>
                   <tr>
-                    <td>1</td>
-                    <td>K21</td>
-                    <td>XII MIPA</td>
+                    <td><?= $no; ?></td>
+                    <td><?= $s['nis']; ?></td>
+                    <td><?= $s['nama_siswa']; ?></td>
+                    <td><?= $s['nama_kelas']; ?></td>
                     <td>
-                        <a target="_blank" href="<?= base_url('pustakawan/siswa/cetak/ya'); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-print"> Cetak</i></a>
+                        <a target="_blank" href="<?= base_url('pustakawan/cetak/siswa/'.$s['nis']); ?>" class="btn btn-primary my-1" ><i class="fas fa-solid fa-print"></i> Cetak Kartu</a>
                     </td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>NO</th>
-                    <th>KODE</th>
-                    <th>NAMA KELAS</th>
+                    <th>NIS</th>
+                    <th>NAMA SISWA</th>
+                    <th>KELAS</th>
                     <th>ACTION</th>
                   </tr>
                   </tfoot>

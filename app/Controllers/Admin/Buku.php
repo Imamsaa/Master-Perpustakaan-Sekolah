@@ -123,7 +123,11 @@ class Buku extends BaseController
             return redirect()->to(base_url('pustakawan/buku/tambah'))->withInput();
         }
         // Kita Buat perulangan untuk insert data buku sebanyak stok buku
+        require 'vendor/autoload.php';
+        $generator = new \Picqer\Barcode\BarcodeGeneratorHTML();
+
         $pertambahan = 0;
+
         for ($i=1; $i <= $buku['stok'] ; $i++) { 
 
             // kita buat kode bawaan kita untuk identifikasi buku
@@ -146,6 +150,7 @@ class Buku extends BaseController
             $kode_buku = 'B'. sprintf("%04s", $urutanAkhir) . $kode_depan;
 
             // kita buat array untuk insert data buku
+            $barcodeImage = $generator->getBarcode($kode_buku, $generator::TYPE_CODE_128);
             $bulkBuku[] = [
                 'kode_buku' => $kode_buku,
                 'judul_buku' => $buku['judul_buku'],
@@ -157,7 +162,8 @@ class Buku extends BaseController
                 'kode_jenis' => $buku['kode_jenis'],
                 'halaman' => $buku['halaman'],
                 'deskripsi_buku' => $buku['deskripsi_buku'],
-                'sampul' => $name
+                'sampul' => $name,
+                'barcode_buku' => $barcodeImage
             ];
             $pertambahan++;
         }
@@ -349,6 +355,9 @@ class Buku extends BaseController
         $req = $this->request->getVar();
         $buku = $this->bukuModel->where('slug',$req['slug'])->first();
         // dd($buku);
+
+        require 'vendor/autoload.php';
+        $generator = new \Picqer\Barcode\BarcodeGeneratorHTML();
         $pertambahan = 0;
         for ($i=1; $i <= $req['stok'] ; $i++) { 
 
@@ -370,7 +379,7 @@ class Buku extends BaseController
             $urutan++;
             $urutanAkhir = $urutan + $pertambahan;
             $kode_buku = 'B'. sprintf("%04s", $urutanAkhir) . $kode_depan;
-
+            $barcodeImage = $generator->getBarcode($kode_buku, $generator::TYPE_CODE_128);
             // kita buat array untuk insert data buku
             $bulkBuku[] = [
                 'kode_buku' => $kode_buku,
@@ -383,7 +392,8 @@ class Buku extends BaseController
                 'kode_jenis' => $buku['kode_jenis'],
                 'halaman' => $buku['halaman'],
                 'deskripsi_buku' => $buku['deskripsi_buku'],
-                'sampul' => $buku['sampul']
+                'sampul' => $buku['sampul'],
+                'barcode_buku' => $barcodeImage
             ];
             $pertambahan++;
         }

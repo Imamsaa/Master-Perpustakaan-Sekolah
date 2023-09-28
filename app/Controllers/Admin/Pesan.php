@@ -8,6 +8,11 @@ use App\Models\SettransaksiModel;
 use App\Models\SiswaModel;
 use App\Models\KelasModel;
 use App\Models\WhastappModel;
+use App\Models\EmailModel;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
 
 class Pesan extends BaseController
 {
@@ -15,13 +20,15 @@ class Pesan extends BaseController
     protected $trans;
     protected $setTrans;
     protected $siswaModel;
+    protected $emailModel;
 
     function __construct()
     {
         $this->trans = new TransaksiModel();
         $this->setTrans = new SettransaksiModel();
         $this->siswaModel = new SiswaModel();  
-        $this->whastappModel = new WhastappModel();   
+        $this->whastappModel = new WhastappModel();  
+        $this->emailModel = new EmailModel();  
     }
 
     public function index()
@@ -99,7 +106,7 @@ class Pesan extends BaseController
             }
             $result[] = (isset($var)) ? $var : $pvalue;
         }
-        return urlencode(implode(" ",$result)); 
+        return implode(" ",$result); 
     }
 
     function whastapp($nis)
@@ -107,7 +114,7 @@ class Pesan extends BaseController
         // AMBIL DATABASE
         $siswa = $this->siswaModel->where('nis',$nis)->first();
         $wa = $this->whastappModel->first();
-        $message = $this->setpesan($nis, $wa['selector'],$wa['message']);
+        $message = urlencode($this->setpesan($nis, $wa['selector'],$wa['message']));
 
         // BUAT CURL
         $url = $wa['endpoint'].'?api_key='.$wa['apikey']."&sender=".$wa['pengirim']."&number=".$siswa['wa']."&message=".$message;
@@ -125,6 +132,34 @@ class Pesan extends BaseController
 
     function email($nis)
     {
-        
+        // Inisialisasi objek PHPMailer
+        $mail = new PHPMailer(true); // Buat objek PHPMailer dengan mode debugging aktif
+
+        $vmail = $this->emailModel->first();
+
+        // Konfigurasi SMTP
+        $mail->isSMTP(); // Menggunakan SMTP
+        $mail->Host = $vmail['smtp']; // Ganti dengan server SMTP Anda
+        $mail->SMTPAuth = true; // Mengaktifkan otentikasi SMTP
+        $mail->Username = $vmail['email']; // Ganti dengan email pengirim
+        $mail->Password = $vmail['password_email']; // Ganti dengan kata sandi pengirim
+        $mail->SMTPSecure = 'tls'; // Ganti dengan 'ssl' jika diperlukan
+        $mail->Port = $vmail['port']; // Ganti port SMTP sesuai kebutuhan
+
+        // Alamat pengirim
+        $mail->setFrom($vmail['email'], $vmail['nama']);
+
+
+        $tujuan = $this->siswaModel->where('nis',$nis)->first();
+
+        // Alamat penerima
+        $mail->addAddress($tujuan['email'],$tujuan['nama_siswa']);
+
+        // Subjek dan isi pesan email
+        $mail->Subject = $vmail['subject'];
+        $mail->Body = $this->setpesan($nis,$vmail['selector'],$vmail['message']);
+
+        // Mengirim email
+        dd($mail->send());
     }
 }

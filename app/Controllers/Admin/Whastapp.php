@@ -4,14 +4,17 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\WhastappModel;
+use App\Models\SelectorModel;
 
 class WhastApp extends BaseController
 {
     protected $whastappModel;
+    protected $selectorModel;
 
     function __construct()
     {
-        $this->whastappModel = new WhastappModel();    
+        $this->whastappModel = new WhastappModel();
+        $this->selectorModel = new SelectorModel();    
     }
 
     public function index()
@@ -23,12 +26,14 @@ class WhastApp extends BaseController
         }
 
         $whastapp = $this->whastappModel->first();
+        $selector = $this->selectorModel->findAll();
         $data = [
             'title' => 'Atur Pesan WhastApp',
             'whastapp'  => $whastapp,
             'sekolah' => $this->sekolah,
             'perpus' => $this->perpus,
-            'aku' => $this->aku
+            'aku' => $this->aku,
+            'selector' => $selector
         ];
         return view('admin/whastapp/index', $data);
     }
@@ -39,7 +44,9 @@ class WhastApp extends BaseController
         if ($this->whastappModel->where('id', 1)->set([
             'endpoint' => $w['endpoint'],
             'pengirim'  => $w['pengirim'],
-            'message'   => $w['message']
+            'message'   => $w['message'],
+            'apikey'    => $w['apikey'],
+            'selector' => $w['selector']
         ])->update() == true
         ) {
             session()->setFlashdata('session',[

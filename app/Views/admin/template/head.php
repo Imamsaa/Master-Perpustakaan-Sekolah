@@ -18,5 +18,17 @@
       tinymce.init({
         selector: '#mytextarea'
       });
-    </script>
+
+      tinymce.init({
+        selector: 'textarea#simpel',
+        height: 200,
+        toolbar: false,
+        menubar: false,
+        menu: false,
+        setup: function (editor) {
+          var toggleState = false;
+        },
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+      });
+  </script>
 </head>

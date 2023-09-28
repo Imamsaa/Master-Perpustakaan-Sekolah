@@ -39,6 +39,10 @@
               <form action="<?= base_url('pustakawan/whastapp/save'); ?>" method="POST">
               <?= csrf_field(); ?>
                 <div class="card-body">
+                <div class="form-group">
+                      <label for="apikey">APIKEY Gateway WhastApp</label>
+                      <input type="text" value="<?= (old('apikey')) ? old('apikey') : $whastapp['apikey']; ?>" name="apikey" class="form-control" id="apikey" placeholder="">
+                  </div>
                   <div class="form-group">
                       <label for="endpoint">Link Endpoint</label>
                       <input type="text" value="<?= (old('endpoint')) ? old('endpoint') : $whastapp['endpoint']; ?>" name="endpoint" class="form-control" id="endpoint" placeholder="">
@@ -47,6 +51,14 @@
                       <label for="pengirim">Nomor Pengirim</label>
                       <input type="text" value="<?= (old('pengirim')) ? old('pengirim') : $whastapp['pengirim']; ?>" name="pengirim" class="form-control" id="pengirim" placeholder="">
                   </div>
+                  <div class="form-group">
+                      <label for="selector">Selector Pesan</label>
+                      <select id="selector" name="selector" class="form-control">
+                        <?php foreach($selector as $s) : ?>
+                        <option value="<?= $s['selector']; ?>" <?= ($s['selector'] == $whastapp['selector']) ? 'selected' : ''; ?>><?= $s['selector']; ?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </div>
                   <div class="form-group">
                     <label for="message">Isi Pesan</label>
                     <textarea name="message" class="form-control" id="message" rows="3"><?= (old('message')) ? old('message') : $whastapp['message']; ?></textarea>

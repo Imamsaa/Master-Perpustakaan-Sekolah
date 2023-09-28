@@ -8,6 +8,6 @@ class WhastappModel extends Model
 {
     protected $table      = 'set_whastapp';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['endpoint','pengirim','message'];
+    protected $allowedFields = ['endpoint','selector','apikey','pengirim','message'];
     protected $useTimestamps = false;
 }

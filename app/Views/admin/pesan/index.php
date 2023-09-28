@@ -62,8 +62,8 @@
                         <td><?= $p['terlambat'].' HARI'; ?></td>
                         <td><?= $p['denda']; ?></td>
                         <td>
-                          <a class="btn btn-block btn-danger"><i class="fas fa-solid fa-envelope"></i> KIRIM</a>
-                          <a class="btn btn-block btn-success"><i class="fab fa-whatsapp"></i> KIRIM</a>
+                          <a href="<?= base_url('pustakawan/email/'.$p['nis']); ?>" class="btn btn-block btn-danger"><i class="fas fa-solid fa-envelope"></i> KIRIM</a>
+                          <a href="<?= base_url('pustakawan/whastapp/'.$p['nis']); ?>" href="" class="btn btn-block btn-success"><i class="fab fa-whatsapp"></i> KIRIM</a>
                         </td>
                       </tr>
                     <?php $no++; endforeach; ?>

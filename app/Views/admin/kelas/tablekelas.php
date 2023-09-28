@@ -43,8 +43,8 @@
                     <div class="col-lg-4">
                     <form action="<?= base_url('pustakawan/excel/kelas'); ?>" method="post" id="excel-kelas" enctype="multipart/form-data" class="d-inline">
                       <div class="custom-file my-1">
-                        <input name="kelas" type="file" class="custom-file-input" id="foto">
-                        <label class="custom-file-label" for="foto">Pilih file Excel</label>
+                        <input name="kelas" type="file" class="custom-file-input" id="kelas">
+                        <label class="custom-file-label" for="kelas">Pilih file Excel</label>
                       </div>
                     </form>
                     </div>

@@ -131,7 +131,7 @@ class Buku extends BaseController
         for ($i=1; $i <= $buku['stok'] ; $i++) { 
 
             // kita buat kode bawaan kita untuk identifikasi buku
-            $kode_depan = $buku['kode_penerbit'][0].$buku['kode_rak'][0].$buku['kode_jenis'][0];
+            // $kode_depan = $buku['kode_penerbit'][0].$buku['kode_rak'][0].$buku['kode_jenis'][0];
             
             // kita ambil nomor urut terakhir dari database buku
             $kode = $this->bukuModel->selectMax('kode_buku', 'max_buku')->first();
@@ -147,7 +147,7 @@ class Buku extends BaseController
             // Kita kombinasikan nomor buku dengan kode bawaan kita
             $urutan++;
             $urutanAkhir = $urutan + $pertambahan;
-            $kode_buku = 'B'. sprintf("%04s", $urutanAkhir) . $kode_depan;
+            $kode_buku = 'B'. sprintf("%04s", $urutanAkhir);
 
             // kita buat array untuk insert data buku
             $barcodeImage = $generator->getBarcode($kode_buku, $generator::TYPE_CODE_128);
@@ -362,7 +362,7 @@ class Buku extends BaseController
         for ($i=1; $i <= $req['stok'] ; $i++) { 
 
             // kita buat kode bawaan kita untuk identifikasi buku
-            $kode_depan = $buku['kode_penerbit'][0].$buku['kode_rak'][0].$buku['kode_jenis'][0];
+            // $kode_depan = $buku['kode_penerbit'][0].$buku['kode_rak'][0].$buku['kode_jenis'][0];
             
             // kita ambil nomor urut terakhir dari database buku
             $kode = $this->bukuModel->selectMax('kode_buku', 'max_buku')->first();
@@ -378,7 +378,7 @@ class Buku extends BaseController
             // Kita kombinasikan nomor buku dengan kode bawaan kita
             $urutan++;
             $urutanAkhir = $urutan + $pertambahan;
-            $kode_buku = 'B'. sprintf("%04s", $urutanAkhir) . $kode_depan;
+            $kode_buku = 'B'. sprintf("%04s", $urutanAkhir);
             $barcodeImage = $generator->getBarcode($kode_buku, $generator::TYPE_CODE_128);
             // kita buat array untuk insert data buku
             $bulkBuku[] = [

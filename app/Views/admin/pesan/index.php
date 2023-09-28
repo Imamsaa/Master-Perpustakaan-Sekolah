@@ -62,7 +62,8 @@
                         <td><?= $p['terlambat'].' HARI'; ?></td>
                         <td><?= $p['denda']; ?></td>
                         <td>
-                          <button class="btn btn-block btn-primary"><i class="fas fa-solid fa-paper-plane"></i> KIRIM</button>
+                          <a class="btn btn-block btn-danger"><i class="fas fa-solid fa-envelope"></i> KIRIM</a>
+                          <a class="btn btn-block btn-success"><i class="fab fa-whatsapp"></i> KIRIM</a>
                         </td>
                       </tr>
                     <?php $no++; endforeach; ?>

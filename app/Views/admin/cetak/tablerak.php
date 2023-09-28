@@ -39,27 +39,24 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-sm table-bordered table-hover">
+                <table id="example1" class="table table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
-                    <th>KODE BUKU</th>
-                    <th>JUDUL</th>
-                    <th>JENIS BUKU</th>
+                    <th>KODE RAK BUKU</th>
                     <th>RAK BUKU</th>
                     <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <?php $no =1; foreach($buku as $b) : ?>
+                    <?php $no = 1; foreach($rak as $r) : ?>
                   <tr>
                     <td><?= $no; ?></td>
-                    <td><?= $b['kode_buku']; ?></td>
-                    <td><?= $b['judul_buku']; ?></td>
-                    <td><?= $b['nama_jenis']; ?></td>
-                    <td><?= $b['nama_rak']; ?></td>
+                    <td><?= $r['kode_rak']; ?></td>
+                    <td><?= $r['nama_rak']; ?></td>
                     <td>
-                        <a target="_blank" href="<?= base_url('pustakawan/cetak/buku/'.$b['kode_buku']); ?>" class="btn btn-primary btn-sm" ><i class="fas fa-solid fa-print"></i> Cetak</a>
+                        <a target="_blank" href="<?= base_url('pustakawan/cetak/rak/'.$r['kode_rak']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-print"></i> Cetak</a>
+                        <a href="<?= base_url('pustakawan/buku/cetakbuku/'.$r['kode_rak']); ?>" class="btn btn-success mb-1" ><i class="fas fa-solid fa-arrow-right"> </i> Buka Rak Buku</a>
                     </td>
                   </tr>
                   <?php $no++; endforeach; ?>
@@ -67,9 +64,7 @@
                   <tfoot>
                   <tr>
                     <th>NO</th>
-                    <th>KODE BUKU</th>
-                    <th>JUDUL</th>
-                    <th>JENIS BUKU</th>
+                    <th>KODE RAK BUKU</th>
                     <th>RAK BUKU</th>
                     <th>ACTION</th>
                   </tr>

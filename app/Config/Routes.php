@@ -53,9 +53,15 @@ $routes->get('/pustakawan/cetak/siswa', 'Admin\Cetak::cetaksiswa');
 $routes->get('/pustakawan/cetak/siswa/(:any)', 'Admin\Cetak::cetaksiswa/$1');
 $routes->get('/pustakawan/cetak/kelas/(:any)', 'Admin\Cetak::cetakkelas/$1');
 
-$routes->get('/pustakawan/buku/cetak', 'Admin\Cetak::buku');
-$routes->get('/pustakawan/siswa/cetak/ya', 'Admin\Cetak::cetak');
-$routes->get('/pustakawan/buku/cetak/ya', 'Admin\Cetak::barcode');
+
+// CETAK BUKU
+$routes->get('/pustakawan/buku/cetakbuku', 'Admin\Cetak::buku');
+$routes->get('/pustakawan/buku/cetakbuku/(:any)', 'Admin\Cetak::buku/$1');
+$routes->get('/pustakawan/buku/cetakrak', 'Admin\Cetak::rak');
+// $routes->get('/pustakawan/buku/cetakbuku/(:any)', 'Admin\Cetak::buku/$1');
+$routes->get('/pustakawan/cetak/buku', 'Admin\Cetak::cetakbuku');
+$routes->get('/pustakawan/cetak/buku/(:any)', 'Admin\Cetak::cetakbuku/$1');
+$routes->get('/pustakawan/cetak/rak/(:any)', 'Admin\Cetak::cetakrak/$1');
 
 // PENERBIT
 

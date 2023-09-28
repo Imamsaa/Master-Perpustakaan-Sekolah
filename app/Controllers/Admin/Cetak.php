@@ -3,18 +3,24 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\BukuModel;
 use App\Models\SiswaModel;
 use App\Models\KelasModel;
+use App\Models\RakModel;
 
 class Cetak extends BaseController
 {
     protected $siswaModel;
     protected $kelasModel;
+    protected $bukuModel;
+    protected $rakModel;
 
     function __construct()
     {
-        $this->siswaModel = new SiswaModel;
-        $this->kelasModel = new KelasModel;    
+        $this->siswaModel = new SiswaModel();
+        $this->kelasModel = new KelasModel();   
+        $this->bukuModel = new BukuModel();
+        $this->rakModel = new RakModel(); 
     }
 
     public function index($kode_kelas = null)
@@ -139,45 +145,97 @@ class Cetak extends BaseController
     // CETAK BUKU
 
 
-    public function buku()
+    public function buku($kode_rak = null)
     {
         if (session()->get('login') == null) {
             return redirect()->to(base_url('login'));
+        }
+
+        if ($kode_rak == null) {
+            $buku = $this->bukuModel
+            ->join('penerbit','penerbit.kode_penerbit = buku.kode_penerbit')
+            ->join('rak', 'rak.kode_rak = buku.kode_rak')
+            ->join('jenis_buku', 'jenis_buku.kode_jenis = buku.kode_jenis')
+            ->findAll();   
+        }else{
+            $buku = $this->bukuModel
+            ->join('penerbit','penerbit.kode_penerbit = buku.kode_penerbit')
+            ->join('rak', 'rak.kode_rak = buku.kode_rak')
+            ->join('jenis_buku', 'jenis_buku.kode_jenis = buku.kode_jenis')
+            ->where('buku.kode_rak',$kode_rak)
+            ->findAll();
+        }
+
+        $data = [
+            'title' => 'Daftar Barcode Buku',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku,
+            'buku' => $buku
+        ];
+        return view('admin/cetak/tablebarcode', $data);
+    }
+
+    function rak()
+    {
+        if (session()->get('login') == null) {
+            return redirect()->to(base_url('login'));
+        }
+        
+        $rak = $this->rakModel->findAll();
+        
+        $data = [
+            'title' => 'Daftar Barcode Buku',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku,
+            'rak' => $rak
+        ];
+        return view('admin/cetak/tablerak', $data);
+    }
+
+    function cetakbuku($kode_buku = null)
+    { 
+        if ($kode_buku == null) {
+            $buku = $this->bukuModel
+            ->join('penerbit','penerbit.kode_penerbit = buku.kode_penerbit')
+            ->join('rak', 'rak.kode_rak = buku.kode_rak')
+            ->join('jenis_buku', 'jenis_buku.kode_jenis = buku.kode_jenis')
+            ->findAll();
+        }else{
+            $buku = $this->bukuModel
+            ->join('penerbit','penerbit.kode_penerbit = buku.kode_penerbit')
+            ->join('rak', 'rak.kode_rak = buku.kode_rak')
+            ->join('jenis_buku', 'jenis_buku.kode_jenis = buku.kode_jenis')
+            ->where('buku.kode_buku',$kode_buku)
+            ->findAll();
         }
         $data = [
             'title' => 'Daftar Barcode Buku',
             'sekolah' => $this->sekolah,
             'perpus' => $this->perpus,
-            'aku' => $this->aku
-        ];
-        return view('admin/cetak/tablebarcode', $data);
-    }
-
-    public function barcode()
-    {
-        if (session()->get('login') == null) {
-            return redirect()->to(base_url('login'));
-        }
-        $data = [
-            'title' => 'Cetak Barcode Buku',
-            'sekolah' => $this->sekolah,
-            'perpus' => $this->perpus,
-            'aku' => $this->aku
+            'aku' => $this->aku,
+            'buku'=> $buku
         ];
         return view('admin/cetak/cetakbarcode', $data);
     }
 
-    public function cetak()
+    function cetakrak($kode_rak)
     {
-        if (session()->get('login') == null) {
-            return redirect()->to(base_url('login'));
-        }
+        $buku = $this->bukuModel
+        ->join('penerbit','penerbit.kode_penerbit = buku.kode_penerbit')
+        ->join('rak', 'rak.kode_rak = buku.kode_rak')
+        ->join('jenis_buku', 'jenis_buku.kode_jenis = buku.kode_jenis')
+        ->where('buku.kode_rak',$kode_rak)
+        ->findAll();
+
         $data = [
-            'title' => 'Cetak Kartu Siswa',
+            'title' => 'Daftar Barcode Buku',
             'sekolah' => $this->sekolah,
             'perpus' => $this->perpus,
-            'aku' => $this->aku
+            'aku' => $this->aku,
+            'buku'=> $buku
         ];
-        return view('admin/cetak/cetakkartu', $data);
+        return view('admin/cetak/cetakbarcode', $data);
     }
 }

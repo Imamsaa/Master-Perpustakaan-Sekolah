@@ -28,7 +28,8 @@ class Tahun extends BaseController
             'title' => 'Daftar Tahun Ajaran',
             'tahun' => $dataTahun,
             'sekolah' => $this->sekolah,
-            'perpus' => $this->perpus
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/tahun/tabletahun', $data);
     }

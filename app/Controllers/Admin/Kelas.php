@@ -42,7 +42,10 @@ class Kelas extends BaseController
         }
 
         $data = [
-            'title' => 'Tambah Kelas'
+            'title' => 'Tambah Kelas',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/kelas/addkelas', $data);
     }
@@ -110,8 +113,21 @@ class Kelas extends BaseController
         }
     }
 
-    public function hapus()
+    public function delete($kode_kelas)
     {
-        // isi kode disini
+        if ($this->kelasModel->where('kode_kelas',$kode_kelas)->delete() == true ) {
+            session()->setFlashdata('session',[
+                'status'    => 'success',
+                'message'   => 'Data Kelas Berhasil Dihapus'
+            ]);
+            return redirect()->to(base_url('pustakawan/kelas'));
+        }else{
+            session()->setFlashdata('session',[
+                'status'    => 'error',
+                'message'   => 'Data Kelas Gagal Dihapus'
+            ]);
+            return redirect()->to(base_url('pustakawan/kelas'));
+        }
     }
+
 }

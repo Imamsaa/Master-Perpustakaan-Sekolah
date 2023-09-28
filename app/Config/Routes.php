@@ -24,6 +24,7 @@ $routes->get('/pustakawan/kelas/tambah', 'Admin\Kelas::tambah');
 $routes->get('/pustakawan/kelas/ubah/(:any)', 'Admin\Kelas::ubah/$1');
 $routes->post('/pustakawan/kelas/save', 'Admin\Kelas::save');
 $routes->post('/pustakawan/kelas/update', 'Admin\Kelas::update');
+$routes->DELETE('/pustakawan/kelas/delete/(:any)', 'Admin\Kelas::delete/$1');
 
 // SISWA
 
@@ -146,6 +147,9 @@ $routes->post('/pustakawan/whastapp/save', 'Admin\Whastapp::save');
 
 $routes->get('/pustakawan/email', 'Admin\Email::index');
 $routes->post('/pustakawan/email/save', 'Admin\Email::save');
+
+// EXCEL
+$routes->post('/pustakawan/excel/kelas', 'Admin\Excel::kelas');
 
 // PROFIL
 

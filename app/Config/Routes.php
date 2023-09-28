@@ -132,6 +132,11 @@ $routes->post('/pustakawan/sekolah/update', 'Admin\Sekolah::update');
 $routes->get('/pustakawan/perpustakaan', 'Admin\Perpustakaan::index');
 $routes->post('/pustakawan/perpustakaan/save', 'Admin\Perpustakaan::save');
 
+// KIRIM
+$routes->get('/pustakawan/kirimpesan/whastapp/(:any)', 'Admin\Pesan::whastapp/$1');
+$routes->get('/pustakawan/kirimpesan/email/(:any)', 'Admin\Pesan::email/$1');
+
+
 // WHASTAPP
 $routes->get('/pustakawan/kirimpesan', 'Admin\Pesan::index');
 $routes->get('/pustakawan/whastapp', 'Admin\Whastapp::index');

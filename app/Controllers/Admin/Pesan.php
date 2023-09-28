@@ -70,8 +70,13 @@ class Pesan extends BaseController
         return view('admin/pesan/index',$data);
     }
 
-    function reset()
+    function whastapp($nis)
     {
+        
+    }
 
+    function email($nis)
+    {
+        
     }
 }

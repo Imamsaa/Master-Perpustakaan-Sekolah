@@ -17,6 +17,7 @@ class Excel extends BaseController
     function __construct()
     {
         $this->siswaModel = new SiswaModel();   
+        $this->kelasModel = new KelasModel(); 
     }
 
     public function kelas()
@@ -56,12 +57,12 @@ class Excel extends BaseController
                 // Sesuaikan dengan struktur tabel Anda
                 $insertData = [
                     'kode_kelas' => $data[1],
-                    'nama_kelas' => $data[2],
+                    'nama_kelas' => $data[2]
                 ];
 
-                $this->kelasModel->insert($insertData);
+                $this->kelasModel->save($insertData);
             }
-        unlink('uploads/'.$newName);
+        unlink('uploads/' . $newName);
         return redirect()->to(base_url('pustakawan/kelas'));
         } else {
             return redirect()->to(base_url('pustakawan/kelas'));
@@ -118,7 +119,7 @@ class Excel extends BaseController
 
                 $this->siswaModel->save($insertData);
             }
-        unlink('uploads/'.$newName);
+        unlink(ROOTPATH . 'public/uploads/' . $newName);
         return redirect()->to(base_url('pustakawan/siswa'));
         } else {
             return redirect()->to(base_url('pustakawan/siswa'));

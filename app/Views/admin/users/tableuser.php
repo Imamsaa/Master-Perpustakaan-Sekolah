@@ -59,7 +59,10 @@
                     <td><?= $u['nama_level']; ?></td>
                     <td>
                         <a href="<?= base_url('pustakawan/user/ubah/'.$u['username']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <button type="button" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        <form action="<?= base_url('pustakawan/user/delete/'.$u['username']); ?>" method="post">
+                          <input type="hidden" name="_method" value="DELETE">
+                          <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                        </form>
                     </td>
                   </tr>
                   <?php $no++; endforeach; ?>

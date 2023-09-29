@@ -248,8 +248,12 @@ class Users extends BaseController
         }
     }
 
-    public function hapus()
+    public function delete($username)
     {
-        // isi kode disini
+        if ($this->usersModel->where('username',$username)->delete() == true) {
+            return redirect()->to(base_url('pustakawan/user/'));
+        }else{
+            return redirect()->to(base_url('pustakawan/user/'));
+        }
     }
 }

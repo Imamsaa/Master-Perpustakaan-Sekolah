@@ -1,19 +1,24 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark mt-5">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('peminjaman'); ?>">Peminjaman</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('pengembalian'); ?>">Pengembalian</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('login'); ?>">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('register'); ?>">Register</a>
-                </li>
-            </ul>
-        </nav>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-nav">
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">PERPUSTAKAAN</a> -->
+        <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold text-white" href="<?= base_url(); ?>">Pengunjung <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold text-white" href="<?= base_url('peminjaman'); ?>">Peminjaman</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold text-white" href="<?= base_url('pengembalian'); ?>">Pengembalian</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold text-white" href="<?= base_url('login'); ?>">Login</a>
+            </li>
+          </ul>
+    </div>
+  </div>
+</nav>

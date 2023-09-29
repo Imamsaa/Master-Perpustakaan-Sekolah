@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title; ?></title>
-    <link rel="shortcut icon" href="<?= base_url('admin/img/sekolah.png'); ?>" type="image/x-icon">
-    <link rel="stylesheet" href="<?= base_url('dist/css/bootstrap.min.css'); ?>">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="<?= base_url('dist/css/bootstrap.min.css'); ?>" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        .container-img {
-            width: 70%;
-        }
-        /* Menambahkan transparansi pada latar belakang menu */
-        .navbar {
-            background-color: rgba(0, 0, 0, 0.0) !important; /* Gunakan !important untuk mengatasi kekhususan Bootstrap */
-        }
-        /* Mengatur lebar tombol login */
-        .login-btn {
-            width: 100%;
-        }
-    </style>
+        .login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url("img/<?= 'background_home.jpg' ?>");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.bg-login{
+    background-color : rgb(255,255,255,0.2);
+}
+
+.bg-nav{
+    background-color : rgb(255,255,255,0.0);
+}
+    </style>    
 </head>
-<body style="background-image: url(<?= base_url('img/background_home.jpg'); ?>); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; margin: 0; padding: 0; height: 100vh;">
+<body class="">

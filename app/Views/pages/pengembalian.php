@@ -1,39 +1,33 @@
 <?= $this->extend('template'); ?>
-<?= $this->section('content'); ?>
-<div class="row container-fluid d-flex justify-content-start align-items-center" style="height: 100vh;">
-    <!-- Bagian pertama (sebelah kiri) -->
-    <div class="col-md-8">
-        <!-- Header dan Logo -->
-        <div class="text-center">
-            <img src="<?= base_url('admin/img/'.$sekolah['logo']); ?>" alt="<?= $sekolah['nama_sekolah']; ?>" class="img-fluid" style="max-width: 120px; max-height: 120px;">
-            <div class="my-4"></div>
-            <span class="logo-text" style="font-size: 42px; font-weight: bold; color: white; font-family: 'Arial', sans-serif;"><?= $sekolah['nama_sekolah']; ?></span>
-        </div>
-        <!-- Input teks -->
-        <!-- <div class="input-container text-center">
-            <input type="text" class="form-control rounded-input mx-auto" placeholder="Tuliskan sesuatu..." style="font-size: 14px; padding: 15px; width: 80%; border-radius: 25px;">
-        </div> -->
-        <!-- Menu Link Horizontal (Bootstrap) -->
-        <?= $this->include('menu'); ?>
+<?= $this->section('tampilan'); ?>
+<div class="col-md-7 mt-5 d-none d-md-flex">
+    <div class="col-md-6 text-white text-center text-md-left mt-xl-5 mb-3 mx-auto" >
+        <div class="text-center mt-5">
+            <img class="mx-auto d-block" src="admin/img/<?= $sekolah['logo']; ?>" width="140px"> 
+        </div>    
+        <h1 class="h1-responsive text-center font-weight-bold mt-sm-2">SELAMAT DATANG DI<br><?= $perpus['nama_perpus']; ?><br><?= $sekolah['nama_sekolah']; ?></h1>
     </div>
-    <!-- Bagian kedua (sebelah kanan) -->
-    <div class="col-md-4 d-flex justify-content-center align-items-center" style="background-color: rgba(255, 255, 255, 1); width: 33%; height: 100vh; position: fixed; right: 0; overflow-y: scroll; padding: 20px;">
-        <div class="container container-img">
-            <h2 class="table-heading text-center mb-3">Pengembalian Buku</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="username" class="form-label">Kode Buku</label>
-                    <input type="text" class="form-control" id="username" placeholder="Masukkan username" required>
+</div>
+<?= $this->endSection(); ?>
+<?= $this->section('form'); ?>
+<div class="col-md-5 bg-login">
+    <div class="login d-flex align-items-center py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-7 mx-auto">              
+                    <h1 class="h1-responsive text-center text-white font-weight-bold">FORM</h1><h2 class="h1-responsive text-center text-white font-weight-bold mb-4">PENGEMBALIAN</h2> 
+                    <form>
+                        <div class="form-group mb-3">
+                            <input id="inputEmail" type="text" placeholder="NIS SISWA" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input id="inputPassword" type="text" placeholder="KODE BUKU" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">PINJAM</button>       
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Kode Siswa</label>
-                    <input type="text" class="form-control" id="password" placeholder="Masukkan password" required>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary login-btn">Submit</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        </div><!-- End -->
     </div>
 </div>
 <?= $this->endSection(); ?>

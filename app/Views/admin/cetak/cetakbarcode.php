@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
-    <link rel="stylesheet" href="<?= base_url('dist/css/bootstrap.min.css'); ?>">
-    <link rel="shortcut icon" href="<?= base_url('admin/img/sekolah.png'); ?>" type="image/x-icon">
+    <link rel="stylesheet" href="<?= base_url('dist/bootstrap5/css/bootstrap.min.css'); ?>">
+    <link rel="shortcut icon" href="<?= base_url('admin/img/'.$sekolah['logo']); ?>" type="image/x-icon">
     <!-- Google Font: Source Sans Pro -->
     <style>
     .kartu{
         display: inline-block;
         width: 7cm;
-        height: 4cm;
+        height: 4.5cm;
         border: 2px solid black;
     }
     td{
         font-size : 13px;
     }
     .barcode{
-        transform : scaleY(0.4) scaleX(1.5) rotate(90deg) translate(10px,-5px);
+        transform :rotate(90deg) scaleY(2) translate(0px, -5px);
+        max-width : 40px 5px;
+        padding : 7px;
     }
     </style>
 </head>
@@ -27,12 +29,12 @@
         <?php foreach ($buku as $c) : ?>
             <div class="kartu mx-1 my-1">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-sm-3">
                         <div class="barcode">
                             <?= $c['barcode_buku']; ?>
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-sm-9">
                         <table class="table table-borderless">
                             <tr>
                                 <th class="text-center" style="background-color:<?= $c['kode_warna']; ?>"><?= $sekolah['nama_sekolah']; ?></th>

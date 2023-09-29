@@ -57,10 +57,21 @@ class Dashboard extends BaseController
 
         $presen = [];
         foreach ($this->kelasModel->findAll() as $v) {
+            $getpk = $this->pModel
+            ->join('siswa','pengunjung.nis = siswa.nis')
+            ->where('siswa.kode_kelas',$v['kode_kelas'])
+            ->countAllResults();
+            $getp = $this->pModel->countAllResults();
+            // dd($getp);
+            if ($getp == 0) {
+                $hasil = 0;
+            }else{
+                $hasil = ($getpk/$getp)*100;
+            }
             $presen[] = [
                 'nama_kelas' => $v['nama_kelas'],
                 'total' => $this->pModel->join('siswa','pengunjung.nis = siswa.nis')->like('siswa.kode_kelas',$v['kode_kelas'])->countAllResults(),
-                'persen' => round(($this->pModel->join('siswa','pengunjung.nis = siswa.nis')->like('siswa.kode_kelas',$v['kode_kelas'])->countAllResults()/$this->pModel->countAllResults())*100)
+                'persen' => $hasil
             ];
         }
         // dd($presen);

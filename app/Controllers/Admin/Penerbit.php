@@ -43,7 +43,10 @@ class Penerbit extends BaseController
         }
 
         $data = [
-            'title' => 'Tambah Penerbit'
+            'title' => 'Tambah Penerbit',
+            'sekolah' => $this->sekolah,
+            'perpus' => $this->perpus,
+            'aku' => $this->aku
         ];
         return view('admin/penerbit/addpenerbit', $data);
     }

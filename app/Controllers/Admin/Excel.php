@@ -283,16 +283,16 @@ class Excel extends BaseController
                 if ($kode == null) {
                     $kode = 'B000000';
                 }
-                $pertambahan = 0;
-                for ($i=0; $i <= $data[8] ; $i++) { 
+                // $pertambahan = 0;
+                for ($i=1; $i <= $data[8] ; $i++) { 
                     // kita ambil nomor urutnya dan mengubbahnya menjadi integer
                     
                     // Kita kombinasikan nomor buku dengan kode bawaan kita
                     $urutan++;
-                    $urutanAkhir = $urutan + $pertambahan;
-                    $kode_buku = 'B'. sprintf("%04s", $urutanAkhir);
+                    // $urutanAkhir = $urutan + $pertambahan;
+                    $kode_buku = 'B'. sprintf("%04s", $urutan);
 
-                    $barcodeImage = $generator->getBarcode($data[1], $generator::TYPE_CODE_128);
+                    $barcodeImage = $generator->getBarcode($kode_buku, $generator::TYPE_CODE_128);
                     // Sesuaikan dengan struktur tabel Anda
                     $insertData = [
                         'kode_buku' => $kode_buku,
@@ -308,7 +308,7 @@ class Excel extends BaseController
                         'barcode_buku' => $barcodeImage
                     ];
                     $this->bukuModel->save($insertData);
-                    $pertambahan++;
+                    // $pertambahan++;
                 }
             }
             unlink('uploads/' . $newName);

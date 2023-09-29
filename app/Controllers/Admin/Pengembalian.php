@@ -54,7 +54,7 @@ class Pengembalian extends BaseController
         $peminjam = $this->trans
         ->join('siswa', 'siswa.nis = transaksi.nis')
         ->join('buku', 'buku.kode_buku = transaksi.kode_buku')
-        ->where('id',$id)
+        ->where('transaksi.id',$id)
         ->first();
         if ($id == null) {
             $data = [

@@ -152,6 +152,7 @@ $routes->post('/pustakawan/email/save', 'Admin\Email::save');
 $routes->post('/pustakawan/excel/kelas', 'Admin\Excel::kelas');
 $routes->post('/pustakawan/excel/siswa', 'Admin\Excel::siswa');
 $routes->post('/pustakawan/excel/rak', 'Admin\Excel::rak');
+$routes->post('/pustakawan/excel/jenis', 'Admin\Excel::jenis');
 
 // PROFIL
 

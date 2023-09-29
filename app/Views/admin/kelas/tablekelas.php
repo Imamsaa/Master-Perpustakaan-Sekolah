@@ -52,7 +52,7 @@
                       <button form="excel-kelas" type="submit" class="btn btn-block btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPOR EXCEL</button>
                     </div>
                   </div>
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-sm table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
@@ -68,10 +68,10 @@
                     <td><?= $row['kode_kelas']; ?></td>
                     <td><?= $row['nama_kelas']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/kelas/ubah/'.$row['kode_kelas']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <a href="<?= base_url('pustakawan/kelas/ubah/'.$row['kode_kelas']); ?>" class="btn btn-primary my-1 btn-sm" ><i class="fas fa-solid fa-pen"></i></a>
                         <form action="<?= base_url('pustakawan/kelas/delete/'.$row['kode_kelas']); ?>" method="post" class="d-inline">
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                            <button type="submit" class="btn btn-danger my-1 btn-sm" ><i class="fas fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                   </tr>

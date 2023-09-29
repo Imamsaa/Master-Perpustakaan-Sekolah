@@ -36,7 +36,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-sm table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
@@ -56,10 +56,10 @@
                     <td><?= date("d-m-Y", strtotime($row['aktif'])); ?></td>
                     <td><?= date("d-m-Y", strtotime($row['kadaluarsa'])) ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/tahun/ubah/'.$row['kode_tahun']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <a href="<?= base_url('pustakawan/tahun/ubah/'.$row['kode_tahun']); ?>" class="btn btn-primary btn-sm my-1" ><i class="fas fa-solid fa-pen"></i></a>
                         <form action="<?= base_url('pustakawan/tahun/delete/'.$row['kode_tahun']); ?>" method="POST" class="d-inline">
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                            <button type="submit" class="btn btn-danger btn-sm my-1" ><i class="fas fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                   </tr>

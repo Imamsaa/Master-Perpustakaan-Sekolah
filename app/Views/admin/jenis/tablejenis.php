@@ -31,13 +31,27 @@
               <div class="card-header">
                 <div class="card-title">
                     <h3>DAFTAR JENIS BUKU</h3>
-                    <a href="<?= base_url('pustakawan/jenis/tambah'); ?>" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> TAMBAHKAN JENIS BUKU</a>
-                    <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</button>
-                    <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPORT DATA JENIS BUKU</button>
+                  </div>
                 </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="row my-2">
+                    <div class="col-lg-6">
+                      <a href="<?= base_url('pustakawan/jenis/tambah'); ?>" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> TAMBAHKAN JENIS BUKU</a>
+                      <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</button>
+                    </div>
+                    <div class="col-lg-4">
+                      <form action="<?= base_url('pustakawan/excel/jenis'); ?>" method="post" id="excel-jenis" enctype="multipart/form-data" class="d-inline">
+                        <div class="custom-file my-1">
+                          <input name="jenis" type="file" class="custom-file-input" id="jenis">
+                        <label class="custom-file-label" for="rak">Pilih file Excel</label>
+                      </div>
+                    </form>
+                    </div>
+                    <div class="col-lg-2">
+                      <button form="excel-jenis" type="submit" class="btn btn-block btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPOR EXCEL</button>
+                    </div>
+                  </div>
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
                   <tr>

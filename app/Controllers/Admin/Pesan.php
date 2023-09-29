@@ -118,8 +118,7 @@ class Pesan extends BaseController
 
         // BUAT CURL
         $url = $wa['endpoint'].'?api_key='.$wa['apikey']."&sender=".$wa['pengirim']."&number=".$siswa['wa']."&message=".$message;
-        $cek = file_get_contents($url);
-        if (!$cek) {
+        if (!($cek = file_get_contents($url))) {
             return redirect()->to(base_url('pustakawan/kirimpesan')); 
         }
         $hasil = json_decode($cek,true);

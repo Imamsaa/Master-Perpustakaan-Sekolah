@@ -16,12 +16,12 @@
             <div class="row">
                 <div class="col-lg-10 col-xl-7 mx-auto">              
                     <h1 class="h1-responsive text-center text-white font-weight-bold mb-4">FORM PEMINJAMAN</h1> 
-                    <form>
+                    <form action="<?= base_url('setpeminjaman'); ?>" method="POST">
                         <div class="form-group mb-3">
-                            <input id="inputEmail" type="text" placeholder="NIS SISWA" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                            <input id="nis" name="nis" type="text" placeholder="NIS SISWA" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                         </div>
                         <div class="form-group mb-3">
-                            <input id="inputPassword" type="text" placeholder="KODE BUKU" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                            <input id="kode_buku" name="kode_buku" type="text" placeholder="KODE BUKU" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
                         </div>
                         <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">PINJAM</button>       
                     </form>

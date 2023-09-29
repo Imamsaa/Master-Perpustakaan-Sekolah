@@ -35,6 +35,10 @@
 <!-- bs-custom-file-input -->
 <script src="<?= base_url('admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js'); ?>"></script>
 
+<!-- SweetAlert2 -->
+<script src="<?= base_url('vendor/sweetalert2/dist/sweetalert2.all.js'); ?>"></script>
+
+
 <script>
 $(function () {
   bsCustomFileInput.init();

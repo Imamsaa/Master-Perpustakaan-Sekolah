@@ -13,9 +13,6 @@
               <a class="nav-link font-weight-bold text-white" href="<?= base_url('peminjaman'); ?>">Peminjaman</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold text-white" href="<?= base_url('pengembalian'); ?>">Pengembalian</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link font-weight-bold text-white" href="<?= base_url('login'); ?>">Login</a>
             </li>
           </ul>

@@ -21,6 +21,7 @@ class Sekolah extends BaseController
         }
 
         $sekolah = $this->sekolahModel->first();
+        // dd($sekolah);
         $data = [
             'title' => 'Profil Sekolah',
             'sekolah' => $sekolah,
@@ -34,11 +35,20 @@ class Sekolah extends BaseController
     {
         $req = $this->request->getVar();
         $logo = $this->request->getFile('logo');
+        $background = $this->request->getFile('background');
         $sekolah = $this->sekolahModel->first();
 
         $validate = [
             'logo' => [
                 'rules' => 'max_size[logo,1024]|ext_in[logo,png,jpg,jpeg]|is_image[logo]',
+                'errors' => [
+                    'max_size' => 'Ukuran file terlalu besar',
+                    'ext_in' => 'Moson Masukan file Gambar',
+                    'is_image' => 'Moson Masukan file Gambar Yang benar'
+                ],
+            ],
+            'background' => [
+                'rules' => 'max_size[background,2048]|ext_in[background,png,jpg,jpeg]|is_image[background]',
                 'errors' => [
                     'max_size' => 'Ukuran file terlalu besar',
                     'ext_in' => 'Moson Masukan file Gambar',
@@ -53,6 +63,12 @@ class Sekolah extends BaseController
         }else{
             $name = $logo->getRandomName();
         }
+
+        if ($background->getError() == 4 ) {
+            $bname = $sekolah['background'];
+        }else{
+            $bname = $background->getRandomName();
+        }
         
         
         $sekolahbaru = [
@@ -60,7 +76,8 @@ class Sekolah extends BaseController
             'slogan_sekolah' => $req['slogan_sekolah'],
             'email_sekolah' => $req['email_sekolah'],
             'alamat_sekolah' => $req['alamat_sekolah'],
-            'logo' => $name
+            'logo' => $name,
+            'background' => $bname
         ];
         
         if (!$this->validate($validate)) {
@@ -73,6 +90,10 @@ class Sekolah extends BaseController
             $logo->move('admin/img/',$name);
         }
 
+        if ($background->isvalid() && !$background->hasMoved()) {
+            $background->move('img/',$bname);
+        }
+
         if($this->sekolahModel->where('id',$sekolah['id'])->set($sekolahbaru)->update() == true )
         {
             session()->setFlashdata('session',[
@@ -83,6 +104,12 @@ class Sekolah extends BaseController
             
             }else{
                 unlink('admin/img/'.$sekolah['logo']);
+            }
+
+            if ($background->getError() == 4 ) {
+            
+            }else{
+                unlink('img/'.$sekolah['background']);
             }
             return redirect()->to(base_url('pustakawan/sekolah'));
         }else{

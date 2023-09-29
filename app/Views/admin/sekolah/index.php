@@ -74,6 +74,25 @@
                     <label for="alamat_sekolah">Alamat Sekolah</label>
                     <textarea name="alamat_sekolah" class="form-control" id="alamat_sekolah" rows="3"><?= (old('alamat_sekolah')) ? old('alamat_sekolah') : $sekolah['alamat_sekolah']; ?></textarea>
                   </div>
+                  <div class="row mb-2">
+                    <div class="col-md-3 my-2 col-sm-12">
+                      <img src="<?= base_url('img/'.$sekolah['background']); ?>" alt="Logo Sekolah" class="img-thumbnail">
+                    </div>
+                    <div class="col-md-9 col-sm-12">
+                  <div class="form-group">
+                    <label for="background">Unggah Background</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input name="background" type="file" class="custom-file-input" id="background">
+                        <label class="custom-file-label" for="foto">Pilih file gambar</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
                   <!-- <div class="form-group">
                     <label for="nisn">NISN Siswa</label>
                     <input type="text" name="nisn" class="form-control" id="nisn" placeholder="">

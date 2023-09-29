@@ -29,14 +29,14 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3><?= $jp; ?></h3>
 
                 <p>Jumlah Pengunjung hari ini</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
             </div>
           </div>
           <!-- ./col -->
@@ -44,14 +44,14 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53</h3>
+                <h3><?= $pinjam; ?></h3>
 
                 <p>Jumlah Peminjaman</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
             </div>
           </div>
           <!-- ./col -->
@@ -59,14 +59,14 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3><?= $jsiswa; ?></h3>
 
                 <p>Jumlah Siswa</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
             </div>
           </div>
           <!-- ./col -->
@@ -74,14 +74,14 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3><?= $jbuku; ?></h3>
 
                 <p>Jumlah Buku</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
             </div>
           </div>
           <!-- ./col -->
@@ -106,13 +106,15 @@
                   </tr>
                   </thead>
                   <tbody>
+                    <?php $no = 1; foreach($pday as $p) : ?>
                   <tr>
-                    <td>1</td>
-                    <td>2121</td>
-                    <td>Imam Safii</td>
-                    <td>XIIPA</td>
-                    <td>12:22</td>
+                    <td><?= $no; ?></td>
+                    <td><?= $p['nis']; ?></td>
+                    <td><?= $p['nama_siswa']; ?></td>
+                    <td><?= $p['nama_kelas']; ?></td>
+                    <td><?= $p['waktu']; ?></td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>
@@ -147,16 +149,18 @@
                   </tr>
                   </thead>
                   <tbody>
+                    <?php $no =1; foreach($presen as $n) : ?>
                   <tr>
-                    <td>1</td>
-                    <td>XI IPA</td>
-                    <td>211</td>
+                    <td><?= $no; ?></td>
+                    <td><?= $n['nama_kelas']; ?></td>
+                    <td><?= $n['total']; ?></td>
                     <td>
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        <div class="progress-bar" role="progressbar" style="width: <?= $n['persen']; ?>%;" aria-valuenow="<?= $n['persen']; ?>" aria-valuemin="0" aria-valuemax="100"><?= $n['persen']; ?>%</div>
                       </div>
                     </td>
                   </tr>
+                  <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>

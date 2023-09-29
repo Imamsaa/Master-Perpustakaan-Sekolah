@@ -31,13 +31,27 @@
               <div class="card-header">
                 <div class="card-title">
                     <h3>DAFTAR BUKU</h3>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="row my-2">
+                    <div class="col-lg-6">
                     <a href="<?= base_url('pustakawan/buku/tambah'); ?>" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> TAMBAHKAN BUKU</a>
                     <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</button>
-                    <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPORT DATA BUKU</button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
+                  </div>
+                    <div class="col-lg-4">
+                    <form action="<?= base_url('pustakawan/excel/buku'); ?>" method="post" id="excel-buku" enctype="multipart/form-data" class="d-inline">
+                      <div class="custom-file my-1">
+                        <input name="buku" type="file" class="custom-file-input" id="buku">
+                        <label class="custom-file-label" for="buku">Pilih file Excel</label>
+                      </div>
+                    </form>
+                    </div>
+                    <div class="col-lg-2">
+                      <button form="excel-buku" type="submit" class="btn btn-block btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPOR EXCEL</button>
+                    </div>
+                  </div>
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
                   <tr>

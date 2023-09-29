@@ -12,13 +12,13 @@
         display: inline-block;
         width: 7cm;
         height: 4cm;
-        border: 1px solid black;
+        border: 2px solid black;
     }
     td{
         font-size : 13px;
     }
     .barcode{
-        transform : scale(2,.9) rotate(90deg) translate(10px,-5px);
+        transform : scaleY(0.4) scaleX(1.5) rotate(90deg) translate(10px,-5px);
     }
     </style>
 </head>

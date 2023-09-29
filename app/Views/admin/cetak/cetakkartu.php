@@ -12,7 +12,7 @@
         display: inline-block;
         width: 8.56cm;
         height: 5.398cm;
-        border: 1px solid black;
+        border: 2px solid black;
         border-radius: 15px;
     }
     img{

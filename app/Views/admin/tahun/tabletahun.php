@@ -57,9 +57,9 @@
                     <td><?= date("d-m-Y", strtotime($row['kadaluarsa'])) ?></td>
                     <td>
                         <a href="<?= base_url('pustakawan/tahun/ubah/'.$row['kode_tahun']); ?>" class="btn btn-primary btn-sm my-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <form action="<?= base_url('pustakawan/tahun/delete/'.$row['kode_tahun']); ?>" method="POST" class="d-inline">
+                        <form action="<?= base_url('pustakawan/tahun/delete/'.$row['kode_tahun']); ?>" method="POST" class="d-inline formdelete">
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger btn-sm my-1" ><i class="fas fa-solid fa-trash"></i></button>
+                            <button type="submit" class="btn delete btn-danger btn-sm my-1" ><i class="fas fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                   </tr>

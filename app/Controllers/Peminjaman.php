@@ -32,22 +32,33 @@ class Peminjaman extends BaseController
     function siswa()
     {
         $req = $this->request->getVar();
+        $waktu = $this->siswaModel->join('tahun_ajaran', 'tahun_ajaran.kode_tahun = siswa.kode_tahun')->where('nis',$req['nis'])->first();
         // dd($this->transModel->where('status','pinjam')->where('kode_buku',$req['kode_buku'])->countAllResults());
         if ($this->bukuModel->where('kode_buku',$req['kode_buku'])->countAllResults() == 0) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotaktime',[
                 'status' => 'error',
+                'title' => 'Gagal',
                 'message' => 'Buku Tidak Ditemukan'
             ]);
             return redirect()->to(base_url('peminjaman'));
         }elseif ($this->siswaModel->where('nis',$req['nis'])->countAllResults() == 0) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotaktime',[
                 'status' => 'error',
+                'title' => 'Gagal',
                 'message' => 'NIS Siswa Tidak Ditemukan'
             ]);
             return redirect()->to(base_url('peminjaman'));
-        }elseif($this->transModel->where('status','pinjam')->where('kode_buku',$req['kode_buku'])->countAllResults() == 1){
-            session()->setFlashdata('session',[
+        }elseif ($waktu['kadaluarsa'] <= date('Y-m-d')) {
+            session()->setFlashdata('kotaktime',[
                 'status' => 'error',
+                'title' => 'Gagal',
+                'message' => 'Masa Berlaku Sudah Habis'
+            ]);
+            return redirect()->to(base_url('peminjaman'));
+        }elseif($this->transModel->where('status','pinjam')->where('kode_buku',$req['kode_buku'])->countAllResults() == 1){
+            session()->setFlashdata('kotaktime',[
+                'status' => 'warning',
+                'title' => 'Gagal',
                 'message' => 'Buku Sedang Dipinjam'
             ]);
             return redirect()->to(base_url('peminjaman'));
@@ -59,14 +70,16 @@ class Peminjaman extends BaseController
                 'pinjam' => date('Y-m-d')
             ]) == true ) 
             {
-                session()->setFlashdata('session',[
+                session()->setFlashdata('kotaktime',[
                     'status' => 'success',
+                    'title' => 'Berhasil',
                     'message' => 'Berhasil Melakukan Peminjaman'
                 ]);
                 return redirect()->to(base_url('peminjaman'));
             }else{
-                session()->setFlashdata('session',[
+                session()->setFlashdata('kotaktime',[
                     'status' => 'error',
+                    'title' => 'Gagal',
                     'message' => 'Gagal Melakukan Peminjaman'
                 ]);
                 return redirect()->to(base_url('peminjaman'));

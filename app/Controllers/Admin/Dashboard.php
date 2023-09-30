@@ -71,7 +71,7 @@ class Dashboard extends BaseController
             $presen[] = [
                 'nama_kelas' => $v['nama_kelas'],
                 'total' => $this->pModel->join('siswa','pengunjung.nis = siswa.nis')->like('siswa.kode_kelas',$v['kode_kelas'])->countAllResults(),
-                'persen' => $hasil
+                'persen' => round($hasil)
             ];
         }
         // dd($presen);

@@ -1,6 +1,6 @@
 <?= $this->include('header'); ?>
+<div class="container-fluid">
 <?= $this->include('menu'); ?>
-<div class="container-fluid bg-image">
     <div class="row no-gutter">
         <!-- The image half -->
          <?= $this->renderSection('tampilan'); ?>

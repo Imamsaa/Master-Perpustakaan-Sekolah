@@ -20,12 +20,13 @@
 }
 
 .bg-login{
-    background-color : rgb(255,255,255,0.2);
+    background-color : rgb(255,255,255,0.0);
 }
 
 .bg-nav{
     background-color : rgb(255,255,255,0.0);
 }
+
     </style>    
 </head>
-<body class="">
+<body class="bg-image">

@@ -31,12 +31,27 @@ class Login extends BaseController
             if (password_verify($setlogin['password'],$user['password'])) {
                 session()->set('user',$user);
                 session()->set('login',true);
+                session()->setFlashdata('kotakok',[
+                    'status' => 'success',
+                    'title' => 'Login Berhasil',
+                    'message' => 'Selamat Datang '
+                ]);
                 return redirect()->to(base_url('pustakawan'));
             }else{
-                return redirect()->to(base_url('login'));
+                session()->setFlashdata('kotakok',[
+                    'status' => 'error',
+                    'title' => 'Login Gagal',
+                    'message' => 'Password Yang Anda Masukan Salah'
+                ]);
+                return redirect()->to(base_url('login'))->withInput();
             }
         }else{
-            return redirect()->to(base_url('login'));
+            session()->setFlashdata('kotakok',[
+                'status' => 'error',
+                'title' => 'Login Gagal',
+                'message' => 'Email Tidak Ditemukan'
+            ]);
+            return redirect()->to(base_url('login'))->withInput();
         }
     }
 }

@@ -37,6 +37,103 @@
 
 <!-- SweetAlert2 -->
 <script src="<?= base_url('vendor/sweetalert2/dist/sweetalert2.all.js'); ?>"></script>
+</body>
+</html>
+
+<script>
+  const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'success',
+  title: 'Signed in successfully'
+})
+</script>
+
+<script>
+var deleteLinks = document.querySelectorAll('.delete-link');
+
+// Membuat event listener dan mengaitkannya dengan setiap elemen
+deleteLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var url = this.getAttribute('href');
+
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Tidak',
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = url;
+            }
+        });
+    });
+});
+</script>
+<script>
+    function submitForm(e) {
+        e.preventDefault();
+        const form = e.target.closest("form"); // Temukan elemen formulir terdekat
+
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Tidak',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Kirim formulir yang terkait dengan tombol yang diklik
+                form.submit();
+            }
+        });
+    }
+
+    // Tambahkan pemasang acara ke semua elemen dengan class "delete"
+    const tombolHapus = document.querySelectorAll(".delete");
+    tombolHapus.forEach((tombol) => {
+        tombol.addEventListener("click", submitForm);
+    });
+</script>
+
+<script>
+    function submitForm(e) {
+        e.preventDefault();
+        const form = e.target.closest("form"); // Temukan elemen formulir terdekat
+
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Kirim formulir yang terkait dengan tombol yang diklik
+                form.submit();
+            }
+        });
+    }
+
+    // Tambahkan pemasang acara ke semua elemen dengan class "submitconfirm"
+    const tombolKirim = document.querySelectorAll(".submitconfirm");
+    tombolKirim.forEach((tombol) => {
+        tombol.addEventListener("click", submitForm);
+    });
+</script>
 
 
 <script>
@@ -89,3 +186,27 @@ $(function () {
     });
   });
 </script>
+
+  <?php if (session()->has('kotakok')) : ?>
+  <?php $session = session()->get('kotakok'); ?>
+  <script>
+      Swal.fire({
+      icon: '<?= $session['status'] ?>',
+      title: '<?= $session['title']; ?>',
+      text: '<?= $session['message']; ?>'
+    });
+  </script>
+  <?php endif; ?>
+  
+  <?php if(session()->has('kotaktime')) : ?>
+  <?php $session = session()->get('kotaktime'); ?>
+  <script>
+    Swal.fire({
+      icon: '<?= $session['status']; ?>',
+      title: '<?= $session['title']; ?>',
+      text : '<?= $session['message']; ?>',
+      showConfirmButton: false,
+      timer: 3000
+    });
+  </script>
+  <?php endif; ?>

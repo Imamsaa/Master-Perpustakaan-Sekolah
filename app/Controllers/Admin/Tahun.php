@@ -4,15 +4,18 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\TahunModel;
+use App\Models\SiswaModel;
 
 class Tahun extends BaseController
 {
     protected $tahunModel;
+    protected $siswaModel;
 
     function __construct()
     {
         date_default_timezone_set('Asia/Jakarta');
         $this->tahunModel = new TahunModel();
+        $this->siswaModel = new SiswaModel();
     }
 
     public function index()
@@ -53,21 +56,29 @@ class Tahun extends BaseController
 
     function save()
     {
-        if (!$this->validate($this->tahunModel->getvalidationRules())) {
-            session()->setFlashdata('errors', $this->validator);
+        $req = $this->request->getVar();
+        if ($this->tahunModel->where('kode_tahun',$req['kode_tahun'])->countAllResults() > 0 )
+        {
+            session()->setFlashdata('kotakok',[
+                'status'    => 'warning',
+                'title' => 'Gagal',
+                'message'   => 'Kode Tahun Telah Digunakan'
+            ]);
             return redirect()->to(base_url('pustakawan/tahun/tambah'))->withInput();
-        }elseif($this->tahunModel->save($this->request->getVar()) == true){
-            session()->setFlashdata('session',[
-                'status'    => 'success', 
+        }
+        
+        if($this->tahunModel->save($this->request->getVar()) == true){
+            session()->setFlashdata('pojokatas',[
+                'status'    => 'success',
                 'message'   => 'Tahun Berhasil Ditambahkan'
             ]);
             return redirect()->to(base_url('pustakawan/tahun'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error', 
                 'message'   => 'Tahun Gagal Ditambahkan'
             ]);
-            return redirect()->to(base_url('pustakawan/tahun'))->withInput();
+            return redirect()->to(base_url('pustakawan/tahun/tambah'))->withInput();
         }
     }
 
@@ -118,16 +129,26 @@ class Tahun extends BaseController
 
     public function delete($kode_tahun)
     {
-        if ($this->tahunModel->where('kode_tahun', $kode_tahun)->delete() == true) {
-            session()->setFlashdata('session',[
-                'status'    => 'success',
-                'message'   => 'Tahun Berhasil Dihapus'
-            ]);
-            return redirect()->to(base_url('pustakawan/tahun'));
+        $this->tahunModel->disableForeignKeyChecks();
+        if ($this->siswaModel->where('kode_tahun',$kode_tahun)->countAllResults() <= 0) {
+            if ($this->tahunModel->where('kode_tahun', $kode_tahun)->delete() == true) {
+                session()->setFlashdata('pojokatas',[
+                    'status'    => 'success',
+                    'message'   => 'Tahun Berhasil Dihapus'
+                ]);
+                return redirect()->to(base_url('pustakawan/tahun'));
+            }else{
+                session()->setFlashdata('pojokatas',[
+                    'status'    => 'error',
+                    'message'   => 'Tahun Gagal Dihapus'
+                ]);
+                return redirect()->to(base_url('pustakawan/tahun'));
+            }   
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotakok',[
                 'status'    => 'error',
-                'message'   => 'Tahun Gagal Dihapus'
+                'title' => 'Gagal Menghapus',
+                'message'   => 'Tahun Masih Digunakan'
             ]);
             return redirect()->to(base_url('pustakawan/tahun'));
         }

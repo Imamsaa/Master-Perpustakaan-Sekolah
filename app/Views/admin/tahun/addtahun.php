@@ -37,7 +37,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/tahun/save'); ?>" method="post">
+              <form action="<?= base_url('pustakawan/tahun/save'); ?>" method="post" class="formconfirm">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
@@ -60,7 +60,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Tahun</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Tahun</button>
                   <a href="<?= base_url('pustakawan/tahun'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

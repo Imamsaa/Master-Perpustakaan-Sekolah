@@ -40,24 +40,6 @@
 </body>
 </html>
 
-<script>
-  const Toast = Swal.mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 3000,
-  timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.addEventListener('mouseenter', Swal.stopTimer)
-    toast.addEventListener('mouseleave', Swal.resumeTimer)
-  }
-})
-
-Toast.fire({
-  icon: 'success',
-  title: 'Signed in successfully'
-})
-</script>
 
 <script>
 var deleteLinks = document.querySelectorAll('.delete-link');
@@ -75,7 +57,7 @@ deleteLinks.forEach(function(link) {
             confirmButtonColor: '#d33',
             confirmButtonText: 'Hapus',
             cancelButtonText: 'Tidak',
-        }).then((result) => {
+          }).then((result) => {
             if (result.value) {
                 window.location.href = url;
             }
@@ -83,6 +65,42 @@ deleteLinks.forEach(function(link) {
     });
 });
 </script>
+
+<script>
+    function submitForm(e) {
+        e.preventDefault();
+
+        // Check if there are any required fields that are empty
+        const requiredFields = document.querySelectorAll(".formconfirm [required]");
+        let hasEmptyRequiredFields = false;
+
+        requiredFields.forEach((field) => {
+            if (!field.value) {
+                hasEmptyRequiredFields = true;
+                field.reportValidity();
+            }
+        });
+
+        if (!hasEmptyRequiredFields) {
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Submit the form
+                    document.querySelector(".formconfirm").submit();
+                }
+            });
+        }
+    }
+
+    // Menambahkan event listener untuk form submission
+    document.getElementById("submitconfirm").addEventListener("click", submitForm);
+</script>
+
 <script>
     function submitForm(e) {
         e.preventDefault();
@@ -110,36 +128,9 @@ deleteLinks.forEach(function(link) {
 </script>
 
 <script>
-    function submitForm(e) {
-        e.preventDefault();
-        const form = e.target.closest("form"); // Temukan elemen formulir terdekat
-
-        Swal.fire({
-            title: 'Apakah Anda yakin?',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Ya',
-            cancelButtonText: 'Tidak',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Kirim formulir yang terkait dengan tombol yang diklik
-                form.submit();
-            }
-        });
-    }
-
-    // Tambahkan pemasang acara ke semua elemen dengan class "submitconfirm"
-    const tombolKirim = document.querySelectorAll(".submitconfirm");
-    tombolKirim.forEach((tombol) => {
-        tombol.addEventListener("click", submitForm);
-    });
-</script>
-
-
-<script>
-$(function () {
-  bsCustomFileInput.init();
-});
+  $(function () {
+    bsCustomFileInput.init();
+  });
 </script>
 
 <script>
@@ -151,14 +142,14 @@ $(function () {
 
         // set textarea value to: text before caret + tab + text after caret
         this.value = this.value.substring(0, start) +
-          "\t" + this.value.substring(end);
+        "\t" + this.value.substring(end);
 
         // put caret at right position again
         this.selectionStart =
           this.selectionEnd = start + 1;
       }
       });
-</script>
+    </script>
 
 <script>
   $(function () {
@@ -187,11 +178,11 @@ $(function () {
   });
 </script>
 
-  <?php if (session()->has('kotakok')) : ?>
+<?php if (session()->has('kotakok')) : ?>
   <?php $session = session()->get('kotakok'); ?>
   <script>
       Swal.fire({
-      icon: '<?= $session['status'] ?>',
+        icon: '<?= $session['status'] ?>',
       title: '<?= $session['title']; ?>',
       text: '<?= $session['message']; ?>'
     });
@@ -210,3 +201,25 @@ $(function () {
     });
   </script>
   <?php endif; ?>
+
+<?php if(session()->has('pojokatas')) :  ?>
+<?php $session =  session()->get('pojokatas'); ?>
+<script>
+  const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: '<?= $session['status']; ?>',
+  title: '<?= $session['message']; ?>'
+})
+</script>
+<?php endif; ?>

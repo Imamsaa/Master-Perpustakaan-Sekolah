@@ -119,7 +119,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link btn btn-light" href="<?= base_url('logout'); ?>" role="button">
+        <a class="nav-link btn save btn-light" href="<?= base_url('logout'); ?>" role="button">
           <i class="fas fa-power-off mr-2"></i>Keluar
         </a>
       </li>

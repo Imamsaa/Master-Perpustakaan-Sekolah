@@ -37,22 +37,22 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/rak/save'); ?>" method="POST">
+              <form action="<?= base_url('pustakawan/rak/save'); ?>" method="POST" class="formconfirm">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
                       <label for="kode_rak">Kode Rak Buku</label>
-                      <input type="text" value="<?= old('kode_rak'); ?>" name="kode_rak" class="form-control" id="kode_rak" placeholder="">
+                      <input type="text" value="<?= old('kode_rak'); ?>" name="kode_rak" class="form-control" id="kode_rak" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="nama_rak">Nama Rak Buku</label>
-                    <input type="text" value="<?= old('nama_rak'); ?>" name="nama_rak" class="form-control" id="nama_rak" placeholder="">
+                    <input type="text" value="<?= old('nama_rak'); ?>" name="nama_rak" class="form-control" id="nama_rak" placeholder="" required>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Rak Buku</button>
+                  <button id="submitconfirm" type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Rak Buku</button>
                   <a href="<?= base_url('pustakawan/rak'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

@@ -4,14 +4,17 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\KelasModel;
+use App\Models\SiswaModel;
 
 class Kelas extends BaseController
 {
     protected $kelasModel;
+    protected $siswaModel;
 
     function __construct()
     {
         $this->kelasModel = new KelasModel();   
+        $this->siswaModel = new SiswaModel();
     }
 
     public function index()
@@ -52,17 +55,23 @@ class Kelas extends BaseController
 
     function save()
     {
-        if($this->kelasModel->save($this->request->getVar()) == true){
-            session()->setFlashdata('session',[
+        $req = $this->request->getVar();
+        if ($this->kelasModel->where('kode_kelas',$req['kode_kelas'])->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status'    => 'warning',
+                'title'     => 'Gagal',
+                'message'   => 'Kode Kelas Telah Digunakan'
+            ]);
+            return redirect()->to(base_url('pustakawan/kelas/tambah'))->withInput();
+        }
+        if($this->kelasModel->save($req) == true){
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Kelas Berhasil Ditambahkan'
             ]);
             return redirect()->to(base_url('pustakawan/kelas'));
-        }elseif (!$this->validate($this->kelasModel->getvalidationRules())) {
-            session()->setFlashdata('errors',$this->validator);
-            return redirect()->to(base_url('pustakawan/kelas/tambah'))->withInput();
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Kelas Gagal Ditambahkan'
             ]);
@@ -96,16 +105,13 @@ class Kelas extends BaseController
             'nama_kelas'    => $kelas['nama_kelas']
         ])->update() == true
         ){
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Kelas Berhasil Diubah'
             ]);
             return redirect()->to(base_url('pustakawan/kelas'));
-        }elseif (!$this->validate($this->kelasModel->getvalidationRules())) {
-            session()->setFlashdata('errors', $this->validator);
-            return redirect()->to(base_url('pustakawan/kelas/ubah/'.$kelas['kode_kelas']))->withInput();
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Kelas Gagal Diubah'
             ]);
@@ -115,14 +121,23 @@ class Kelas extends BaseController
 
     public function delete($kode_kelas)
     {
+        $this->kelasModel->disableForeignKeyChecks();
+        if ($this->siswaModel->where('kode_kelas',$kode_kelas)->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status'    => 'warning',
+                'title' => 'Gagal',
+                'message'   => 'Kelas Masih Digunakan'
+            ]);
+            return redirect()->to(base_url('pustakawan/kelas'));
+        }
         if ($this->kelasModel->where('kode_kelas',$kode_kelas)->delete() == true ) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Data Kelas Berhasil Dihapus'
             ]);
             return redirect()->to(base_url('pustakawan/kelas'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Data Kelas Gagal Dihapus'
             ]);

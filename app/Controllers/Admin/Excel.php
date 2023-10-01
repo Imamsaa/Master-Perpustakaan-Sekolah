@@ -8,6 +8,7 @@ use App\Models\SiswaModel;
 use App\Models\RakModel;
 use App\Models\JenisModel;
 use App\Models\BukuModel;
+use App\Models\TahunModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\IOFactory; 
@@ -19,6 +20,7 @@ class Excel extends BaseController
     protected $rakModel;
     protected $jenisModel;
     protected $bukuModel;
+    protected $tahunModel;
 
     function __construct()
     {
@@ -26,13 +28,14 @@ class Excel extends BaseController
         $this->kelasModel = new KelasModel(); 
         $this->rakModel = new RakModel();
         $this->jenisModel = new JenisModel();
-        $this->bukuModel = new BukuModel(); 
+        $this->bukuModel = new BukuModel();
+        $this->tahunModel = new TahunModel(); 
     }
 
     public function kelas()
     {
         session();
-        
+        $this->kelasModel->disableForeignKeyChecks();
         if (session()->get('login') == null) {
             return redirect()->to(base_url('login'));
         }
@@ -49,6 +52,7 @@ class Excel extends BaseController
             $worksheet = $spreadsheet->getActiveSheet();
 
             $headerRow = true;
+            $tampil = [];
             foreach ($worksheet->getRowIterator() as $row) {
                 if ($headerRow) {
                     $headerRow = false;
@@ -63,24 +67,54 @@ class Excel extends BaseController
                     $data[] = $cell->getValue();
                 }
 
-                // Sesuaikan dengan struktur tabel Anda
-                $insertData = [
-                    'kode_kelas' => $data[1],
-                    'nama_kelas' => $data[2]
-                ];
 
+                if (!isset($data[1]) OR !isset($data[1])) {
+                    continue;
+                }
+
+                if ($this->kelasModel->where('kode_kelas',$data[1])->countAllResults() > 0) {
+                    $tampil[] = $data[1];
+                    continue;
+                }else{
+                    $insertData = [
+                        'kode_kelas' => $data[1],
+                        'nama_kelas' => $data[2]
+                    ];
+                }
                 $this->kelasModel->save($insertData);
             }
-        unlink('uploads/' . $newName);
-        return redirect()->to(base_url('pustakawan/kelas'));
-        } else {
+            unlink('uploads/' . $newName);   
+            if(is_array($tampil) && count($tampil) > 0)
+            {
+                $result = implode(" , ",$tampil);
+                session()->setFlashdata('kotakok',[
+                    'status' => 'warning',
+                    'title' => 'Duplikat',
+                    'message' => "Data Kelas Telah Di Import Kecuali Data Kelas Duplikat : $result"
+                ]);
+                return redirect()->to(base_url('pustakawan/kelas'));
+            }else{
+                session()->setFlashdata('kotakok',[
+                    'status' => 'success',
+                    'title' => 'Berhasil',
+                    'message' => 'Impor Data Kelas Berhasil'
+                ]);
+                return redirect()->to(base_url('pustakawan/kelas'));
+            }
+        }else{
+            session()->setFlashdata('kotakok',[
+                'status' => 'error',
+                'title' => 'Gagal',
+                'message' => 'Impor Data Kelas Gagal'
+            ]);
             return redirect()->to(base_url('pustakawan/kelas'));
         }
     }
-
+    
     public function siswa()
     {
         session();
+        $this->siswaModel->disableForeignKeyChecks();
         $generator = new \Picqer\Barcode\BarcodeGeneratorHTML();
         if (session()->get('login') == null) {
             return redirect()->to(base_url('login'));
@@ -98,6 +132,9 @@ class Excel extends BaseController
             $worksheet = $spreadsheet->getActiveSheet();
 
             $headerRow = true;
+            $tampil = [];
+            $tampiltahun = [];
+            $tampilkelas = [];
             foreach ($worksheet->getRowIterator() as $row) {
                 if ($headerRow) {
                     $headerRow = false;
@@ -111,6 +148,26 @@ class Excel extends BaseController
                 foreach ($cellIterator as $cell) {
                     $data[] = $cell->getValue();
                 }
+
+                if (!isset($data[1]) OR !isset($data[2]) OR !isset($data[3]) OR !isset($data[4]) OR !isset($data[5]) OR !isset($data[6]) OR !isset($data[7]) OR !isset($data[8])) {
+                    continue;
+                }
+
+                if ($this->tahunModel->where('kode_tahun',$data[5])->countAllResults() == 0) {
+                    $tampiltahun[] = $data[5];
+                    continue;
+                }
+
+                if ($this->kelasModel->where('kode_kelas',$data[4])->countAllResults() == 0) {
+                    $tampilkelas[] = $data[4];
+                    continue;
+                }
+
+                if ($this->siswaModel->where('nis',$data[1])->countAllResults() > 0) {
+                    $tampil[] = $data[1];
+                    continue;
+                }
+
                 $barcodeImage = $generator->getBarcode($data[1], $generator::TYPE_CODE_128);
                 // Sesuaikan dengan struktur tabel Anda
                 $insertData = [
@@ -128,9 +185,49 @@ class Excel extends BaseController
 
                 $this->siswaModel->save($insertData);
             }
-        unlink(ROOTPATH . 'public/uploads/' . $newName);
-        return redirect()->to(base_url('pustakawan/siswa'));
-        } else {
+            unlink(ROOTPATH . 'public/uploads/' . $newName);
+            if(is_array($tampil) && count($tampil) > 0)
+            {
+                $result = implode(" , ",$tampil);
+                session()->setFlashdata('kotakok',[
+                    'status' => 'warning',
+                    'title' => 'Duplikat',
+                    'message' => "Data Siswa Telah Di Import Kecuali Dengan NIS Duplikat : $result"
+                ]);
+                return redirect()->to(base_url('pustakawan/siswa'));
+            }
+            elseif(is_array($tampiltahun) && count($tampiltahun) > 0)
+            {
+                $result = implode(" , ",array_unique($tampiltahun));
+                session()->setFlashdata('kotakok',[
+                    'status' => 'warning',
+                    'title' => 'Duplikat',
+                    'message' => "Data Siswa Telah Di Import Kecuali Tahun Tidak Terdaftar : $result"
+                ]);
+                return redirect()->to(base_url('pustakawan/siswa'));
+            }elseif(is_array($tampilkelas) && count($tampilkelas) > 0)
+            {
+                $result = implode(" , ",array_unique($tampilkelas));
+                session()->setFlashdata('kotakok',[
+                    'status' => 'warning',
+                    'title' => 'Duplikat',
+                    'message' => "Data Siswa Telah Di Import Kecuali Kelas Tidak Terdaftar : $result"
+                ]);
+                return redirect()->to(base_url('pustakawan/siswa'));
+            }else{
+                session()->setFlashdata('kotakok',[
+                    'status' => 'success',
+                    'title' => 'Berhasil',
+                    'message' => 'Impor Data Siswa Berhasil'
+                ]);
+                return redirect()->to(base_url('pustakawan/siswa'));
+            }
+        }else{
+            session()->setFlashdata('kotakok',[
+                'status' => 'error',
+                'title' => 'Gagal',
+                'message' => 'Impor Data Siswa Gagal'
+            ]);
             return redirect()->to(base_url('pustakawan/siswa'));
         }
     }
@@ -155,6 +252,7 @@ class Excel extends BaseController
             $worksheet = $spreadsheet->getActiveSheet();
 
             $headerRow = true;
+            $tampil = [];
             foreach ($worksheet->getRowIterator() as $row) {
                 if ($headerRow) {
                     $headerRow = false;
@@ -169,6 +267,14 @@ class Excel extends BaseController
                     $data[] = $cell->getValue();
                 }
 
+                if (!isset($data[1]) OR !isset($data[2])) {
+                    continue;
+                }
+
+                if ($this->rakModel->where('kode_rak',$data[1])->countAllResults() > 0) {
+                    $tampil[] = $data[1];
+                    continue;
+                }
                 // Sesuaikan dengan struktur tabel Anda
                 $insertData = [
                     'kode_rak' => $data[1],
@@ -177,9 +283,30 @@ class Excel extends BaseController
 
                 $this->rakModel->save($insertData);
             }
-        unlink('uploads/' . $newName);
-        return redirect()->to(base_url('pustakawan/rak'));
-        } else {
+            unlink('uploads/' . $newName);
+            if(is_array($tampil) && count($tampil) > 0)
+            {
+                $result = implode(" , ",$tampil);
+                session()->setFlashdata('kotakok',[
+                    'status' => 'warning',
+                    'title' => 'Duplikat',
+                    'message' => "Data Rak Telah Di Import Kecuali Data Kode Rak Duplikat : $result"
+                ]);
+                return redirect()->to(base_url('pustakawan/rak'));
+            }else{
+                session()->setFlashdata('kotakok',[
+                    'status' => 'success',
+                    'title' => 'Berhasil',
+                    'message' => 'Impor Data Rak Berhasil'
+                ]);
+                return redirect()->to(base_url('pustakawan/rak'));
+            }
+        }else{
+            session()->setFlashdata('kotakok',[
+                'status' => 'error',
+                'title' => 'Gagal',
+                'message' => 'Impor Data Rak Buku Gagal'
+            ]);
             return redirect()->to(base_url('pustakawan/rak'));
         }
     }
@@ -204,6 +331,7 @@ class Excel extends BaseController
             $worksheet = $spreadsheet->getActiveSheet();
 
             $headerRow = true;
+            $tampil = [];
             foreach ($worksheet->getRowIterator() as $row) {
                 if ($headerRow) {
                     $headerRow = false;
@@ -218,6 +346,15 @@ class Excel extends BaseController
                     $data[] = $cell->getValue();
                 }
 
+                if (!isset($data[1]) OR !isset($data[2])) {
+                    continue;
+                }
+
+                if ($this->jenisModel->where('kode_jenis',$data[1])->countAllResults() > 0) {
+                    $tampil[] = $data[1];
+                    continue;
+                }
+
                 // Sesuaikan dengan struktur tabel Anda
                 $insertData = [
                     'kode_jenis' => $data[1],
@@ -227,9 +364,30 @@ class Excel extends BaseController
 
                 $this->jenisModel->save($insertData);
             }
-        unlink('uploads/' . $newName);
-        return redirect()->to(base_url('pustakawan/jenis'));
-        } else {
+            unlink('uploads/' . $newName);
+            if(is_array($tampil) && count($tampil) > 0)
+            {
+                $result = implode(" , ",$tampil);
+                session()->setFlashdata('kotakok',[
+                    'status' => 'warning',
+                    'title' => 'Duplikat',
+                    'message' => "Data Jenis Telah Di Import Kecuali Data Kode Jenis Duplikat : $result"
+                ]);
+                return redirect()->to(base_url('pustakawan/jenis'));
+            }else{
+                session()->setFlashdata('kotakok',[
+                    'status' => 'success',
+                    'title' => 'Berhasil',
+                    'message' => 'Impor Data Jenis Berhasil'
+                ]);
+                return redirect()->to(base_url('pustakawan/jenis'));
+            }
+        }else{
+            session()->setFlashdata('kotakok',[
+                'status' => 'error',
+                'title' => 'Gagal',
+                'message' => 'Impor Data Jenis Buku Gagal'
+            ]);
             return redirect()->to(base_url('pustakawan/jenis'));
         }
     }
@@ -257,26 +415,30 @@ class Excel extends BaseController
             $worksheet = $spreadsheet->getActiveSheet();
 
             $headerRow = true;
-            
+            $tampil = [];
             foreach ($worksheet->getRowIterator() as $row) {
                 if ($headerRow) {
                     $headerRow = false;
                     continue;
                 }
 
-                
-                
-                
-                
                 $cellIterator = $row->getCellIterator();
                 $cellIterator->setIterateOnlyExistingCells(false);
                 
                 $data = [];
-                
+
                 foreach ($cellIterator as $cell) {
                     $data[] = $cell->getValue();
                 }
                 
+                if (!isset($data[1]) OR !isset($data[2]) OR !isset($data[3]) OR !isset($data[4]) OR !isset($data[5]) OR !isset($data[6]) OR !isset($data[7])) {
+                    continue;
+                }
+
+                if ($this->bukuModel->where('judul_buku',$data[1])->countAllResults() > 0) {
+                    $tampil[] = $data[1];
+                    continue;
+                }
                 $kode = $this->bukuModel->selectMax('kode_buku', 'max_buku')->first();
                 // apabila belum ada data buku maka kita set nomornya jadi 0
                 $urutan = (int) substr($kode['max_buku'], 1, 4);
@@ -312,8 +474,29 @@ class Excel extends BaseController
                 }
             }
             unlink('uploads/' . $newName);
-            return redirect()->to(base_url('pustakawan/buku'));
-        } else {
+            if(is_array($tampil) && count($tampil) > 0)
+            {
+                $result = implode(" , ",$tampil);
+                session()->setFlashdata('kotakok',[
+                    'status' => 'warning',
+                    'title' => 'Duplikat',
+                    'message' => "Jika Anda Menginginkan Penambahan Stok Buku Silahkan Menggunakan Menu edit Buku, Data Jenis Telah Di Import Kecuali : $result"
+                ]);
+                return redirect()->to(base_url('pustakawan/buku'));
+            }else{
+                session()->setFlashdata('kotakok',[
+                    'status' => 'success',
+                    'title' => 'Berhasil',
+                    'message' => 'Impor Data Buku Berhasil'
+                ]);
+                return redirect()->to(base_url('pustakawan/buku'));
+            }
+        }else{
+            session()->setFlashdata('kotakok',[
+                'status' => 'error',
+                'title' => 'Gagal',
+                'message' => 'Impor Data Buku Gagal'
+            ]);
             return redirect()->to(base_url('pustakawan/buku'));
         }
     }

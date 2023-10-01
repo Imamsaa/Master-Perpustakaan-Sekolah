@@ -4,14 +4,17 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\RakModel;
+use App\Models\BukuModel;
 
 class Rak extends BaseController
 {
     protected $rakModel;
+    protected $bukuModel;
 
     function __construct()
     {
         $this->rakModel = new RakModel();    
+        $this->bukuModel = new BukuModel();  
     }
 
     public function index()
@@ -52,17 +55,23 @@ class Rak extends BaseController
 
     function save()
     {
-        if ($this->rakModel->save($this->request->getVar()) == true) {
-            session()->setFlashdata('session',[
+        $rak = $this->request->getVar();
+        if ($this->rakModel->where('kode_rak',$rak['kode_rak'])->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Kode Rak Buku Sudah Digunakan'
+            ]);
+            return redirect()->to('pustakawan/rak/tambah')->withInput();
+        }
+        if ($this->rakModel->save($rak) == true) {
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Rak Buku Berhasil Ditambahkan'
             ]);
             return redirect()->to('pustakawan/rak');
-        }elseif(!$this->validate($this->rakModel->getvalidationRules())){
-            session()->setFlashdata('errors',$this->validator);
-            return redirect()->to('pustakawan/rak/tambah')->withInput();
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Rak Buku Gagal Ditambahkan'
             ]);
@@ -96,16 +105,13 @@ class Rak extends BaseController
             'nama_rak'  => $rak['nama_rak']
         ])->update() == true
         ) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Data Rak Berhasil Diubah'
             ]);
             return redirect()->to(base_url('pustakawan/rak'));
-        }elseif(!$this->validate($this->rakModel->getvalidationRules())){
-            session()->setFlashdata('errors', $this->validator);
-            return redirect()->to(base_url('pustakawan/rak/ubah/'.$rak['kode_rak']))->withInput();
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Data Rak Gagal Diubah'
             ]);
@@ -115,14 +121,25 @@ class Rak extends BaseController
 
     public function delete($kode_rak)
     {
+        $this->rakModel->disableForeignKeyChecks();
+
+        if ($this->bukuModel->where('kode_rak',$kode_rak)->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Rak Buku Masih Digunakan'
+            ]);
+            return redirect()->to(base_url('pustakawan/rak'));
+        }
+
         if ($this->rakModel->where('kode_rak',$kode_rak)->delete() == true) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Data Rak Buku Berhasil Dihapus'
             ]);
             return redirect()->to(base_url('pustakawan/rak'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Data Rak Buku l Dihapus'
             ]);

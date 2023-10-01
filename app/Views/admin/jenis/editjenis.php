@@ -37,16 +37,16 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/jenis/update'); ?>" method="POST">
+              <form action="<?= base_url('pustakawan/jenis/update'); ?>" method="POST" class="formconfirm">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
                       <label for="kode_jenis">Kode Jenis Buku</label>
-                      <input type="text" value="<?= (old('kode_jenis')) ? old('kode_jenis') : $jenis['kode_jenis']; ?>" name="kode_jenis" class="form-control" id="kode_jenis" placeholder="" readonly>
+                      <input type="text" value="<?= (old('kode_jenis')) ? old('kode_jenis') : $jenis['kode_jenis']; ?>" name="kode_jenis" class="form-control" id="kode_jenis" placeholder="" readonly required>
                   </div>
                   <div class="form-group">
                     <label for="nama_jenis">Nama Jenis Buku</label>
-                    <input type="text" value="<?= (old('nama_jenis')) ? old('nama_jenis') : $jenis['nama_jenis']; ?>" name="nama_jenis" class="form-control" id="nama_jenis" placeholder="">
+                    <input type="text" value="<?= (old('nama_jenis')) ? old('nama_jenis') : $jenis['nama_jenis']; ?>" name="nama_jenis" class="form-control" id="nama_jenis" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="kode_warna">Kode Warna</label>
@@ -57,7 +57,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Jenis Buku</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Jenis Buku</button>
                   <a href="<?= base_url('pustakawan/jenis'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

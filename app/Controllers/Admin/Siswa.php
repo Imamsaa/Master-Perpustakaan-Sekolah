@@ -6,10 +6,12 @@ use App\Controllers\BaseController;
 use App\Models\SiswaModel;
 use App\Models\KelasModel;
 use App\Models\TahunModel;
+use App\Models\TransaksiModel;
 
 class Siswa extends BaseController
 {
     protected $siswaModel;
+    protected $trans;
     protected $kelasModel;
     protected $tahunModel;
     protected $db;
@@ -19,6 +21,7 @@ class Siswa extends BaseController
         $this->siswaModel = new SiswaModel();
         $this->kelasModel = new KelasModel();
         $this->tahunModel = new TahunModel();
+        $this->trans = new TransaksiModel();
         $this->db = \Config\Database::connect();
     }
 
@@ -70,13 +73,13 @@ class Siswa extends BaseController
             'nis' => [
                 'rules' => 'is_unique[siswa.nis]',
                 'errors' => [
-                    'is_unique' => 'Nis Sudah dipakai'
+                    'is_unique' => 'NIS Sudah Digunakan'
                 ],
             ],
             'nisn' => [
                 'rules' => 'is_unique[siswa.nisn]',
                 'errors' => [
-                    'is_unique' => 'Nisn Sudah dipakai'
+                    'is_unique' => 'NISN Sudah Digunakan'
                 ],
             ],
             'foto' => [
@@ -90,7 +93,20 @@ class Siswa extends BaseController
         ];
         
         if (!$this->validate($validate)) {
-            session()->setFlashdata('errors',$this->validator);
+            if ($this->validator->hasError('nis')) {
+                $message = $this->validator->getError('nis');
+            }elseif ($this->validator->hasError('nisn')) {
+                $message = $this->validator->getError('nisn');
+            }elseif ($this->validator->hasError('foto')) {
+                $message = $this->validator->getError('foto');
+            }
+
+            session()->setFlashdata('kotakok',[
+
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => $message
+            ]);
             return redirect()->to(base_url('pustakawan/siswa/tambah'))->withInput();
         }
         
@@ -124,13 +140,13 @@ class Siswa extends BaseController
             'barcode_siswa' => $barcodeImage
         ]) == true
         ) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Data Siswa Berhasil disimpan'
             ]);
             return redirect()->to(base_url('pustakawan/siswa'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'error',
                 'message' => 'Data Siswa Gagal disimpan'
             ]);
@@ -168,20 +184,24 @@ class Siswa extends BaseController
                 'rules' => 'max_size[foto,1024]|ext_in[foto,png,jpg,jpeg]|is_image[foto]',
                 'errors' => [
                     'max_size' => 'Ukuran file terlalu besar',
-                    'ext_in' => 'Moson Masukan file Gambar',
-                    'is_image' => 'Moson Masukan file Gambar Yang benar'
+                    'ext_in' => 'Mohon Masukan file Gambar',
+                    'is_image' => 'Mohon Masukan file Gambar Yang benar'
                 ],
             ],
         ];
-        if (!$this->validate($validate)) {
-            // dd($this->validator);
-            session()->setFlashdata('errors',$this->validator);
-            return redirect()->to(base_url('pustakawan/siswa/tambah'))->withInput();
-        }
+
         $siswa = $this->request->getvar();
+        if (!$this->validate($validate)) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => $this->validator->getError('foto')
+            ]);
+            return redirect()->to(base_url('pustakawan/siswa/ubah/'.$siswa['nis']))->withInput();
+        }
+
         $setsiswa = [
             'nis' => $siswa['nis'],
-            'nisn' => $siswa['nisn'],
             'nama_siswa' => $siswa['nama_siswa'],
             'kode_kelas' => $siswa['kode_kelas'],
             'kode_tahun' => $siswa['kode_tahun'],
@@ -200,6 +220,20 @@ class Siswa extends BaseController
         }
         
         $cek = $this->siswaModel->where('nis',$siswa['nis'])->first();
+
+        if ($cek['nisn'] == $siswa['nisn']) {
+            $setsiswa['nisn'] = $siswa['nisn'];
+        }elseif($this->siswaModel->where('nisn',$siswa['nisn'])->countAllResults() > 0){
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'NISN Sudah Digunakan Digunakan'
+            ]);
+            return redirect()->to(base_url('pustakawan/siswa/ubah/'.$siswa['nis']))->withInput();
+        }else{
+            $setsiswa['nisn'] = $siswa['nisn'];
+        }
+
         if ($foto->isvalid() && !$foto->hasMoved()) {
             $foto->move('admin/img/siswa',$name);
             if ($cek['foto'] != 'siswa_default.jpg') {
@@ -208,13 +242,13 @@ class Siswa extends BaseController
         }
         if ($this->siswaModel->where('nis',$siswa['nis'])->set($setsiswa)->update() == true) 
         {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Data Siswa Berhasil disimpan'
             ]);
             return redirect()->to(base_url('pustakawan/siswa'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'error',
                 'message' => 'Data Siswa Gagal disimpan'
             ]);
@@ -224,18 +258,29 @@ class Siswa extends BaseController
 
     public function delete($nis)
     {
+        $this->siswaModel->disableForeignKeyChecks();
+
+        if ($this->trans->where('status','pinjam')->where('nis',$nis)->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status'    => 'warning',
+                'title' => 'Perhatian',
+                'message'   => 'Siswa Masih Memiliki Tanggungan Peminjaman'
+            ]);
+            return redirect()->to(base_url('pustakawan/siswa'));
+        }
+
         $nama = $this->siswaModel->select('foto')->where('nis',$nis)->first('foto');
         if ($this->siswaModel->where('nis',$nis)->delete() == true ) {
             if($nama['foto'] != 'siswa_default.jpg'){
                 unlink('admin/img/siswa/'.$nama['foto']);
             }
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Data Siswa Berhasil Dihapus'
             ]);
             return redirect()->to(base_url('pustakawan/siswa'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Data Siswa Gagal Dihapus'
             ]);

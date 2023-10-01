@@ -37,12 +37,12 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/buku/save'); ?>" method="POST" enctype="multipart/form-data">
+              <form action="<?= base_url('pustakawan/buku/save'); ?>" method="POST" enctype="multipart/form-data"class="formconfirm">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
                       <label for="judul_buku">Judul Buku</label>
-                      <input type="text" value="<?= old('judul_buku'); ?>" name="judul_buku" class="form-control" id="judul_buku" placeholder="">
+                      <input type="text" value="<?= old('judul_buku'); ?>" name="judul_buku" class="form-control" id="judul_buku" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="isbn">Nomor ISBN Buku (Optional)</label>
@@ -50,7 +50,7 @@
                   </div>
                   <div class="form-group">
                     <label for="stok">Stok Buku</label>
-                    <input type="number" value="<?= old('stok'); ?>" name="stok" class="form-control" id="stok" placeholder="">
+                    <input type="number" value="<?= old('stok'); ?>" name="stok" class="form-control" id="stok" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="tahun_buku">Tahun Buku (Optional)</label>
@@ -58,7 +58,7 @@
                   </div>
                   <div class="form-group">
                       <label for="kode_penerbit">Penerbit</label>
-                      <select id="kode_penerbit" name="kode_penerbit" class="form-control">
+                      <select id="kode_penerbit" name="kode_penerbit" class="form-control" required>
                         <option></option>
                         <?php foreach($penerbit as $p) : ?>
                         <option value="<?= $p['kode_penerbit']; ?>" <?= (old('kode_penerbit') == $p['kode_penerbit']) ? 'selected' : ''; ?>><?= $p['nama_penerbit']; ?></option>
@@ -67,7 +67,7 @@
                   </div>
                   <div class="form-group">
                     <label for="kode_rak">Rak Buku</label>
-                    <select id="kode_rak" name="kode_rak" class="form-control">
+                    <select id="kode_rak" name="kode_rak" class="form-control" required>
                       <option></option>
                       <?php foreach($rak as $r) : ?>
                       <option value="<?= $r['kode_rak']; ?>" <?= (old('kode_rak') == $r['kode_rak']) ? 'selected' : ''; ?>><?= $r['nama_rak']; ?></option>
@@ -76,7 +76,7 @@
                   </div>
                     <div class="form-group">
                       <label for="kode_jenis">Jenis Buku</label>
-                      <select id="kode_jenis" name="kode_jenis" class="form-control">
+                      <select id="kode_jenis" name="kode_jenis" class="form-control" required>
                         <option></option>
                         <?php foreach($jenis as $j) : ?>
                         <option value="<?= $j['kode_jenis']; ?>" <?= (old('kode_jenis') == $j['kode_jenis']) ? 'selected' : ''; ?>><?= $j['nama_jenis']; ?></option>
@@ -111,7 +111,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Buku</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Buku</button>
                   <a href="<?= base_url('pustakawan/buku'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

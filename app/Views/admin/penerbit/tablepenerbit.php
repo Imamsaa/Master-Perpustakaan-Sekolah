@@ -38,7 +38,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-sm table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
@@ -54,10 +54,10 @@
                     <td><?= $row['kode_penerbit']; ?></td>
                     <td><?= $row['nama_penerbit']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/penerbit/ubah/'.$row['kode_penerbit']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <form action="<?= base_url('pustakawan/penerbit/delete/'.$row['kode_penerbit']); ?>" method="post" class="d-inline">
+                        <a href="<?= base_url('pustakawan/penerbit/ubah/'.$row['kode_penerbit']); ?>" class="btn btn-sm btn-primary my-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <form action="<?= base_url('pustakawan/penerbit/delete/'.$row['kode_penerbit']); ?>" method="post" class="formdelete d-inline">
                           <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                          <button type="submit" class="btn delete btn-danger btn-sm my-1" ><i class="fas fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                   </tr>

@@ -67,6 +67,31 @@ deleteLinks.forEach(function(link) {
 </script>
 
 <script>
+    var saveButtons = document.querySelectorAll('.save');
+
+// Menambahkan event listener ke setiap elemen dengan kelas 'save-button'
+saveButtons.forEach(function(button) {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    var url = e.currentTarget.getAttribute('href');
+
+    Swal.fire({
+      title: 'Apakah Anda yakin?',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Ya',
+      cancelButtonText: 'Tidak',
+    }).then((result) => {
+      if (result.value) {
+        window.location.href = url;
+      }
+    });
+  });
+});
+</script>
+
+<script>
     function submitForm(e) {
         e.preventDefault();
 
@@ -223,3 +248,13 @@ Toast.fire({
 })
 </script>
 <?php endif; ?>
+
+<script>
+    var angkaInputs = document.querySelectorAll('.angka');
+    
+    angkaInputs.forEach(function(input) {
+        input.addEventListener('input', function () {
+            this.value = this.value.replace(/[^0-9]/g, ''); // Hanya mengizinkan angka
+        });
+    });
+</script>

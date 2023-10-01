@@ -39,7 +39,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-sm table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
@@ -57,7 +57,7 @@
                     <td><?= $s['nama_siswa']; ?></td>
                     <td><?= $s['nama_kelas']; ?></td>
                     <td>
-                        <a target="_blank" href="<?= base_url('pustakawan/cetak/siswa/'.$s['nis']); ?>" class="btn btn-primary my-1" ><i class="fas fa-solid fa-print"></i> Cetak Kartu</a>
+                        <a target="_blank" href="<?= base_url('pustakawan/cetak/siswa/'.$s['nis']); ?>" class="btn btn-sm btn-primary my-1" ><i class="fas fa-solid fa-print"></i> Cetak Kartu</a>
                     </td>
                   </tr>
                   <?php $no++; endforeach; ?>

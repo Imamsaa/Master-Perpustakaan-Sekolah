@@ -7,6 +7,7 @@ use App\Models\BukuModel;
 use App\Models\PenerbitModel;
 use App\Models\RakModel;
 use App\Models\JenisModel;
+use App\Models\TransaksiModel;
 
 class Buku extends BaseController
 {
@@ -15,6 +16,7 @@ class Buku extends BaseController
     protected $rakModel;
     protected $jenisModel;
     protected $db;
+    protected $trans;
 
     function __construct()
     {
@@ -22,6 +24,7 @@ class Buku extends BaseController
         $this->penerbitModel = new PenerbitModel();
         $this->rakModel = new RakModel();
         $this->jenisModel = new JenisModel();
+        $this->trans = new TransaksiModel();
         $this->db = \Config\Database::connect();
     }
 
@@ -90,10 +93,19 @@ class Buku extends BaseController
             ],
         ];
 
-        // Melakukan Validasi dengan fungsi $this->validate()
         if (!$this->validate($validate)) {
-            // dd($this->validator->getErrors());
-            session()->setFlashdata('errors',$this->validator);
+            if ($this->validator->hasError('sampul')) {
+                $message = $this->validator->getError('sampul');
+            }elseif ($this->validator->hasError('judul_buku')) {
+                $message = $this->validator->getError('judul_buku');
+            }
+
+            session()->setFlashdata('kotakok',[
+
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => $message
+            ]);
             return redirect()->to(base_url('pustakawan/buku/tambah'))->withInput();
         }
 
@@ -116,8 +128,9 @@ class Buku extends BaseController
         }
 
         if ($buku['stok'] <= 0 ) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotakok',[
                 'status' => 'error',
+                'title' => 'Peringatan',
                 'message' => 'Stok buku tidak boleh kosong'
             ]);
             return redirect()->to(base_url('pustakawan/buku/tambah'))->withInput();
@@ -173,13 +186,13 @@ class Buku extends BaseController
 
         // kita lakukan insert sekaligus pengecekan
         if ($builder->insertBatch($bulkBuku) == true) {
-           session()->setFlashdata('session',[
+           session()->setFlashdata('pojokatas',[
             'status' => 'success',
             'message' => 'Berhasil Menambahkan data buku'
            ]);
            return redirect()->to(base_url('pustakawan/buku'));
         } else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Berhasil Menambahkan data buku'
             ]);
@@ -221,8 +234,18 @@ class Buku extends BaseController
     function deleteBuku($slug,$kode_buku)
     {
         $buku = $this->bukuModel->where('kode_buku', $kode_buku)->first();
+
+        if ($this->trans->where('kode_buku',$kode_buku)->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Buku Masih Dalam Peminjaman'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));   
+        }
+
         if ($this->bukuModel->where('kode_buku',$kode_buku)->delete() == true) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Buku Berhasil di hapus'
             ]);
@@ -233,7 +256,7 @@ class Buku extends BaseController
                 return redirect()->to(base_url('pustakawan/buku'));
             }
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'error',
                 'message' => 'Buku gagal di hapus'
             ]);
@@ -255,26 +278,33 @@ class Buku extends BaseController
             ],
         ];
         
+        if (!$this->validate($validate)) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => $this->validator->getError('sampul')
+            ]);
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$bukulama['slug']))->withInput();
+        }
+
         $buku = $this->request->getVar();
         $bukulama = $this->bukuModel->where('kode_buku', $buku['kode_buku'])->first();
         $caribuku = $this->bukuModel->findAll();
         $sampul = $this->request->getFile('sampul');
-        $slug = url_title($buku['judul_buku'],'-',true);
-
+        
         if ($buku['judul_buku'] == $bukulama['judul_buku']) {
             $judul = $buku['judul_buku'];
+            $slug = url_title($judul);
+        }elseif ($this->bukuModel->where('judul_buku !=',$bukulama['judul_buku'])->where('judul_buku',$buku['judul_buku'])->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => 'Judul Buku Telah Digunakan'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$bukulama['slug']));
         }else{
-            foreach ($caribuku as $v) {
-                if ($v['judul_buku'] == $bukulama['judul_buku']) {
-                    session()->setFlashdata('session',[
-                        'status' => 'error',
-                        'message' => 'Judul Buku Telah Dipakai'
-                    ]);
-                    return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));        
-                }else {
-                    $judul = $buku['judul_buku'];
-                }
-            }
+            $judul = $buku['judul_buku'];
+            $slug = url_title($judul);
         }
         
         if ($sampul->getError() == 4 ) {
@@ -296,20 +326,6 @@ class Buku extends BaseController
             'sampul' => $name
         ];
         
-        // Melakukan Validasi dengan fungsi $this->validate()
-        if (!$this->validate($validate)) {
-            // dd($this->validator->getErrors());
-            session()->setFlashdata('errors',$this->validator);
-            return redirect()->to(base_url('pustakawan/buku/ubah/'.$bukulama['slug']))->withInput();
-        }
-        
-        // Apabila berhasil tanpa error sekarang kita ambil request filenya
-
-        // Kita cek apakah user melakukan uploadfile atau tidak jika tidak kita isi dengan cover default
-
-        // Setelah melakukan validasi pada file, kita ambil request form terlebih dahulu
-
-        // lalu kita pindah file gambar yang di input ke folder admin/img/buku
         if ($sampul->isvalid() && !$sampul->hasMoved()) {
             $sampul->move('admin/img/buku',$name);
         }
@@ -317,32 +333,45 @@ class Buku extends BaseController
 
         if($this->bukuModel->where('slug',$bukulama['slug'])->set($bukubaru)->update() == true )
         {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Buku Berhasil Diubah'
             ]);
-            return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug));
+            return redirect()->to(base_url('pustakawan/buku'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'error',
                 'message' => 'Buku Gagal Diubah'
             ]);
-            return redirect()->to(base_url('pustakawan/buku/ubah/'.$slug))->withInput();
+            return redirect()->to(base_url('pustakawan/buku/ubah/'.$bukulama['slug']))->withInput();
         }
     }
 
     function delete($slug)
     {
+        $this->bukuModel->disableForeignKeyChecks();
         $buku = $this->bukuModel->first();
+
+        if ($this->trans->join('buku','transaksi.kode_buku = buku.kode_buku')->where('buku.slug',$slug)->where('status','pinjam')->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Masih Terdapat Buku Yang Dipinjam'
+            ]);
+            return redirect()->to(base_url('pustakawan/buku'));
+        }
+
         if ($this->bukuModel->where('slug',$slug)->delete() == true) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Buku Berhasil Dihapus'
             ]);
-            unlink('admin/img/buku/'.$buku['sampul']);
+            if ($buku['sampul'] != 'cover_default.png') {        
+                unlink('admin/img/buku/'.$buku['sampul']);
+            }
             return redirect()->to(base_url('pustakawan/buku'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'error',
                 'message' => 'Buku Gagal Dihapus'
             ]);
@@ -402,13 +431,13 @@ class Buku extends BaseController
 
         // kita lakukan insert sekaligus pengecekan
         if ($builder->insertBatch($bulkBuku) == true) {
-           session()->setFlashdata('session',[
+           session()->setFlashdata('pojokatas',[
             'status' => 'success',
             'message' => 'Berhasil Menambahkan data buku'
            ]);
            return redirect()->to(base_url('pustakawan/buku/ubah/'.$req['slug']));
         } else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Berhasil Menambahkan data buku'
             ]);

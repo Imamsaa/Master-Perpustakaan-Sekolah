@@ -41,9 +41,9 @@
                       <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</button>
                     </div>
                     <div class="col-lg-4">
-                      <form action="<?= base_url('pustakawan/excel/jenis'); ?>" method="post" id="excel-jenis" enctype="multipart/form-data" class="d-inline">
+                    <form action="<?= base_url('pustakawan/excel/jenis'); ?>" method="post" id="excel-jenis" enctype="multipart/form-data" class="d-inline">
                         <div class="custom-file my-1">
-                          <input name="jenis" type="file" class="custom-file-input" id="jenis">
+                          <input name="jenis" accept=".xls,.xlsx" type="file" class="custom-file-input" id="jenis">
                         <label class="custom-file-label" for="rak">Pilih file Excel</label>
                       </div>
                     </form>
@@ -52,7 +52,7 @@
                       <button form="excel-jenis" type="submit" class="btn btn-block btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPOR EXCEL</button>
                     </div>
                   </div>
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-sm table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
@@ -70,10 +70,10 @@
                     <td><?= $row['nama_jenis']; ?></td>
                     <td><span style="color:<?= $row['kode_warna']; ?>;"><?= $row['kode_warna']; ?></span></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/jenis/ubah/'.$row['kode_jenis']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <form action="<?= base_url('pustakawan/jenis/delete/'.$row['kode_jenis']); ?>" method="post" class="d-inline">
+                        <a href="<?= base_url('pustakawan/jenis/ubah/'.$row['kode_jenis']); ?>" class="btn btn-sm btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <form action="<?= base_url('pustakawan/jenis/delete/'.$row['kode_jenis']); ?>" method="post" class="formdelete d-inline">
                           <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                          <button type="submit" class="btn delete btn-sm btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                   </tr>

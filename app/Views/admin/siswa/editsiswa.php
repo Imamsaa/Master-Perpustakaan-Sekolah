@@ -37,7 +37,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/siswa/update'); ?>" method="post" enctype="multipart/form-data">
+              <form action="<?= base_url('pustakawan/siswa/update'); ?>" method="post" enctype="multipart/form-data" class="formconfirm">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="row mb-2">
@@ -61,19 +61,19 @@
                   </div>
                   <div class="form-group">
                       <label for="nis">NIS Siswa</label>
-                      <input type="text" value="<?= (old('nis')) ? old('nis') : $siswa['nis']; ?>" name="nis" class="form-control" id="nis" placeholder="" readonly>
+                      <input type="text" value="<?= (old('nis')) ? old('nis') : $siswa['nis']; ?>" name="nis" class="angka form-control" id="nis" placeholder="" readonly>
                   </div>
                   <div class="form-group">
                     <label for="nisn">NISN Siswa</label>
-                    <input type="text" value="<?= (old('nisn')) ? old('nisn') : $siswa['nisn']; ?>" name="nisn" class="form-control" id="nisn" placeholder="">
+                    <input type="text" value="<?= (old('nisn')) ? old('nisn') : $siswa['nisn']; ?>" name="nisn" class="angka form-control" id="nisn" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="nama_siswa">Nama Siswa</label>
-                    <input type="text" value="<?= (old('nama_siswa')) ? old('nama_siswa') : $siswa['nama_siswa']; ?>" name="nama_siswa" class="form-control" id="nama_siswa" placeholder="">
+                    <input type="text" value="<?= (old('nama_siswa')) ? old('nama_siswa') : $siswa['nama_siswa']; ?>" name="nama_siswa" class="form-control" id="nama_siswa" placeholder="" required>
                   </div>
                   <div class="form-group">
                       <label for="kode_kelas">Pilih Kelas</label>
-                      <select id="kode_kelas" name="kode_kelas" class="form-control">
+                      <select id="kode_kelas" name="kode_kelas" class="form-control" required>
                         <option></option>
                         <?php foreach($kelas as $k) : ?>
                         <option value="<?= $k['kode_kelas']; ?>" <?= (old('kode_kelas') == $siswa['kode_kelas'] || $k['kode_kelas'] == $siswa['kode_kelas']) ? 'selected' : ''; ?> ><?= $k['nama_kelas']; ?></option>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group">
                       <label for="kode_tahun">Pilih Tahun Ajaran</label>
-                      <select id="kode_tahun" name="kode_tahun" class="form-control">
+                      <select id="kode_tahun" name="kode_tahun" class="form-control" required>
                         <option></option>
                         <?php foreach($tahun as $t) : ?>
                         <option value="<?= $t['kode_tahun'] ?>" <?= ($t['kode_tahun'] == $siswa['kode_tahun'] OR old('kode_tahun') == $siswa['kode_tahun']) ? 'selected' : ''; ?> ><?= $t['nama_tahun']; ?></option>
@@ -91,11 +91,11 @@
                     </div>
                   <div class="form-group">
                     <label for="wa">Nomor WhastApp</label>
-                    <input type="text" value="<?= (old('wa')) ? old('wa') : $siswa['wa']; ?>" name="wa" class="form-control" id="wa" placeholder="">
+                    <input type="text" value="<?= (old('wa')) ? old('wa') : $siswa['wa']; ?>" name="wa" class="angka form-control" id="wa" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="email">Email Siswa</label>
-                    <input type="email" value="<?= (old('email')) ? old('email') : $siswa['email']; ?>" name="email" class="form-control" id="email" placeholder="">
+                    <input type="email" value="<?= (old('email')) ? old('email') : $siswa['email']; ?>" name="email" class="form-control" id="email" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="alamat_siswa">Alamat Siswa</label>
@@ -105,7 +105,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Siswa</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Siswa</button>
                   <a href="<?= base_url('pustakawan/siswa'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

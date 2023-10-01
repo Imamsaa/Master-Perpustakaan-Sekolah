@@ -110,17 +110,15 @@ class Tahun extends BaseController
                 'kadaluarsa'    => $tahun['kadaluarsa']
             ])->update() == true
         ){
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Tahun Berhasil Diubah'
             ]);
             return redirect()->to(base_url('pustakawan/tahun'));
-        }elseif ($this->validate($this->tahunModel->getvalidationRules())) {
-            session()->setFlashdata('errors', $this->validator);
-            return redirect()->to(base_url('pustakawan/tahun/ubah'.$tahun['kode_tahun']))->withInput();
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotakok',[
                 'status'    => 'error',
+                'title' => 'Gagal',
                 'message'   => 'Tahun Gagal Diubah'
             ]);
             return redirect()->to(base_url('pustakawan/tahun/ubah/'.$tahun['kode_tahun']))->withInput();
@@ -146,7 +144,7 @@ class Tahun extends BaseController
             }   
         }else{
             session()->setFlashdata('kotakok',[
-                'status'    => 'error',
+                'status'    => 'warning',
                 'title' => 'Gagal Menghapus',
                 'message'   => 'Tahun Masih Digunakan'
             ]);

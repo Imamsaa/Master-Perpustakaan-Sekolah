@@ -42,13 +42,12 @@
                         <div class="form-group row">
                           <div class="col-md-9">
                             <!-- <label class="sr-only" for="inlineFormInput">Name</label> -->
-                            <input type="hidden" name="slug" value="<?= $buku['slug']; ?>">
                             <input type="number" name="stok" class="form-control mb-1" id="inlineFormInput" placeholder="Tambahkan Stok">
                           </div>
                             <button type="submit" class="btn mb-1 col-md-3 btn-success"><i class="fas fa-solid fa-plus"></i> Tambah Stok</button>
                         </div>
                       </form>
-                  <table id="example1" class="table table-bordered table-hover">
+                      <table id="example1" class="table table-sm table-bordered table-hover">
                     <thead>
                     <tr>
                       <th>NO</th>
@@ -61,14 +60,14 @@
                     </thead>
                     <tbody>
                       <?php $no = 1; foreach($table as $tab) : ?>
-                    <tr>
-                      <td><?= $no; ?></td>
-                      <td><?= $tab['kode_buku']; ?></td>
+                        <tr>
+                          <td><?= $no; ?></td>
+                          <td><?= $tab['kode_buku']; ?></td>
                       <td><?= $tab['judul_buku']; ?></td>
                       <td><?= $tab['nama_rak']; ?></td>
                       <td><?= $tab['nama_jenis']; ?></td>
                       <td>
-                        <a href="<?= base_url('pustakawan/buku/deletebuku/'.$tab['slug'].'/'.$tab['kode_buku']); ?>" class="btn btn-danger" ><i class="fas fa-solid fa-trash"></i></a>
+                        <a href="<?= base_url('pustakawan/buku/deletebuku/'.$tab['slug'].'/'.$tab['kode_buku']); ?>" class="btn btn-sm delete-link btn-danger" ><i class="fas fa-solid fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php $no++; endforeach; ?>
@@ -93,8 +92,8 @@
         <!-- ROW -->
         <div class="row">
             <div class="col-md-12">
-            <!-- general form elements -->
-            <div class="card card-primary">
+              <!-- general form elements -->
+              <div class="card card-primary">
               <div class="card-header">
                 <div class="card-title">
                     <h3>Ubah Buku</h3>
@@ -102,12 +101,12 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/buku/update'); ?>" method="post" enctype="multipart/form-data">
+              <form action="<?= base_url('pustakawan/buku/update'); ?>" method="post" enctype="multipart/form-data" class="formconfirm">
               <?= csrf_field(); ?>
-                <div class="card-body">
-                  <div class="row mb-2">
-                    <div class="col-md-3 my-2 col-sm-12">
-                      <img src="<?= base_url('admin/img/buku/'.$buku['sampul']); ?>" alt="Foto Buku" class="img-thumbnail">
+              <div class="card-body">
+                <div class="row mb-2">
+                  <div class="col-md-3 my-2 col-sm-12">
+                    <img src="<?= base_url('admin/img/buku/'.$buku['sampul']); ?>" alt="Foto Buku" class="img-thumbnail">
                     </div>
                     <div class="col-md-9 col-sm-12">
                       <div class="form-group">
@@ -124,9 +123,10 @@
                       </div>
                     </div>
                   </div>
+                  <input type="hidden" name="slug" value="<?= $buku['slug']; ?>">
                   <div class="form-group">
                     <label for="judul_buku">Judul Buku</label>
-                    <input type="text" value="<?= (old('judul_buku')) ? old('judul_buku') : $buku['judul_buku']; ?>" name="judul_buku" class="form-control" id="judul_buku" placeholder="">
+                    <input type="text" value="<?= (old('judul_buku')) ? old('judul_buku') : $buku['judul_buku']; ?>" name="judul_buku" class="form-control" id="judul_buku" placeholder="" required>
                     <input type="hidden" name="kode_buku" value="<?= $buku['kode_buku']; ?>">
                   </div>
                   <div class="form-group">
@@ -139,7 +139,7 @@
                   </div>
                   <div class="form-group">
                       <label for="kode_penerbit">Penerbit</label>
-                      <select id="kode_penerbit" name="kode_penerbit" class="form-control">
+                      <select id="kode_penerbit" name="kode_penerbit" class="form-control" required>
                         <option></option>
                         <?php foreach($penerbit as $p) : ?>
                         <option value="<?= $p['kode_penerbit']; ?>" <?= ($p['kode_penerbit'] == $buku['kode_penerbit']) ? 'selected' : ''; ?>><?= $p['nama_penerbit']; ?></option>
@@ -148,7 +148,7 @@
                     </div>
                     <div class="form-group">
                       <label for="kode_rak">Rak Buku</label>
-                      <select id="kode_rak" name="kode_rak" class="form-control">
+                      <select id="kode_rak" name="kode_rak" class="form-control" required>
                         <option></option>
                         <?php foreach($rak as $r) : ?>
                         <option value="<?= $r['kode_rak']; ?>" <?= ($r['kode_rak'] == $buku['kode_rak']) ? 'selected' : ''; ?>><?= $r['nama_rak']; ?></option>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="form-group">
                       <label for="kode_jenis">Jenis Buku</label>
-                      <select id="kode_jenis" name="kode_jenis" class="form-control">
+                      <select id="kode_jenis" name="kode_jenis" class="form-control" required>
                         <option></option>
                         <?php foreach($jenis as $j) : ?>
                         <option value="<?= $j['kode_jenis']; ?>" <?= ($j['kode_jenis'] == $buku['kode_jenis']) ? 'selected' : ''; ?>><?= $j['nama_jenis']; ?></option>
@@ -180,7 +180,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Buku</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Buku</button>
                   <a href="<?= base_url('pustakawan/buku'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

@@ -37,22 +37,22 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/kelas/save'); ?>" method="post">
+              <form action="<?= base_url('pustakawan/kelas/save'); ?>" method="post" class="formconfirm">
               <?= csrf_field(); ?>  
               <div class="card-body">
                   <div class="form-group">
                       <label for="kode_kelas">Kode Kelas</label>
-                      <input type="text" value="<?= old('kode_kelas'); ?>" name="kode_kelas" class="form-control" id="kode_kelas" placeholder="">
+                      <input type="text" value="<?= old('kode_kelas'); ?>" name="kode_kelas" class="form-control" id="kode_kelas" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="nama_kelas">Nama Kelas</label>
-                    <input type="text" value="<?= old('nama_kelas'); ?>" name="nama_kelas" class="form-control" id="nama_kelas" placeholder="">
+                    <input type="text" value="<?= old('nama_kelas'); ?>" name="nama_kelas" class="form-control" id="nama_kelas" placeholder="" required>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Kelas</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Kelas</button>
                   <a href="<?= base_url('pustakawan/kelas'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

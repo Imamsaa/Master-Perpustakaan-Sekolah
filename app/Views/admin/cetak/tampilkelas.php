@@ -39,7 +39,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-sm table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
@@ -55,8 +55,8 @@
                     <td><?= $s['kode_kelas']; ?></td>
                     <td><?= $s['nama_kelas']; ?></td>
                     <td>
-                        <a target="_blank" href="<?= base_url('pustakawan/cetak/kelas/'.$s['kode_kelas']); ?>" class="btn btn-primary my-1" ><i class="fas fa-solid fa-print"></i> Cetak Kartu Kelas</a>
-                        <a href="<?= base_url('pustakawan/siswa/cetaksiswa/'.$s['kode_kelas']); ?>" class="btn btn-success my-1" ><i class="fas fa-solid fa-arrow-right"></i> Tampilkan Siswa</a>
+                        <a target="_blank" href="<?= base_url('pustakawan/cetak/kelas/'.$s['kode_kelas']); ?>" class="btn btn-sm btn-primary my-1" ><i class="fas fa-solid fa-print"></i> Cetak Kartu Kelas</a>
+                        <a href="<?= base_url('pustakawan/siswa/cetaksiswa/'.$s['kode_kelas']); ?>" class="btn btn-success btn-sm my-1" ><i class="fas fa-solid fa-arrow-right"></i> Tampilkan Siswa</a>
                     </td>
                   </tr>
                   <?php $no++; endforeach; ?>

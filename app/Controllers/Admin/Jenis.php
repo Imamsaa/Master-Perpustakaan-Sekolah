@@ -4,14 +4,17 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\JenisModel;
+use App\Models\BukuModel;
 
 class Jenis extends BaseController
 {
     protected $jenisModel;
+    protected $bukuModel;
 
     function __construct()
     {
-        $this->jenisModel = new JenisModel();    
+        $this->jenisModel = new JenisModel();
+        $this->bukuModel = new BukuModel();    
     }
 
     public function index()
@@ -52,17 +55,24 @@ class Jenis extends BaseController
 
     function save()
     {
-        if ($this->jenisModel->save($this->request->getVar()) == true) {
-            session()->setFlashdata('session',[
+        $req = $this->request->getVar();
+        if ($this->bukuModel->where('kode_jenis',$req['kode_jenis'])->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Kode Jenis Buku Sudah Digunakan'
+            ]);
+            return redirect()->to(base_url('pustakawan/jenis/tambah'))->withInput();
+        }
+
+        if ($this->jenisModel->save($req) == true) {
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Data Jenis Buku Berhasil Ditambahkan'
             ]);
             return redirect()->to(base_url('pustakawan/jenis'));
-        }elseif (!$this->validate($this->jenisModel->getvalidationRules())) {
-            session()->setFlashdata('errors', $this->validator);
-            return redirect()->to(base_url('pustakawan/jenis/tambah'))->withInput();
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Data Jenis Buku Gagal Ditambahkan'
             ]);
@@ -97,16 +107,13 @@ class Jenis extends BaseController
             'kode_warna'    => $jenis['kode_warna']
         ])->update() == true
         ) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Data Jenis buku berhasil diubah'
             ]);
             return redirect()->to(base_url('pustakawan/jenis'));
-        }elseif(!$this->validate($this->jenisModel->getvalidationRules())){
-            session()->setFlashdata('errors',$this->validator);
-            return redirect()->to(base_url('pustakawan/jenis/ubah/'.$jenis['kode_jenis']))->withInput();
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Data Jenis buku gagal diubah'
             ]);
@@ -116,14 +123,25 @@ class Jenis extends BaseController
 
     public function delete($kode_jenis)
     {
+        $this->jenisModel->disableForeignKeyChecks();
+
+        if ($this->bukuModel->where('kode_jenis',$kode_jenis)->countAllResults() > 0) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Data Jenis Buku Masih Digunakan'
+            ]);
+            return redirect()->to(base_url('pustakawan/jenis'));
+        }
+
         if ($this->jenisModel->where('kode_jenis',$kode_jenis)->delete() == true) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
-                'message'   => 'Data Jenis Buku Berhasi Dihapus'
+                'message'   => 'Data Jenis Buku Berhasil Dihapus'
             ]);
             return redirect()->to(base_url('pustakawan/jenis'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Data Jenis Buku Gagal Dihapus'
             ]);

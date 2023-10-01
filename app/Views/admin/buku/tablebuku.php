@@ -38,12 +38,12 @@
                   <div class="row my-2">
                     <div class="col-lg-6">
                     <a href="<?= base_url('pustakawan/buku/tambah'); ?>" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> TAMBAHKAN BUKU</a>
-                    <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</button>
+                    <a href="<?= base_url('excel/FORMAT IMPORT BUKU.xlsx'); ?>" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</a>
                   </div>
                     <div class="col-lg-4">
                     <form action="<?= base_url('pustakawan/excel/buku'); ?>" method="post" id="excel-buku" enctype="multipart/form-data" class="d-inline">
                       <div class="custom-file my-1">
-                        <input name="buku" type="file" class="custom-file-input" id="buku">
+                        <input name="buku" accept=".xls,.xlsx" type="file" class="custom-file-input" id="buku">
                         <label class="custom-file-label" for="buku">Pilih file Excel</label>
                       </div>
                     </form>
@@ -52,7 +52,7 @@
                       <button form="excel-buku" type="submit" class="btn btn-block btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPOR EXCEL</button>
                     </div>
                   </div>
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-sm table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
@@ -72,10 +72,10 @@
                     <td><?= $row['nama_rak']; ?></td>
                     <td><?= $row['nama_jenis']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/buku/ubah/'.$row['slug']); ?>" class="btn btn-primary mb-1" ><i class="fas fa-solid fa-pen"></i></a>
-                        <form action="<?= base_url('pustakawan/buku/delete/'.$row['slug']); ?>" method="post" class="d-inline">
+                        <a href="<?= base_url('pustakawan/buku/ubah/'.$row['slug']); ?>" class="btn btn-sm btn-primary my-1" ><i class="fas fa-solid fa-pen"></i></a>
+                        <form action="<?= base_url('pustakawan/buku/delete/'.$row['slug']); ?>" method="post" class="formdelete d-inline">
                           <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-danger mb-1" ><i class="fas fa-solid fa-trash"></i></button>
+                          <button type="submit" class="btn btn-danger delete btn-sm my-1" ><i class="fas fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                   </tr>

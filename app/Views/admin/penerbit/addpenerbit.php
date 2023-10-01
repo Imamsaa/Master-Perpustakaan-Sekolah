@@ -37,22 +37,22 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/penerbit/save'); ?>" method="post">
+              <form action="<?= base_url('pustakawan/penerbit/save'); ?>" method="post" class="formconfirm">
               <?= csrf_field(); ?>
               <div class="card-body">
                   <div class="form-group">
                       <label for="kode_penerbit">Kode Penerbit</label>
-                      <input type="text" value="<?= old('kode_penerbit'); ?>" name="kode_penerbit" class="form-control" id="kode_penerbit" placeholder="">
+                      <input type="text" value="<?= old('kode_penerbit'); ?>" name="kode_penerbit" class="form-control" id="kode_penerbit" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="nama_penerbit">Nama Penerbit</label>
-                    <input type="text" value="<?= old('nama_penerbit'); ?>" name="nama_penerbit" class="form-control" id="nama_penerbit" placeholder="">
+                    <input type="text" value="<?= old('nama_penerbit'); ?>" name="nama_penerbit" class="form-control" id="nama_penerbit" placeholder="" required>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Penerbit</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Penerbit</button>
                   <a href="<?= base_url('pustakawan/penerbit'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

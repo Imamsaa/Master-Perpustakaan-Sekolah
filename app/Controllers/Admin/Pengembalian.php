@@ -95,20 +95,20 @@ class Pengembalian extends BaseController
     function update()
     {
         $kembali = $this->request->getVar();  
-        if($this->trans->where('id',$kembali['id'])->set([
+        if($this->trans->where('kode_buku',$kembali['kode_buku'])->where('status','pinjam')->set([
             'kembali' => date('Y-m-d'),
             'status' => 'kembali',
             'terlambat' => $kembali['terlambat'],
             'denda'=> $kembali['denda']
         ])->update() == true )
         {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'success',
                 'message'   => 'Pengembalian Berhasil'
             ]);
             return redirect()->to(base_url('pustakawan/pengembalian'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Pengembalian Gagal'
             ]);

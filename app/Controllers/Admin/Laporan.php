@@ -43,13 +43,14 @@ class Laporan extends BaseController
     function reset()
     {
         if ($this->trans->where('status','kembali')->delete() == true) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotaktime',[
                 'status'    => 'success',
+                'title' => 'Berhasil',
                 'message'   => 'Laporan berhasil di reset'
             ]);
             return redirect()->to(base_url('pustakawan/laporan'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Laporan gagal di reset'
             ]);

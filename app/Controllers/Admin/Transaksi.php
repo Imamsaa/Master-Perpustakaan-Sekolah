@@ -42,13 +42,14 @@ class Transaksi extends BaseController
             'denda' => $set['denda']
         ])->update() == true
         ) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotaktime',[
                 'status'    => 'success',
+                'title' => 'Berhasil',
                 'message'   => 'Data Berhasil Di Ubah'
             ]);
             return redirect()->to(base_url('pustakawan/transaksi'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Data Gagal Di Ubah'
             ]);

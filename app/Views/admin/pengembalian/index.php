@@ -56,7 +56,7 @@
                     <td><?= $k['pinjam']; ?></td>
                     <td><?= $k['terlambat']; ?></td>
                     <td>
-                        <a href="<?= base_url('pustakawan/pengembalian/'.$k['id']); ?>" class="btn btn-sm btn-primary <?= (isset($peminjam['id']) AND $k['id'] == $peminjam['id']) ? 'disabled' : ''; ?> " >Pengembalian <i class="fas fa-solid fa-arrow-right"></i></button>
+                        <a href="<?= base_url('pustakawan/pengembalian/'.$k['id']); ?>" class="btn save btn-sm btn-primary <?= (isset($peminjam['id']) AND $k['id'] == $peminjam['id']) ? 'disabled' : ''; ?> " >Pengembalian <i class="fas fa-solid fa-arrow-right"></i></a>
                     </td>
                   </tr>
                   <?php $no++; endforeach; ?>
@@ -129,12 +129,12 @@
               <!-- /.card-body -->
               <div class="card-footer">
               <?php if(isset($peminjam)) : ?>
-                  <form action="<?= base_url('pustakawan/pengembalian/update'); ?>" method="post">
-                    <input type="hidden" name="id" value="<?= $peminjam['id']; ?>">
+                  <form action="<?= base_url('pustakawan/pengembalian/update'); ?>" method="post" class="formconfirm">
+                    <input type="hidden" name="kode_buku" value="<?= $peminjam['kode_buku']; ?>">
                     <input type="hidden" name="terlambat" value="<?= $terlambat; ?>">
                     <input type="hidden" name="denda" value="<?= $denda; ?>">
               <?php endif; ?>
-                    <button type="submit" class="btn btn-primary btn-block my-1">SUBMIT</button>
+                    <button type="submit" id="<?= (isset($peminjam)) ? 'submitconfirm' : '' ?>" class="btn btn-primary btn-block my-1">SUBMIT</button>
                   </form>
                   <a href="<?= base_url('pustakawan/pengembalian'); ?>" class="btn btn-danger btn-block my-1">BATAL</a>
               </div>

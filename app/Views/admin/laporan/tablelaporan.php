@@ -31,7 +31,7 @@
               <div class="card-header">
                 <div class="card-title">
                     <h3>Laporan Transaksi</h3>
-                    <a href="<?= base_url('pustakawan/laporan/reset'); ?>" class="btn btn-primary my-1"><i class="fas fa-solid fa-arrow-right"></i> RESET LAPORAN</a>
+                    <a href="<?= base_url('pustakawan/laporan/reset'); ?>" class="btn save btn-primary my-1"><i class="fas fa-solid fa-arrow-right"></i> RESET LAPORAN</a>
                     <!-- <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</button>
                     <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPORT DATA DENDA</button> -->
                 </div>

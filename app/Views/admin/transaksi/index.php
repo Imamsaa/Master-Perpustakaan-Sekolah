@@ -36,15 +36,15 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/transaksi/update'); ?>" method="post">
+              <form action="<?= base_url('pustakawan/transaksi/update'); ?>" method="post" class="formconfirm">
                 <div class="card-body">
                   <div class="form-group">
                       <label for="terlambat">Batas Peminjaman</label>
-                      <input type="number" value="<?= (old('terlambat')) ? old('terlambat') : $set['terlambat']; ?>" value="" name="terlambat" class="form-control" id="terlambat" placeholder="Dalam hari...">
+                      <input type="number" value="<?= (old('terlambat')) ? old('terlambat') : $set['terlambat']; ?>" value="" name="terlambat" class="form-control" id="terlambat" placeholder="Dalam hari..." required>
                   </div>
                   <div class="form-group">
                       <label for="denda">Denda keterlambatan</label>
-                      <input type="text" value="<?= (old('denda')) ? old('denda') : $set['denda']; ?>" value="" name="denda" class="form-control" id="denda" placeholder="">
+                      <input type="text" value="<?= (old('denda')) ? old('denda') : $set['denda']; ?>" value="" name="denda" class="form-control" id="denda" placeholder="" required>
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>
@@ -98,8 +98,8 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Pengaturan Transaksi</button>
-                  <a href="<?= base_url('pustakawan/transaksi'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Pengaturan Transaksi</button>
+                  <a href="<?= base_url('pustakawan/transaksi'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Kembali</a>
                 </div>
               </form>
             </div>

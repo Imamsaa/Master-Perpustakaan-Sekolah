@@ -34,20 +34,20 @@
                 </div>
               </div>
               <!-- /.card-header -->
-              <form action="<?= base_url('pustakawan/peminjaman/save'); ?>" method="post">
+              <form action="<?= base_url('pustakawan/peminjaman/save'); ?>" method="post" class="formconfirm">
               <div class="card-body">
                   <div class="form-group">
                     <label for="kode_buku">Barcode/Kode Buku</label>
-                    <input type="text" name="kode_buku" class="form-control" id="kode_buku" placeholder="">
+                    <input type="text" name="kode_buku" class="form-control" id="kode_buku" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="nis">Barcode/NIS Siswa</label>
-                    <input type="text" name="nis" class="form-control" id="nis" placeholder="">
+                    <input type="text" name="nis" class="form-control" id="nis" placeholder="" required>
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary btn-block my-1">PINJAM</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary btn-block my-1">PINJAM</button>
                 </div>
               </div>
             </form>
@@ -84,9 +84,9 @@
                     <td><?= $p['judul_buku']; ?></td>
                     <td><?= $p['pinjam']; ?></td>
                     <td class="text-center">
-                      <form action="<?= base_url('pustakawan/peminjaman/delete/'.$p['id']); ?>" method="post" class="d-inline">
+                      <form action="<?= base_url('pustakawan/peminjaman/delete/'.$p['kode_buku']); ?>" method="post" class="formdelete d-inline">
                         <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-sm btn-danger" ><i class="fas fa-solid fa-ban"> Batal</i></button>
+                        <button type="submit" class="btn delete btn-sm btn-danger" ><i class="fas fa-solid fa-ban"> Batal</i></button>
                       </form>
                     </td>
                   </tr>

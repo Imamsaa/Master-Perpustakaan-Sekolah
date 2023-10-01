@@ -20,7 +20,7 @@
 }
 
 .bg-login{
-    background-color : rgb(255,255,255,0.0);
+    background-color : rgb(255,255,255,0.4);
 }
 
 .bg-nav{

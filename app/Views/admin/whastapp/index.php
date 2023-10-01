@@ -24,6 +24,15 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+            <div class="card border-success my-3" style="">
+              <div class="card-body">
+                <p class="card-text">Untuk Mendapatkan <span class="text-danger font-weight-bold">APIKEY</span> dan link <span class="text-danger font-weight-bold">ENDPOINT</span> server Gateway WhastApp silahkan untuk mendaftar pada <a href="https://watsap.id/">https://watsap.id</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- ROW -->
         <div class="row">
             <div class="col-md-12">
@@ -61,8 +70,64 @@
                     </div>
                   <div class="form-group">
                     <label for="message">Isi Pesan</label>
-                    <textarea name="message" class="form-control" id="message" rows="3"><?= (old('message')) ? old('message') : $whastapp['message']; ?></textarea>
+                    <textarea name="message" class="form-control" id="message" rows="10"><?= (old('message')) ? old('message') : $whastapp['message']; ?></textarea>
                   </div>
+                  <div class="form-group">
+                      <div class="card border-success my-3" style="">
+                        <div class="card-body">
+                          <p class="card-text">
+                            <b>ELEMENT DINAMIS</b><br>
+                            Anda dapat menggunakan <span class="text-danger">TAB</span> dan Elemen dinamis pada pesan,<br>
+                            Elemen dinamis adalah elemen yang akan diganti dengan data siswa ketika pesan dikirim.</p>
+                            <table class="table table-sm table-bordered">
+                                <tr>
+                                  <td>ELEMENT DINAMIS</td>
+                                  <td>DATA DARI DATABASE</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>nis<?= $whastapp['selector']; ?></span></td>
+                                  <td>NIS Siswa</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>nisn<?= $whastapp['selector']; ?></span></td>
+                                  <td>NISN Siswa</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>nama_siswa<?= $whastapp['selector']; ?></span></td>
+                                  <td>Nama Siswa</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>nama_kelas<?= $whastapp['selector']; ?></span></td>
+                                  <td>Kelas Siswa</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>kode_buku<?= $whastapp['selector']; ?></span></td>
+                                  <td>Kode Buku Yang Dipinjam</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>judul_buku<?= $whastapp['selector']; ?></span></td>
+                                  <td>Judul Buku Yang Dipinjam</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>nama_rak<?= $whastapp['selector']; ?></span></td>
+                                  <td>Nama Rak Dari Buku Yang Dipinjam</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>pinjam<?= $whastapp['selector']; ?></span></td>
+                                  <td>Hari Peminjaman</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>terlambat_siswa<?= $whastapp['selector']; ?></span></td>
+                                  <td>Hari Keterlambatan Pengembalian</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $whastapp['selector']; ?>denda_siswa<?= $whastapp['selector']; ?></span></td>
+                                  <td>Denda Keterlambatan (contoh : 10000)</td>
+                                </tr>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>
                     <input type="email" name="email" class="form-control" id="email" placeholder="">

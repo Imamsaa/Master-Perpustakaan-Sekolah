@@ -24,6 +24,15 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card border-success my-3" style="">
+              <div class="card-body text-success">
+                <p class="card-text">Pengaturan tahun digunakan untuk menentuka masa berlaku kartu anggota perpustakaan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-12">

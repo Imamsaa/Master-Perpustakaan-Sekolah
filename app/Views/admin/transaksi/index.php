@@ -24,6 +24,15 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+            <div class="card border-success my-3" style="">
+              <div class="card-body text-success">
+                <p class="card-text">Jika tidak ingin menerapkan denda atau maksimal hari peminjaman maka ubah menjadi angka <span class="text-danger">0</span>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- ROW -->
         <div class="row">
             <div class="col-md-12">
@@ -39,12 +48,12 @@
               <form action="<?= base_url('pustakawan/transaksi/update'); ?>" method="post" class="formconfirm">
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="terlambat">Batas Peminjaman</label>
+                      <label for="terlambat">Batas Maksimal Hari Peminjaman</label>
                       <input type="number" value="<?= (old('terlambat')) ? old('terlambat') : $set['terlambat']; ?>" value="" name="terlambat" class="form-control" id="terlambat" placeholder="Dalam hari..." required>
                   </div>
                   <div class="form-group">
                       <label for="denda">Denda keterlambatan</label>
-                      <input type="text" value="<?= (old('denda')) ? old('denda') : $set['denda']; ?>" value="" name="denda" class="form-control" id="denda" placeholder="" required>
+                      <input type="number" value="<?= (old('denda')) ? old('denda') : $set['denda']; ?>" value="" name="denda" class="form-control" id="denda" placeholder="" required>
                   </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>

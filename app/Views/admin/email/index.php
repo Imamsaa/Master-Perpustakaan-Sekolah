@@ -24,6 +24,15 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+            <div class="card border-success my-3" style="">
+              <div class="card-body">
+                <p class="card-text">Sebelum dapat mengirim email silahkan konfigurasi akses aplikasi pihak ketiga pada pengaturan email Anda melalui <a target="_blank" href="https://myaccount.google.com/connections/settings">https://myaccount.google.com/connections/settings</a> (beberapa akun Gmail tidak didukung)</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- ROW -->
         <div class="row">
             <div class="col-md-12">
@@ -64,9 +73,73 @@
                       <input type="text" value="<?= (old('subject')) ? old('subject') : $email['subject']; ?>" name="subject" class="form-control" id="subject" placeholder="" required>
                   </div>
                   <div class="form-group">
-                    <label for="message">Isi Pesan</label>
-                    <textarea name="message" class="form-control" id="message" rows="3"><?= (old('message')) ? old('message') : $email['message']; ?></textarea>
+                      <label for="selector">Selector Pesan</label>
+                      <select id="selector" name="selector" class="form-control">
+                        <?php foreach($selector as $s) : ?>
+                        <option value="<?= $s['selector']; ?>" <?= ($s['selector'] == $email['selector']) ? 'selected' : ''; ?>><?= $s['selector']; ?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </div>
+                  <div class="form-group">
+                    <label class="col-lg-12" for="message">Isi Pesan</label>
+                    <textarea name="message" class="form-control col-md-12 col-lg-12" id="message" rows="10"><?= (old('message')) ? old('message') : $email['message']; ?></textarea>
                   </div>
+                    <div class="form-group">
+                      <div class="card border-success my-3" style="">
+                        <div class="card-body">
+                          <p class="card-text">
+                            <b>ELEMENT DINAMIS</b><br>
+                            Anda dapat menggunakan <span class="text-danger">TAB</span> dan Elemen dinamis pada pesan,<br>
+                            Elemen dinamis adalah elemen yang akan diganti dengan data siswa ketika pesan dikirim.</p>
+                            <table class="table table-sm table-bordered">
+                                <tr>
+                                  <td>ELEMENT DINAMIS</td>
+                                  <td>DATA DARI DATABASE</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>nis<?= $email['selector']; ?></span></td>
+                                  <td>NIS Siswa</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>nisn<?= $email['selector']; ?></span></td>
+                                  <td>NISN Siswa</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>nama_siswa<?= $email['selector']; ?></span></td>
+                                  <td>Nama Siswa</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>nama_kelas<?= $email['selector']; ?></span></td>
+                                  <td>Kelas Siswa</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>kode_buku<?= $email['selector']; ?></span></td>
+                                  <td>Kode Buku Yang Dipinjam</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>judul_buku<?= $email['selector']; ?></span></td>
+                                  <td>Judul Buku Yang Dipinjam</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>nama_rak<?= $email['selector']; ?></span></td>
+                                  <td>Nama Rak Dari Buku Yang Dipinjam</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>pinjam<?= $email['selector']; ?></span></td>
+                                  <td>Hari Peminjaman</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>terlambat_siswa<?= $email['selector']; ?></span></td>
+                                  <td>Hari Keterlambatan Pengembalian</td>
+                                </tr>
+                                <tr>
+                                  <td><span class="text-danger font-weight-bold"><?= $email['selector']; ?>denda_siswa<?= $email['selector']; ?></span></td>
+                                  <td>Denda Keterlambatan (contoh : 10000)</td>
+                                </tr>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
                   <!-- <div class="form-group">
                     <label for="email">Email Sekolah</label>
                     <input type="email" name="email" class="form-control" id="email" placeholder="">

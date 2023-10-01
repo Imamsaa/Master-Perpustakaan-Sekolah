@@ -233,7 +233,11 @@ class Users extends BaseController
             $username = $user['username'];
         }
 
-        $password = password_hash($user['password'],PASSWORD_BCRYPT);
+        if (isset($user['password']) AND $user['password'] != '') {
+            $password = password_hash($user['password'],PASSWORD_BCRYPT);
+        }else{
+            $password = $userlama['password'];
+        }
         
         if ($this->usersModel->where('id_user',$userlama['id_user'])->set([
             'nama_user' => $user['nama_user'],
@@ -246,10 +250,15 @@ class Users extends BaseController
             'foto_user' => $name
         ])->update() == true
         ) {
-            if ($foto->isvalid() && !$foto->hasMoved()) {
-                $foto->move('admin/img/pustakawan/',$name);
-                unlink('admin/img/pustakawan/'.$userlama['foto_user']);
+            if ($foto->getError() == 4 ) {
+                $name = $userlama['foto_user'];
+            }else{
+                if ($foto->isvalid() && !$foto->hasMoved()) {
+                    $foto->move('admin/img/pustakawan/',$name);
+                    unlink('admin/img/pustakawan/'.$userlama['foto_user']);
+                }
             }
+            
             session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Data User Berhasil disimpan'

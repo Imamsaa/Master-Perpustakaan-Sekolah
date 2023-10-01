@@ -77,7 +77,7 @@
                   </div>
                   <div class="form-group">
                     <label for="password">Password Pengguna</label>
-                    <input type="text" name="password" class="form-control" id="password" placeholder="">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="">
                   </div>
                   <div class="form-group">
                       <label for="id_level">Level Pengguna</label>

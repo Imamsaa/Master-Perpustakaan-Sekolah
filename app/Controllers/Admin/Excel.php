@@ -40,6 +40,24 @@ class Excel extends BaseController
             return redirect()->to(base_url('login'));
         }
 
+        $validate = [
+            'kelas' => [
+                'rules' => 'ext_in[kelas,xls,xlsx]',
+                'errors' => [
+                    'ext_in' => 'Hohon Masukan File Impor Yang Sesuai'
+                ],
+            ],
+        ];
+
+        if (!$this->validate($validate)) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => $this->validator->getError('kelas')
+            ]);
+            return redirect()->to(base_url('pustakawan/kelas'));
+        }
+
         $upload = $this->request->getFile('kelas');
 
         if ($upload->isValid() && !$upload->hasMoved()) {
@@ -118,6 +136,24 @@ class Excel extends BaseController
         $generator = new \Picqer\Barcode\BarcodeGeneratorHTML();
         if (session()->get('login') == null) {
             return redirect()->to(base_url('login'));
+        }
+
+        $validate = [
+            'siswa' => [
+                'rules' => 'ext_in[siswa,xls,xlsx]',
+                'errors' => [
+                    'ext_in' => 'Hohon Masukan File Impor Yang Sesuai'
+                ],
+            ],
+        ];
+
+        if (!$this->validate($validate)) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => $this->validator->getError('siswa')
+            ]);
+            return redirect()->to(base_url('pustakawan/siswa'));
         }
 
         $upload = $this->request->getFile('siswa');
@@ -240,6 +276,24 @@ class Excel extends BaseController
             return redirect()->to(base_url('login'));
         }
 
+        $validate = [
+            'rak' => [
+                'rules' => 'ext_in[rak,xls,xlsx]',
+                'errors' => [
+                    'ext_in' => 'Hohon Masukan File Impor Yang Sesuai'
+                ],
+            ],
+        ];
+
+        if (!$this->validate($validate)) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => $this->validator->getError('rak')
+            ]);
+            return redirect()->to(base_url('pustakawan/rak'));
+        }
+
         $upload = $this->request->getFile('rak');
 
         if ($upload->isValid() && !$upload->hasMoved()) {
@@ -317,6 +371,24 @@ class Excel extends BaseController
         
         if (session()->get('login') == null) {
             return redirect()->to(base_url('login'));
+        }
+
+        $validate = [
+            'jenis' => [
+                'rules' => 'ext_in[jenis,xls,xlsx]',
+                'errors' => [
+                    'ext_in' => 'Hohon Masukan File Impor Yang Sesuai'
+                ],
+            ],
+        ];
+
+        if (!$this->validate($validate)) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => $this->validator->getError('jenis')
+            ]);
+            return redirect()->to(base_url('pustakawan/jenis'));
         }
 
         $upload = $this->request->getFile('jenis');
@@ -398,6 +470,24 @@ class Excel extends BaseController
         
         if (session()->get('login') == null) {
             return redirect()->to(base_url('login'));
+        }
+
+        $validate = [
+            'buku' => [
+                'rules' => 'ext_in[buku,xls,xlsx]',
+                'errors' => [
+                    'ext_in' => 'Hohon Masukan File Impor Yang Sesuai'
+                ],
+            ],
+        ];
+
+        if (!$this->validate($validate)) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => $this->validator->getError('buku')
+            ]);
+            return redirect()->to(base_url('pustakawan/buku'));
         }
 
         $upload = $this->request->getFile('buku');

@@ -96,6 +96,23 @@ class Pesan extends BaseController
         ->join('jenis_buku', 'jenis_buku.kode_jenis = buku.kode_jenis')
         ->where('siswa.nis',$nis)
         ->first();
+        
+        //DENDA
+        $set = $this->setTrans->first();
+        $now  = date_create();
+        $ambil = date_diff(date_create($element['pinjam']),$now);
+
+        $terlambat = $ambil->days - $set['terlambat'];
+
+        if ($terlambat < 1) {
+            $element['terlambat_siswa'] = 0;
+        }elseif($set['terlambat'] == 0){
+            $element['terlambat_siswa'] = 0;
+        }else{
+            $element['terlambat_siswa'] = $terlambat;
+        }
+        $element['denda_siswa'] = $element['terlambat_siswa']*$set['denda'];
+
         $result = [];
         foreach ($pecah as $p => $pvalue) {
             unset($var);
@@ -117,12 +134,34 @@ class Pesan extends BaseController
         $message = urlencode($this->setpesan($nis, $wa['selector'],$wa['message']));
 
         // BUAT CURL
-        $url = $wa['endpoint'].'?api_key='.$wa['apikey']."&sender=".$wa['pengirim']."&number=".$siswa['wa']."&message=".$message;
-        if (!($cek = file_get_contents($url))) {
-            return redirect()->to(base_url('pustakawan/kirimpesan')); 
+        $fp = @fsockopen('www.google.com', 80, $errno, $errstr, 30);
+        if (!$fp) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Untuk Mengirim Pesan Diperlukan Koneksi Internet Coba Cek Kembali Koneksi Internet Anda'
+            ]);
+            return redirect()->to(base_url('pustakawan/kirimpesan'));
         }
-        $hasil = json_decode($cek,true);
-        if ($hasil) {
+
+        $url = $wa['endpoint'].'?api_key='.$wa['apikey']."&sender=".$wa['pengirim']."&number=".$siswa['wa']."&message=".$message;
+        
+        $handle = curl_init($url);
+        curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
+
+        /* Get the HTML or whatever is linked in $url. */
+        $response = curl_exec($handle);
+
+        /* Check for 404 (file not found). */
+        $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+        if($httpCode == 400) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Terdapat Kesalahan Pada Konfigurasi Pesan WhastApp Anda Coba Cek Kembali Konfigurasi dan Pastikan Nomor Penerima Aktif'
+            ]);
+            return redirect()->to(base_url('pustakawan/kirimpesan'));
+        }elseif($httpCode == 200){
             session()->setFlashdata('kotaktime',[
                 'status' => 'success',
                 'title' => 'Terkirim',
@@ -136,6 +175,7 @@ class Pesan extends BaseController
             ]);
             return redirect()->to(base_url('pustakawan/kirimpesan'));
         }
+        curl_close($handle);
     }
 
     function email($nis)
@@ -167,6 +207,15 @@ class Pesan extends BaseController
         $mail->Subject = $vmail['subject'];
         $mail->Body = $this->setpesan($nis,$vmail['selector'],$vmail['message']);
 
+        $fp = @fsockopen('www.google.com', 80, $errno, $errstr, 30);
+        if (!$fp) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Untuk Mengirim Pesan Diperlukan Koneksi Internet Coba Cek Kembali Koneksi Internet Anda'
+            ]);
+            return redirect()->to(base_url('pustakawan/kirimpesan'));
+        }
         // Mengirim email
         if ($mail->send()) {
             session()->setFlashdata('kotaktime',[

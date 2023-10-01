@@ -4,14 +4,17 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\EmailModel;
+use App\Models\SelectorModel;
 
 class Email extends BaseController
 {
     protected $emailModel;
+    protected $selectorModel;
 
     function __construct()
     {
-        $this->emailModel = new EmailModel();    
+        $this->emailModel = new EmailModel();
+        $this->selectorModel = new SelectorModel();    
     }
 
     public function index()
@@ -21,12 +24,15 @@ class Email extends BaseController
         }
         session();
         $email = $this->emailModel->first();
+        // dd($email);
+        $selector = $this->selectorModel->findAll();
         $data = [
             'title' => 'Atur Pesan Email',
             'email' => $email,
             'sekolah' => $this->sekolah,
             'perpus' => $this->perpus,
-            'aku' => $this->aku
+            'aku' => $this->aku,
+            'selector' => $selector
         ];
         return view('admin/email/index', $data);
     }
@@ -44,6 +50,7 @@ class Email extends BaseController
             'port'  => $email['port'],
             'nama'  => $email['nama'],
             'subject' => $email['subject'],
+            'selector' => $email['selector'],
             'message' => $email['message']
         ])->update() == true) {
             session()->setFlashdata('kotaktime',[

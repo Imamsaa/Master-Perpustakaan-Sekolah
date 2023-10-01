@@ -41,13 +41,14 @@ class Perpustakaan extends BaseController
             'peraturan_perpus'  => $perpus['peraturan_perpus']
         ])->update() == true
         ) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotaktime',[
                 'status'    => 'success',
+                'title' => 'Berhasil',
                 'message'   => 'Data Perpustakaan Berhasil Di Ubah'
             ]);
             return redirect()->to(base_url('pustakawan/perpustakaan'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   => 'Data Perpustakaan Gagal Di Ubah'
             ]);

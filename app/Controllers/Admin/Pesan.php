@@ -123,8 +123,17 @@ class Pesan extends BaseController
         }
         $hasil = json_decode($cek,true);
         if ($hasil) {
+            session()->setFlashdata('kotaktime',[
+                'status' => 'success',
+                'title' => 'Terkirim',
+                'message' => 'Pesan WhastApp Berhasil Terkirim'
+            ]);
             return redirect()->to(base_url('pustakawan/kirimpesan'));
         }else{
+            session()->setFlashdata('pojokatas',[
+                'status' => 'error',
+                'message' => 'Pesan WhastApp Gagal Terkirim'
+            ]);
             return redirect()->to(base_url('pustakawan/kirimpesan'));
         }
     }
@@ -159,6 +168,19 @@ class Pesan extends BaseController
         $mail->Body = $this->setpesan($nis,$vmail['selector'],$vmail['message']);
 
         // Mengirim email
-        dd($mail->send());
+        if ($mail->send()) {
+            session()->setFlashdata('kotaktime',[
+                'status' => 'success',
+                'title' => 'Terkirim',
+                'message' => 'Pesan Email Berhasil Terkirim'
+            ]);
+            return redirect()->to(base_url('pustakawan/kirimpesan'));
+        }else{
+            session()->setFlashdata('pojokatas',[
+                'status' => 'error',
+                'message' => 'Pesan WhastApp Gagal Terkirim'
+            ]);
+            return redirect()->to(base_url('pustakawan/kirimpesan'));
+        }
     }
 }

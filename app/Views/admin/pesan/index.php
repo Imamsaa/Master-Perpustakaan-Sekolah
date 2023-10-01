@@ -38,7 +38,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-hover">
+                <table id="example1" class="table table-sm table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>NO</th>
@@ -62,8 +62,8 @@
                         <td><?= $p['terlambat'].' HARI'; ?></td>
                         <td><?= $p['denda']; ?></td>
                         <td>
-                          <a href="<?= base_url('pustakawan/kirimpesan/email/'.$p['nis']); ?>" class="btn btn-block btn-danger"><i class="fas fa-solid fa-envelope"></i> KIRIM</a>
-                          <a href="<?= base_url('pustakawan/kirimpesan/whastapp/'.$p['nis']); ?>" href="" class="btn btn-block btn-success"><i class="fab fa-whatsapp"></i> KIRIM</a>
+                          <a href="<?= base_url('pustakawan/kirimpesan/email/'.$p['nis']); ?>" class="btn save btn-sm btn-danger"><i class="fas fa-solid fa-envelope"></i></a>
+                          <a href="<?= base_url('pustakawan/kirimpesan/whastapp/'.$p['nis']); ?>" href="" class="btn save btn-sm btn-success"><i class="fab fa-whatsapp"></i></a>
                         </td>
                       </tr>
                     <?php $no++; endforeach; ?>

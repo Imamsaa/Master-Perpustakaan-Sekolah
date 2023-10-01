@@ -46,13 +46,14 @@ class Email extends BaseController
             'subject' => $email['subject'],
             'message' => $email['message']
         ])->update() == true) {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotaktime',[
                 'status'    => 'success',
+                'title' => 'Berhasil',
                 'message'   =>  'Pengaturan Email Berhasil diubah'
             ]);
             return redirect()->to(base_url('pustakawan/email'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status'    => 'error',
                 'message'   =>  'Pengaturan Email Gagal diubah'
             ]);

@@ -36,32 +36,32 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/email/save'); ?>" method="post">
+              <form action="<?= base_url('pustakawan/email/save'); ?>" method="post" class="formconfirm">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="form-group">
                       <label for="smtp">Server SMTP</label>
-                      <input type="text" value="<?= (old('smtp')) ? old('smtp') : $email['smtp']; ?>" name="smtp" class="form-control" id="smtp" placeholder="">
+                      <input type="text" value="<?= (old('smtp')) ? old('smtp') : $email['smtp']; ?>" name="smtp" class="form-control" id="smtp" placeholder="" required>
                   </div>
                   <div class="form-group">
                       <label for="email">Email Pengirim</label>
-                      <input type="email" value="<?= (old('email')) ? old('email') : $email['email']; ?>" name="email" class="form-control" id="email" placeholder="">
+                      <input type="email" value="<?= (old('email')) ? old('email') : $email['email']; ?>" name="email" class="form-control" id="email" placeholder="" required>
                   </div>
                   <div class="form-group">
                       <label for="password_email">Password Email Pengirim</label>
-                      <input type="password" value="<?= (old('password_email')) ? old('password_email') : $email['password_email']; ?>" name="password_email" class="form-control" id="password_email" placeholder="">
+                      <input type="password" value="<?= (old('password_email')) ? old('password_email') : $email['password_email']; ?>" name="password_email" class="form-control" id="password_email" placeholder="" required>
                   </div>
                   <div class="form-group">
                       <label for="port">Port</label>
-                      <input type="number" value="<?= (old('port')) ? old('port') : $email['port']; ?>" name="port" class="form-control" id="port" placeholder="">
+                      <input type="number" value="<?= (old('port')) ? old('port') : $email['port']; ?>" name="port" class="form-control" id="port" placeholder="" required>
                   </div>
                   <div class="form-group">
                       <label for="nama">Nama Pengirim</label>
-                      <input type="text" value="<?= (old('nama')) ? old('nama') : $email['nama']; ?>" name="nama" class="form-control" id="nama" placeholder="">
+                      <input type="text" value="<?= (old('nama')) ? old('nama') : $email['nama']; ?>" name="nama" class="form-control" id="nama" placeholder="" required>
                   </div>
                   <div class="form-group">
                       <label for="subject">Subject</label>
-                      <input type="text" value="<?= (old('subject')) ? old('subject') : $email['subject']; ?>" name="subject" class="form-control" id="subject" placeholder="">
+                      <input type="text" value="<?= (old('subject')) ? old('subject') : $email['subject']; ?>" name="subject" class="form-control" id="subject" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="message">Isi Pesan</label>
@@ -119,7 +119,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Pesan Email</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Pesan Email</button>
                   <a href="<?= base_url('pustakawan/email'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

@@ -36,7 +36,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/sekolah/update'); ?>" method="POST" enctype="multipart/form-data">
+              <form action="<?= base_url('pustakawan/sekolah/update'); ?>" method="POST" enctype="multipart/form-data" class="formconfirm">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="row mb-2">
@@ -60,7 +60,7 @@
                   </div>
                   <div class="form-group">
                       <label for="nama_sekolah">Nama Sekolah</label>
-                      <input type="text" value="<?= (old('nama_sekolah')) ? old('nama_sekolah') : $sekolah['nama_sekolah']; ?>" name="nama_sekolah" class="form-control" id="nama_sekolah" placeholder="">
+                      <input type="text" value="<?= (old('nama_sekolah')) ? old('nama_sekolah') : $sekolah['nama_sekolah']; ?>" name="nama_sekolah" class="form-control" id="nama_sekolah" placeholder="" required>
                   </div>
                   <div class="form-group">
                       <label for="slogan_sekolah">Slogan Sekolah</label>
@@ -68,7 +68,7 @@
                   </div>
                   <div class="form-group">
                     <label for="email_sekolah">Email Sekolah</label>
-                    <input type="email" value="<?= (old('email_sekolah')) ? old('email_sekolah') : $sekolah['email_sekolah']; ?>" name="email_sekolah" class="form-control" id="email_sekolah" placeholder="">
+                    <input type="email" value="<?= (old('email_sekolah')) ? old('email_sekolah') : $sekolah['email_sekolah']; ?>" name="email_sekolah" class="form-control" id="email_sekolah" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="alamat_sekolah">Alamat Sekolah</label>
@@ -137,7 +137,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Profil Sekolah</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Profil Sekolah</button>
                   <a href="<?= base_url('pustakawan/sekolah'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

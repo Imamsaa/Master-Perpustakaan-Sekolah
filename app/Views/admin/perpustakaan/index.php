@@ -36,15 +36,15 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/perpustakaan/save'); ?>" method="post">
+              <form action="<?= base_url('pustakawan/perpustakaan/save'); ?>" method="post" class="formconfirm">
                 <div class="card-body">
                   <div class="form-group">
                       <label for="nama_perpus">Nama Perpustakaan</label>
-                      <input type="text" value="<?= (old('nama_perpus')) ? old('nama_perpus') : $perpus['nama_perpus']; ?>" name="nama_perpus" class="form-control" id="nama_perpus" placeholder="">
+                      <input type="text" value="<?= (old('nama_perpus')) ? old('nama_perpus') : $perpus['nama_perpus']; ?>" name="nama_perpus" class="form-control" id="nama_perpus" placeholder="" required>
                   </div>
                   <div class="form-group">
                       <label for="slogan_perpus">Slogan Perpustakaan</label>
-                      <input type="text" value="<?= (old('slogan_perpus')) ? old('slogan_perpus') : $perpus['slogan_perpus']; ?>" name="slogan_perpus" class="form-control" id="slogan_perpus" placeholder="">
+                      <input type="text" value="<?= (old('slogan_perpus')) ? old('slogan_perpus') : $perpus['slogan_perpus']; ?>" name="slogan_perpus" class="form-control" id="slogan_perpus" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="mytextarea">Peraturan Perpustakaan (Optional)</label>
@@ -102,7 +102,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Profil Perpustakaan</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Profil Perpustakaan</button>
                   <a href="<?= base_url('pustakawan/perpustakaan'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

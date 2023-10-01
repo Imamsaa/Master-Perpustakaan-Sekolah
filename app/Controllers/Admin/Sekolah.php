@@ -57,6 +57,21 @@ class Sekolah extends BaseController
             ],
         ];
         
+        if (!$this->validate($validate)) {
+            if ($this->validator->hasError('logo')) {
+                $message = $this->validator->getError('logo');
+            }elseif ($this->validator->hasError('background')) {
+                $message = $this->validator->getError('background');
+            }
+
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => $message
+            ]);
+
+            return redirect()->to(base_url('pustakawan/sekolah'))->withInput();
+        }
         
         if ($logo->getError() == 4 ) {
             $name = $sekolah['logo'];
@@ -80,11 +95,6 @@ class Sekolah extends BaseController
             'background' => $bname
         ];
         
-        if (!$this->validate($validate)) {
-            // dd($this->validator->getErrors());
-            session()->setFlashdata('errors',$this->validator);
-            return redirect()->to(base_url('pustakawan/sekolah'))->withInput();
-        }
         
         if ($logo->isvalid() && !$logo->hasMoved()) {
             $logo->move('admin/img/',$name);
@@ -96,8 +106,9 @@ class Sekolah extends BaseController
 
         if($this->sekolahModel->where('id',$sekolah['id'])->set($sekolahbaru)->update() == true )
         {
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotaktime',[
                 'status' => 'success',
+                'title' => 'Berhasil',
                 'message' => 'Data Sekolah Berhasil Diubah'
             ]);
             if ($logo->getError() == 4 ) {
@@ -113,7 +124,7 @@ class Sekolah extends BaseController
             }
             return redirect()->to(base_url('pustakawan/sekolah'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'error',
                 'message' => 'Data Sekolah Gagal Diubah'
             ]);

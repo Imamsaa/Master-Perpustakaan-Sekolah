@@ -32,8 +32,8 @@
                 <div class="card-title">
                     <h3>DAFTAR PENGGUNA</h3>
                     <a href="<?= base_url('pustakawan/user/tambah'); ?>" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> TAMBAHKAN PENGGUNA</a>
-                    <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</button>
-                    <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPORT DATA PENGGUNA</button>
+                    <!-- <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</button>
+                    <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPORT DATA PENGGUNA</button> -->
                 </div>
               </div>
               <!-- /.card-header -->

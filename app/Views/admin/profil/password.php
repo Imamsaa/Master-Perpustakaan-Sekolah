@@ -36,7 +36,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/password/update'); ?>" method="post">
+              <form action="<?= base_url('pustakawan/password/update'); ?>" method="post" class="formconfirm">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <!-- <div class="row mb-2">
@@ -99,7 +99,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Password</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Password</button>
                   <a href="<?= base_url('pustakawan'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

@@ -36,7 +36,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('pustakawan/profil/update'); ?>" method="post" enctype="multipart/form-data">
+              <form action="<?= base_url('pustakawan/profil/update'); ?>" method="post" enctype="multipart/form-data" class="formconfirm">
               <?= csrf_field(); ?>
                 <div class="card-body">
                   <div class="row mb-2">
@@ -69,7 +69,7 @@
                   <div class="form-group">
                     <label for="nama_user">Nama Pustakawan</label>
                     <input type="hidden" name="id_user" value="<?= $aku['id_user']; ?>">
-                    <input type="text" value="<?= (old('nama_user')) ? old('nama_user') : $aku['nama_user']; ?>" name="nama_user" class="form-control" id="nama_user" placeholder="">
+                    <input type="text" value="<?= (old('nama_user')) ? old('nama_user') : $aku['nama_user']; ?>" name="nama_user" class="form-control" id="nama_user" placeholder="" required>
                   </div>
                   <!-- <div class="form-group">
                       <label for="kelas">Pilih Kelas</label>
@@ -93,11 +93,11 @@
                     </div> -->
                   <div class="form-group">
                     <label for="nomor_wa">Nomor WhastApp</label>
-                    <input type="text" value="<?= (old('nomor_wa')) ? old('nomor_wa') : $aku['nomor_wa']; ?>" name="nomor_wa" class="form-control" id="nomor_wa" placeholder="">
+                    <input type="text" value="<?= (old('nomor_wa')) ? old('nomor_wa') : $aku['nomor_wa']; ?>" name="nomor_wa" class="form-control" id="nomor_wa" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="email_user">Email Pustakawan</label>
-                    <input type="email" value="<?= (old('email_user')) ? old('email_user') : $aku['email_user']; ?>" name="email_user" class="form-control" id="email_user" placeholder="">
+                    <input type="email" value="<?= (old('email_user')) ? old('email_user') : $aku['email_user']; ?>" name="email_user" class="form-control" id="email_user" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="alamat_user">Alamat Pustakawan</label>
@@ -107,7 +107,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Profil</button>
+                  <button id="submitconfirm" type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-pen"></i> Ubah Profil</button>
                   <a href="<?= base_url('pustakawan/profil'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
               </form>

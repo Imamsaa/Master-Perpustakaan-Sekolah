@@ -83,8 +83,19 @@ class Users extends BaseController
         ];
 
         if (!$this->validate($validate)) {
-            // dd($this->validator->getErrors());
-            session()->setFlashdata('errors',$this->validator->getErrors());
+            if ($this->validator->hasError('email_user')) {
+                $message = $this->validator->getError('email_user');
+            }elseif ($this->validator->hasError('username')) {
+                $message = $this->validator->getError('username');
+            }elseif ($this->validator->hasError('foto_user')) {
+                $message = $this->validator->getError('foto_user');
+            }
+
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => $message
+            ]);
             return redirect()->to(base_url('pustakawan/user/tambah'))->withInput();
         }
 
@@ -115,13 +126,13 @@ class Users extends BaseController
             if ($foto->isvalid() && !$foto->hasMoved()) {
                 $foto->move('admin/img/pustakawan/',$name);
             }
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Data User Berhasil disimpan'
             ]);
             return redirect()->to(base_url('pustakawan/user'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'error',
                 'message' => 'Data User Gagal disimpan'
             ]);
@@ -167,8 +178,11 @@ class Users extends BaseController
         ];
 
         if (!$this->validate($validate)) {
-            // dd($this->validator->getErrors());
-            session()->setFlashdata('errors',$this->validator);
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => $this->validator->getError('foto_user')
+            ]);
             return redirect()->to(base_url('pustakawan/siswa/tambah'))->withInput();
         }
 
@@ -190,8 +204,9 @@ class Users extends BaseController
                 if ($user['email_user'] != $semua['email_user']) {
                     $email = $user['email_user'];
                 }else{
-                    session()->setFlashdata('session',[
-                        'status' => 'error',
+                    session()->setFlashdata('kotakok',[
+                        'status' => 'warning',
+                        'title' => 'Perhatian',
                         'message' => 'Email Telah digunakan'
                     ]);
                     return redirect()->to(base_url('pustakawan/user/ubah/'.$userlama['username']));
@@ -206,8 +221,9 @@ class Users extends BaseController
                 if ($user['username'] != $semua['username']) {
                     $username = $user['username'];
                 }else{
-                    session()->setFlashdata('session',[
-                        'status' => 'error',
+                    session()->setFlashdata('kotakok',[
+                        'status' => 'warning',
+                        'title' => 'Perhatian',
                         'message' => 'Username Telah digunakan'
                     ]);
                     return redirect()->to(base_url('pustakawan/user/ubah/'.$userlama['username']));
@@ -234,13 +250,13 @@ class Users extends BaseController
                 $foto->move('admin/img/pustakawan/',$name);
                 unlink('admin/img/pustakawan/'.$userlama['foto_user']);
             }
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'success',
                 'message' => 'Data User Berhasil disimpan'
             ]);
             return redirect()->to(base_url('pustakawan/user/ubah/'.$userlama['username']));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'error',
                 'message' => 'Data User Gagal disimpan'
             ]);
@@ -250,9 +266,26 @@ class Users extends BaseController
 
     public function delete($username)
     {
+        $user = session()->get('user');
+        if ($username == $user['username']) {
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Gagal',
+                'message' => 'Penghapusan User Ditolak'
+            ]);
+            return redirect()->to(base_url('pustakawan/user/'));
+        }
         if ($this->usersModel->where('username',$username)->delete() == true) {
+            session()->setFlashdata('pojokatas',[
+                'status' => 'success',
+                'message' => 'Data user Berhasil Dihapus'
+            ]);
             return redirect()->to(base_url('pustakawan/user/'));
         }else{
+            session()->setFlashdata('pojokatas',[
+                'status' => 'error',
+                'message' => 'Data user Gagal Dihapus'
+            ]);
             return redirect()->to(base_url('pustakawan/user/'));
         }
     }

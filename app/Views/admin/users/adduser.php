@@ -38,31 +38,31 @@
               <!-- /.card-header -->
               <!-- form start -->
               <div class="card-body">
-                <form action="<?= base_url('pustakawan/user/tambah/save'); ?>" method="POST" enctype="multipart/form-data">
+                <form action="<?= base_url('pustakawan/user/tambah/save'); ?>" method="POST" enctype="multipart/form-data" class="formconfirm">
                 <?= csrf_field(); ?>
                   <div class="form-group">
                     <label for="nama_user">Nama Pengguna</label>
-                    <input type="text" value="<?= old('nama_user'); ?>" name="nama_user" class="form-control" id="nama_user" placeholder="">
+                    <input type="text" value="<?= old('nama_user'); ?>" name="nama_user" class="form-control" id="nama_user" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="username">Username Pengguna</label>
-                    <input type="text" value="<?= old('username'); ?>" name="username" class="form-control" id="username" placeholder="">
+                    <input type="text" value="<?= old('username'); ?>" name="username" class="form-control" id="username" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="nomor_wa">Nomor WhastApp</label>
-                    <input type="text" value="<?= old('nomor_wa'); ?>" name="nomor_wa" class="form-control" id="nomor_wa" placeholder="">
+                    <input type="text" value="<?= old('nomor_wa'); ?>" name="nomor_wa" class="form-control" id="nomor_wa" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="email_user">Email Pengguna</label>
-                    <input type="email" value="<?= old('email_user'); ?>" name="email_user" class="form-control" id="email_user" placeholder="">
+                    <input type="email" value="<?= old('email_user'); ?>" name="email_user" class="form-control" id="email_user" placeholder="" required>
                   </div>
                   <div class="form-group">
                     <label for="password">Password Pengguna</label>
-                    <input type="password" value="<?= old('password'); ?>" name="password" class="form-control" id="email_user" placeholder="">
+                    <input type="password" value="<?= old('password'); ?>" name="password" class="form-control" id="password" placeholder="" required>
                   </div>
                   <div class="form-group">
                       <label for="id_level">Level Pengguna</label>
-                      <select id="id_level" name="id_level" class="form-control">
+                      <select id="id_level" name="id_level" class="form-control" required>
                         <option></option>
                         <?php foreach($levels as $l) : ?>
                         <option value="<?= $l['id_level']; ?>" <?= (old('id_level') == $l['id_level']) ? 'selected' : ''; ?> ><?= $l['nama_level']; ?></option>
@@ -88,7 +88,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Pengguna</button>
+                  <button type="submit" id="submitconfirm" class="btn btn-primary my-1"><i class="fas fa-solid fa-plus"></i> Tambah Pengguna</button>
                   <a href="<?= base_url('pustakawan/user'); ?>" class="btn btn-danger my-1"><i class="fas fa-solid fa-ban"></i> Batal</a>
                 </div>
                 </form>

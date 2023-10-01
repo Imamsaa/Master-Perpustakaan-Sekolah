@@ -47,9 +47,12 @@ class Profil extends BaseController
         $semua = $this->userModel->findAll();
 
         if (!$this->validate($validate)) {
-            dd($this->validator->getErrors());
-            // session()->setFlashdata('errors',$this->validator);
-            // return redirect()->to(base_url('pustakawan/profil'))->withInput();
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Perhatian',
+                'message' => $this->validator->getError('foto_user')
+            ]);
+            return redirect()->to(base_url('pustakawan/profil'))->withInput();
         }
 
         $foto = $this->request->getFile('foto_user');
@@ -65,8 +68,9 @@ class Profil extends BaseController
                 if ($user['email_user'] != $s['email_user']) {
                     $email = $user['email_user'];
                 }else{
-                    session()->setFlashdata('session',[
+                    session()->setFlashdata('kotakok',[
                         'status' => 'error',
+                        'title' => 'Gagal',
                         'message' => 'Email Sudah terdaftar'
                     ]);
                     return redirect()->to(base_url('pustakawan/profil'))->withInput();
@@ -91,13 +95,14 @@ class Profil extends BaseController
                     unlink('admin/img/pustakawan/'.$userlama['foto_user']);
                 }
             }
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotaktime',[
                 'status' => 'success',
+                'title' => 'Berhasil',
                 'message' => 'Profil Berhasil Diubah'
             ]);
             return redirect()->to(base_url('pustakawan/profil'));
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('pojokatas',[
                 'status' => 'error',
                 'message' => 'Profil Gagal Diubah'
             ]);
@@ -128,28 +133,31 @@ class Profil extends BaseController
                 if ($this->userModel->where('id_user',$this->aku['id_user'])->set([
                     'password' => password_hash($pass['pw1'],PASSWORD_BCRYPT)
                 ])->update() == true) {
-                    session()->setFlashdata('session',[
+                    session()->setFlashdata('kotaktime',[
                         'status' => 'success',
+                        'title' => 'Berhasil',
                         'message' => 'Password Berhasil Diubah'
                     ]);
                     return redirect()->to(base_url('pustakawan'));
                 }else{
-                    session()->setFlashdata('session',[
+                    session()->setFlashdata('pojokatas',[
                         'status' => 'error',
                         'message' => 'Password Gagal Diubah'
                     ]);
                     return redirect()->to(base_url('pustakawan'));
                 }
             }else{
-                session()->setFlashdata('session',[
-                    'status' => 'error',
+                session()->setFlashdata('kotakok',[
+                    'status' => 'warning',
+                    'title' => 'Perhatian',
                     'message' => 'Password Yang Anda Masukan Tidak Sama'
                 ]);
                 return redirect()->to(base_url('pustakawan/password'));
             }
         }else{
-            session()->setFlashdata('session',[
+            session()->setFlashdata('kotakok',[
                 'status' => 'error',
+                'title' => 'Gagal',
                 'message' => 'Password Salah'
             ]);
             return redirect()->to(base_url('pustakawan/password'));

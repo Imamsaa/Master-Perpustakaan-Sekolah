@@ -14,7 +14,7 @@ class Jenis extends BaseController
     function __construct()
     {
         $this->jenisModel = new JenisModel();
-        $this->bukuModel = new BukuModel();    
+        $this->bukuModel = new BukuModel();
     }
 
     public function index()
@@ -27,7 +27,7 @@ class Jenis extends BaseController
 
         $jenis = $this->jenisModel->findAll();
         $data = [
-            'title' => 'Daftar Janis Buku',
+            'title' => 'Daftar Jenis Buku',
             'jenis' => $jenis,
             'sekolah' => $this->sekolah,
             'perpus' => $this->perpus,
@@ -56,8 +56,8 @@ class Jenis extends BaseController
     function save()
     {
         $req = $this->request->getVar();
-        if ($this->bukuModel->where('kode_jenis',$req['kode_jenis'])->countAllResults() > 0) {
-            session()->setFlashdata('kotakok',[
+        if ($this->bukuModel->where('kode_jenis', $req['kode_jenis'])->countAllResults() > 0) {
+            session()->setFlashdata('kotakok', [
                 'status' => 'warning',
                 'title' => 'Gagal',
                 'message' => 'Kode Jenis Buku Sudah Digunakan'
@@ -66,13 +66,13 @@ class Jenis extends BaseController
         }
 
         if ($this->jenisModel->save($req) == true) {
-            session()->setFlashdata('pojokatas',[
+            session()->setFlashdata('pojokatas', [
                 'status'    => 'success',
                 'message'   => 'Data Jenis Buku Berhasil Ditambahkan'
             ]);
             return redirect()->to(base_url('pustakawan/jenis'));
-        }else{
-            session()->setFlashdata('pojokatas',[
+        } else {
+            session()->setFlashdata('pojokatas', [
                 'status'    => 'error',
                 'message'   => 'Data Jenis Buku Gagal Ditambahkan'
             ]);
@@ -88,7 +88,7 @@ class Jenis extends BaseController
             return redirect()->to(base_url('login'));
         }
 
-        $jenis = $this->jenisModel->where('kode_jenis',$kode_jenis)->first();
+        $jenis = $this->jenisModel->where('kode_jenis', $kode_jenis)->first();
         $data = [
             'title' => 'Ubah Jenis Buku',
             'jenis' => $jenis,
@@ -102,22 +102,23 @@ class Jenis extends BaseController
     function update()
     {
         $jenis = $this->request->getVar();
-        if ($this->jenisModel->where('kode_jenis', $jenis['kode_jenis'])->set([
-            'nama_jenis'    => $jenis['nama_jenis'],
-            'kode_warna'    => $jenis['kode_warna']
-        ])->update() == true
+        if (
+            $this->jenisModel->where('kode_jenis', $jenis['kode_jenis'])->set([
+                'nama_jenis'    => $jenis['nama_jenis'],
+                'kode_warna'    => $jenis['kode_warna']
+            ])->update() == true
         ) {
-            session()->setFlashdata('pojokatas',[
+            session()->setFlashdata('pojokatas', [
                 'status'    => 'success',
                 'message'   => 'Data Jenis buku berhasil diubah'
             ]);
             return redirect()->to(base_url('pustakawan/jenis'));
-        }else{
-            session()->setFlashdata('pojokatas',[
+        } else {
+            session()->setFlashdata('pojokatas', [
                 'status'    => 'error',
                 'message'   => 'Data Jenis buku gagal diubah'
             ]);
-            return redirect()->to(base_url('pustakawan/jenis/ubah/'.$jenis['kode_jenis']))->withInput();
+            return redirect()->to(base_url('pustakawan/jenis/ubah/' . $jenis['kode_jenis']))->withInput();
         }
     }
 
@@ -125,8 +126,8 @@ class Jenis extends BaseController
     {
         $this->jenisModel->disableForeignKeyChecks();
 
-        if ($this->bukuModel->where('kode_jenis',$kode_jenis)->countAllResults() > 0) {
-            session()->setFlashdata('kotakok',[
+        if ($this->bukuModel->where('kode_jenis', $kode_jenis)->countAllResults() > 0) {
+            session()->setFlashdata('kotakok', [
                 'status' => 'warning',
                 'title' => 'Gagal',
                 'message' => 'Data Jenis Buku Masih Digunakan'
@@ -134,14 +135,14 @@ class Jenis extends BaseController
             return redirect()->to(base_url('pustakawan/jenis'));
         }
 
-        if ($this->jenisModel->where('kode_jenis',$kode_jenis)->delete() == true) {
-            session()->setFlashdata('pojokatas',[
+        if ($this->jenisModel->where('kode_jenis', $kode_jenis)->delete() == true) {
+            session()->setFlashdata('pojokatas', [
                 'status'    => 'success',
                 'message'   => 'Data Jenis Buku Berhasil Dihapus'
             ]);
             return redirect()->to(base_url('pustakawan/jenis'));
-        }else{
-            session()->setFlashdata('pojokatas',[
+        } else {
+            session()->setFlashdata('pojokatas', [
                 'status'    => 'error',
                 'message'   => 'Data Jenis Buku Gagal Dihapus'
             ]);

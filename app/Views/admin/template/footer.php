@@ -258,3 +258,19 @@ Toast.fire({
         });
     });
 </script>
+
+<script>
+    function toggleInput() {
+        var status = document.getElementById("status").value;
+        var inputContainer = document.getElementById("akhir");
+        var inputContainer2 = document.getElementById("labelakhir");
+
+        if (status === "kembali") {
+            inputContainer.style.display = "block";
+            inputContainer2.style.display = "block";
+        } else {
+            inputContainer.style.display = "none";
+            inputContainer2.style.display = "none";
+        }
+    }
+</script>

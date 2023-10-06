@@ -124,6 +124,7 @@ $routes->DELETE('/pustakawan/peminjaman/delete/(:any)', 'Admin\Peminjaman::delet
 // LAPORAN
 
 $routes->get('/pustakawan/laporan', 'Admin\Laporan::index');
+$routes->post('/pustakawan/laporan', 'Admin\Laporan::index');
 $routes->get('/pustakawan/laporan/reset', 'Admin\Laporan::reset');
 // $routes->get('/pustakawan/denda/tambah', 'Admin\Denda::tambah');
 // $routes->get('/pustakawan/denda/ubah', 'Admin\Denda::ubah');

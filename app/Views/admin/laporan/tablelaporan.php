@@ -29,17 +29,26 @@
             <div class="card border-success my-3" style="">
               <div class="card-body">
                 <h3>Laporan Berdasarkan</h3>
-                <form action="" method="post" class="form-inline">
+                <form action="<?= base_url('pustakawan/laporan'); ?>" method="post" class="form-inline">
+                    <select name="status" class="form-control my-1 mx-2" onchange="toggleInput()" id="status" placeholder="KELAS">
+                      <option value="kembali" selected>DIKEMBALIKAN</option>
+                      <option value="pinjam">DIPINJAM</option>
+                    </select>
                   <label for="awal">Dari :</label>
                   <input type="date" id="awal" class="form-control my-1 mx-2" name="awal" id="awal">
-                  <label for="awal">Sampai :</label>
+                  <label id="labelakhir" for="awal">Sampai :</label>
                   <input type="date" class="form-control my-1 mx-2" name="akhir" id="akhir">
                   <input type="text" name="nis" class="form-control my-1 mx-2" id="nis" placeholder="NIS SISWA">
                   <input type="text" name="nama" id="nama" class="form-control my-1 mx-2" placeholder="NAMA SISWA">
-                  <select name="kelas" class="form-control my-1 mx-2" id="kelas">
-                    <option value="kelas 1">Kelas 1</option>
+                  <!-- <label for="awal">Kelas :</label> -->
+                  <select name="kelas" class="form-control my-1 mx-2" id="kelas" placeholder="KELAS">
+                    <option value="" selected hidden>KELAS</option>
+                    <option value=""></option>
+                    <?php foreach($kelas as $k) : ?>
+                      <option value="<?= $k['kode_kelas']; ?>"><?= $k['nama_kelas']; ?></option>
+                    <?php endforeach; ?>
                   </select>
-                  <button type="submit" class="btn btn-success my-1 mx-1">CARI</button>
+                  <button type="submit" value="lapor" name="lapor" class="btn btn-success my-1 mx-2"><i class="fas fa-solid fa-search"></i> CARI</button>
                 </form>
               </div>
             </div>

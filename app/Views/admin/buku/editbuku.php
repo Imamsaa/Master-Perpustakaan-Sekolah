@@ -53,6 +53,7 @@
                       <th>NO</th>
                       <th>KODE</th>
                       <th>JUDUL</th>
+                      <th>STATUS</th>
                       <th>RAK</th>
                       <th>JENIS</th>
                       <th>ACTION</th>
@@ -64,6 +65,7 @@
                           <td><?= $no; ?></td>
                           <td><?= $tab['kode_buku']; ?></td>
                       <td><?= $tab['judul_buku']; ?></td>
+                      <td><?= $tab['statusbuku']; ?></td>
                       <td><?= $tab['nama_rak']; ?></td>
                       <td><?= $tab['nama_jenis']; ?></td>
                       <td>
@@ -77,6 +79,7 @@
                       <th>NO</th>
                       <th>KODE</th>
                       <th>JUDUL</th>
+                      <th>STATUS</th>
                       <th>RAK</th>
                       <th>JENIS</th>
                       <th>ACTION</th>

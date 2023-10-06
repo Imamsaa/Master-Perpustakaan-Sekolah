@@ -68,7 +68,7 @@
                   <tr>
                     <td><?= $no; ?></td>
                     <td><?= $row['judul_buku']; ?></td>
-                    <td><?= $row['stok']; ?></td>
+                    <td><?= $row['jumlah']; ?>/<?= $row['stok']; ?></td>
                     <td><?= $row['nama_rak']; ?></td>
                     <td><?= $row['nama_jenis']; ?></td>
                     <td>

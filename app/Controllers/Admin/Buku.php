@@ -41,10 +41,19 @@ class Buku extends BaseController
         ->join('jenis_buku', 'buku.kode_jenis = jenis_buku.kode_jenis')
         ->groupBy('judul_buku');
         $buku = $builder->get()->getResultArray();
+        
+        // $jbuku = $this->bukuModel->select('COUNT(judul_buku) jumlah')->where('status','kembali')->groupBy('judul_buku');
+        $hasilbuku = [];
+        foreach ($buku as $b) {
+            $jbuku = $this->trans->join('buku','transaksi.kode_buku = buku.kode_buku')->where('status','pinjam')->where('judul_buku',$b['judul_buku'])->countAllResults();
+            $b['jumlah'] = $b['stok'] - $jbuku;
+            $hasilbuku[] = $b;
+        }  
+        // dd($hasilbuku);
 
         $data = [
             'title' => 'Daftar Buku',
-            'buku'  => $buku,
+            'buku'  => $hasilbuku,
             'sekolah' => $this->sekolah,
             'perpus' => $this->perpus,
             'aku' => $this->aku
@@ -217,9 +226,20 @@ class Buku extends BaseController
         $penerbit = $this->penerbitModel->findAll();
         $rak = $this->rakModel->findAll();
         $jenis = $this->jenisModel->findAll();
+
+        $hasiltable = [];
+        foreach ($table as $t) {
+            if ($this->trans->where('status','pinjam')->where('kode_buku',$t['kode_buku'])->countAllResults() > 0) {
+                $t['statusbuku'] = 'Dipinjam';   
+            } else{
+                $t['statusbuku'] = 'Tersedia';
+            }
+            $hasiltable[] = $t;
+        }
+
         $data = [
             'title' => 'Ubah Buku',
-            'table' => $table,
+            'table' => $hasiltable,
             'buku'  => $buku,
             'penerbit' => $penerbit,
             'rak'   => $rak,

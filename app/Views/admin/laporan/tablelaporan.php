@@ -27,8 +27,20 @@
       <div class="row">
           <div class="col-lg-12">
             <div class="card border-success my-3" style="">
-              <div class="card-body text-success">
-                <p class="card-text">Tombol <span class="text-danger">RESET LAPORAN</span> digunakan untuk menghapus data transaksi kecuali transaksi buku yang masih dalam proses peminjaman.</p>
+              <div class="card-body">
+                <h3>Laporan Berdasarkan</h3>
+                <form action="" method="post" class="form-inline">
+                  <label for="awal">Dari :</label>
+                  <input type="date" id="awal" class="form-control my-1 mx-2" name="awal" id="awal">
+                  <label for="awal">Sampai :</label>
+                  <input type="date" class="form-control my-1 mx-2" name="akhir" id="akhir">
+                  <input type="text" name="nis" class="form-control my-1 mx-2" id="nis" placeholder="NIS SISWA">
+                  <input type="text" name="nama" id="nama" class="form-control my-1 mx-2" placeholder="NAMA SISWA">
+                  <select name="kelas" class="form-control my-1 mx-2" id="kelas">
+                    <option value="kelas 1">Kelas 1</option>
+                  </select>
+                  <button type="submit" class="btn btn-success my-1 mx-1">CARI</button>
+                </form>
               </div>
             </div>
           </div>
@@ -40,7 +52,7 @@
               <div class="card-header">
                 <div class="card-title">
                     <h3>Laporan Transaksi</h3>
-                    <a href="<?= base_url('pustakawan/laporan/reset'); ?>" class="btn save btn-primary my-1"><i class="fas fa-solid fa-arrow-right"></i> RESET LAPORAN</a>
+                    <!-- <a href="" class="btn save btn-primary my-1"><i class="fas fa-solid fa-arrow-right"></i> RESET LAPORAN</a> -->
                     <!-- <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-down"></i> UNDUH EXCEL</button>
                     <button type="button" class="btn btn-success my-1"><i class="fas fa-solid fa-arrow-up"></i> IMPORT DATA DENDA</button> -->
                 </div>

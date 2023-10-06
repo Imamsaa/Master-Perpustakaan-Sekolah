@@ -37,7 +37,7 @@
                     <div class="col-sm-9">
                         <table class="table table-borderless">
                             <tr>
-                                <th class="text-center" style="background-color:<?= $c['kode_warna']; ?>"><?= $sekolah['nama_sekolah']; ?></th>
+                                <td class="text-center" style="background-color:<?= $c['kode_warna']; ?>"><span class="font-weight-bold">Perpustakaan <?= $perpus['nama_perpus']; ?> <?= $sekolah['nama_sekolah']; ?></span></td>
                             </tr>
                             <tr>
                                 <td class="text-center">

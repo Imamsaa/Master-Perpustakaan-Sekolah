@@ -322,6 +322,15 @@
         <!-- LOGOUT -->
 
         <li class="nav-item">
+        <a href="<?= base_url('pustakawan/backup'); ?>" class="save nav-link">
+            <i class="nav-icon fas fa-database"></i>
+            <p>
+            Backup
+            </p>
+        </a>
+        </li>
+
+        <li class="nav-item">
         <a href="<?= base_url('logout'); ?>" class="save nav-link">
             <i class="nav-icon fas fa-power-off"></i>
             <p>

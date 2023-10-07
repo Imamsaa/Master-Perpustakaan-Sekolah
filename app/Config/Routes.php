@@ -133,6 +133,8 @@ $routes->get('/pustakawan/laporan/reset', 'Admin\Laporan::reset');
 $routes->get('/pustakawan/pengunjung', 'Admin\Pengunjung::index');
 $routes->post('/pustakawan/pengunjung', 'Admin\Pengunjung::index');
 
+// BACKUP
+$routes->get('/pustakawan/backup', 'Admin\Backup::index');
 
 // SEKOLAH
 

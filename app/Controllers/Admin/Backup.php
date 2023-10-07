@@ -8,8 +8,6 @@ use CodeIgniter\HTTP\Response;
 
 class Backup extends BaseController
 {
-    private $backupFilePath; // Menambahkan variabel untuk menyimpan path file backup
-
     public function index()
     {
         // Load library database
@@ -17,7 +15,7 @@ class Backup extends BaseController
 
         // Tentukan nama file backup dan direktori penyimpanan
         $backupFileName = 'backup_' . date('Y-m-d_H-i-s') . '.sql';
-        $this->backupFilePath = WRITEPATH . 'backup/' . $backupFileName; // Simpan path file backup
+        $backupFilePath = WRITEPATH . 'backup/' . $backupFileName;
 
         // Ambil semua tabel dari database
         $tables = $db->listTables();
@@ -46,42 +44,43 @@ class Backup extends BaseController
         }
 
         // Simpan SQL ke file
-        if (file_put_contents($this->backupFilePath, $sql) !== false) {
+        if (file_put_contents($backupFilePath, $sql) !== false) {
             // Berhasil membuat backup, arahkan ke halaman sukses
-            $this->downloadBackup($backupFileName);
+            $this->downloadBackup($backupFileName, $backupFilePath);
         } else {
             // Terjadi kesalahan saat membuat backup
-            return redirect()->to(site_url('BackupController/error'));
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Terjadi Kesalahan',
+                'message' => 'Gagal Melakukan Backup Terhadap Database'
+            ]);
+            return redirect()->to(base_url('pustakawan'));
         }
     }
 
-    public function success($backupFileName)
+    protected function downloadBackup($fileName, $filePath)
     {
-        return view('backup_success', ['backupFileName' => $backupFileName]);
-    }
-
-    public function error()
-    {
-        return view('backup_error');
-    }
-
-    public function downloadBackup($fileName)
-    {
-        if (file_exists($this->backupFilePath)) {
-            // Membuat objek Response
-            $request = service('request');
-            $response = new Response($request);
-
-            $response->setContentType('application/octet-stream');
-            $response->setHeader('Content-Disposition', 'attachment; filename="' . basename($this->backupFilePath) . '"');
-            $response->setHeader('Content-Length', filesize($this->backupFilePath));
-            $response->setHeader('Content-Transfer-Encoding', 'binary');
-            $response->setHeader('Cache-Control', 'public, max-age=0');
-            $response->setBody(file_get_contents($this->backupFilePath));
-            return $response;
+        if (file_exists($filePath)) {
+            // Mengatur header untuk pengunduhan
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename="' . $fileName . '"');
+            header('Content-Length: ' . filesize($filePath));
+            header('Content-Transfer-Encoding: binary');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            
+            // Membaca file dan mengirimkan isinya ke output
+            readfile($filePath);
+            unlink($filePath);
+            exit;
         } else {
-            // File backup tidak ditemukan
-            return redirect()->to(site_url('BackupController/error'));
+            session()->setFlashdata('kotakok',[
+                'status' => 'warning',
+                'title' => 'Terjadi Kesalahan',
+                'message' => 'Gagal Melakukan Backup Terhadap Database'
+            ]);
+            return redirect()->to(base_url('pustakawan'));
         }
     }
 }

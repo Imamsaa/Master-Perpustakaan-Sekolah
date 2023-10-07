@@ -129,6 +129,11 @@ $routes->get('/pustakawan/laporan/reset', 'Admin\Laporan::reset');
 // $routes->get('/pustakawan/denda/tambah', 'Admin\Denda::tambah');
 // $routes->get('/pustakawan/denda/ubah', 'Admin\Denda::ubah');
 
+// PENGUNJUNG
+$routes->get('/pustakawan/pengunjung', 'Admin\Pengunjung::index');
+$routes->post('/pustakawan/pengunjung', 'Admin\Pengunjung::index');
+
+
 // SEKOLAH
 
 $routes->get('/pustakawan/sekolah', 'Admin\Sekolah::index');

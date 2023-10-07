@@ -142,7 +142,7 @@
 
         <li class="nav-item">
         <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-solid fa-user"></i>
+            <i class="nav-icon fas fa-solid fa-eye"></i>
             <p>
             Pengunjung
             <i class="right fas fa-angle-left"></i>

@@ -29,7 +29,7 @@
             <div class="card border-success my-3" style="">
               <div class="card-body">
                 <h3>Laporan Berdasarkan</h3>
-                <form action="<?= base_url('pustakawan/laporan'); ?>" method="post" class="form-inline">
+                <form action="<?= base_url('pustakawan/pengunjung'); ?>" method="post" class="form-inline">
                   <label for="awal">Dari :</label>
                   <input type="date" id="awal" class="form-control my-1 mx-2" name="awal" id="awal">
                   <label id="labelakhir" for="awal">Sampai :</label>
@@ -70,39 +70,32 @@
                   <tr>
                     <th>NO</th>
                     <th>NIS</th>
+                    <th>NISN</th>
                     <th>NAMA</th>
                     <th>KELAS</th>
-                    <th>KODE</th>
-                    <th>JUDUL BUKU</th>
-                    <th>JENIS BUKU</th>
-                    <th>RAK</th>
-                    <th>PENERBIT</th>
-                    <th>STATUS BUKU</th>
-                    <th>TANGGAL PINJAM</th>
-                    <th>TANGGAL KEMBALI</th>
-                    <th>HARI KETERLAMBATAN</th>
-                    <th>DENDA</th>
+                    <th>WAKTU</th>
                   </tr>
                   </thead>
                   <tbody>
-                  
+                      <?php $no = 1; foreach($lap as $l) : ?>
+                        <tr>
+                          <td><?= $no; ?></td>
+                          <td><?= $l['nis']; ?></td>
+                          <td><?= $l['nisn']; ?></td>
+                          <td><?= $l['nama_siswa']; ?></td>
+                          <td><?= $l['nama_kelas']; ?></td>
+                          <td><?= $l['waktu']; ?></td>
+                        </tr>
+                        <?php $no++; endforeach; ?>
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>NO</th>
                     <th>NIS</th>
+                    <th>NISN</th>
                     <th>NAMA</th>
                     <th>KELAS</th>
-                    <th>KODE</th>
-                    <th>JUDUL BUKU</th>
-                    <th>JENIS BUKU</th>
-                    <th>RAK</th>
-                    <th>PENERBIT</th>
-                    <th>STATUS BUKU</th>
-                    <th>TANGGAL PINJAM</th>
-                    <th>TANGGAL KEMBALI</th>
-                    <th>HARI KETERLAMBATAN</th>
-                    <th>DENDA</th>
+                    <th>WAKTU</th>
                   </tr>
                   </tfoot>
                 </table>

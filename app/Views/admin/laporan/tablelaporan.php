@@ -30,8 +30,10 @@
               <div class="card-body">
                 <h3>Laporan Berdasarkan</h3>
                 <form action="<?= base_url('pustakawan/laporan'); ?>" method="post" class="form-inline">
-                    <select name="status" class="form-control my-1 mx-2" onchange="toggleInput()" id="status" placeholder="KELAS">
-                      <option value="kembali" selected>DIKEMBALIKAN</option>
+                    <select name="status" class="form-control my-1 mx-2" id="status" placeholder="KELAS">
+                      <option value="" selected hidden>STATUS</option>
+                      <option></option>
+                      <option value="kembali">DIKEMBALIKAN</option>
                       <option value="pinjam">DIPINJAM</option>
                     </select>
                   <label for="awal">Dari :</label>

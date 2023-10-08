@@ -29,17 +29,18 @@ class Laporan extends BaseController
             // dd($req);
             $where = [];
 
-            if ($req['status'] == 'pinjam') {
-                if ($req['awal'] != '') {
-                    // $where = "pinjam >= '".$req['awal']."' AND kembali <= '".$req['akhir']."'";
-                    $where['pinjam >='] = $req['awal'];
-                }
-            }else{
-                if ($req['awal'] != '' AND $req['akhir'] != '') {
-                    // $where = "pinjam >= '".$req['awal']."' AND kembali <= '".$req['akhir']."'";
-                    $where['pinjam >='] = $req['awal'];
-                    $where['kembali <='] =  $req['akhir'];
-                }
+            if ($req['status'] != '') {
+                $where['status'] = $req['status'];
+            }
+
+            if ($req['awal'] != '' AND $req['akhir'] != '') {
+                // $where = "pinjam >= '".$req['awal']."' AND kembali <= '".$req['akhir']."'";
+                $where['pinjam >='] = $req['awal'];
+                $where['pinjam <='] =  $req['akhir'];
+            }elseif ($req['awal'] != '' AND $req['akhir'] == '') {
+                $where['pinjam >='] = $req['awal'];
+            }elseif ($req['awal'] == '' AND $req['akhir'] != '') {
+                $where['pinjam <='] =  $req['akhir'];
             }
 
             if ($req['nis'] != '') {
@@ -50,7 +51,7 @@ class Laporan extends BaseController
                 $where['siswa.kode_kelas ='] = $req['kelas'];
             }
 
-            $where['status ='] = $req['status'];
+            // $where['status ='] = $req['status'];
 
             if (empty($where)) {
                 redirect()->to(base_url('pustakawan/laporan'));

@@ -31,8 +31,8 @@
                 <h3>Laporan Berdasarkan</h3>
                 <form action="<?= base_url('pustakawan/pengunjung'); ?>" method="post" class="form-inline">
                   <label for="awal">Dari :</label>
-                  <input type="date" id="awal" class="form-control my-1 mx-2" name="awal" id="awal">
-                  <label id="labelakhir" for="awal">Sampai :</label>
+                  <input type="date" class="form-control my-1 mx-2" name="awal" id="awal">
+                  <label for="akhir">Sampai :</label>
                   <input type="date" class="form-control my-1 mx-2" name="akhir" id="akhir">
                   <input type="text" name="nis" class="form-control my-1 mx-2" id="nis" placeholder="NIS SISWA">
                   <input type="text" name="nama" id="nama" class="form-control my-1 mx-2" placeholder="NAMA SISWA">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
     <link rel="stylesheet" href="<?= base_url('dist/bootstrap5/css/bootstrap.min.css'); ?>">
-    <link rel="shortcut icon" href="<?= base_url('admin/img/sekolah.png'); ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url('admin/img/'.$sekolah['logo']); ?>" type="image/x-icon">
     <!-- Google Font: Source Sans Pro -->
     <style>
     .kartu{
@@ -14,6 +14,7 @@
         height: 5.398cm;
         border: 2px solid black;
         border-radius: 15px;
+        break-inside : avoid;
     }
     img{
         width : 40px;
@@ -39,8 +40,8 @@
     <section class="mx-2">
         <?php foreach ($cetak as $c) : ?>
         <div class="row mt-3 mb-1">
-            <div class="kartu row mx-3">
-                <table class="table mt-1 mb-0 table-borderless">
+            <div class="kartu row mx-1">
+                <table class="table my-0 table-borderless">
                     <tr>
                         <th><img class="img-thumbnail" src="/admin/img/<?= $sekolah['logo']; ?>" alt="Logo Sekolah"></th>
                         <th>

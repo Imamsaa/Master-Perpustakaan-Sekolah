@@ -45,9 +45,16 @@ class Pengunjung extends BaseController
         //         }
         //     }
         if ($req['awal'] != '' AND $req['akhir'] != '') {
+            // $where = "pinjam >= '".$req['awal']."' AND kembali <= '".$req['akhir']."'";
             $where['waktu >='] = $req['awal'];
             $where['waktu <='] =  $req['akhir'];
+        }elseif ($req['awal'] != '' AND $req['akhir'] == '') {
+            $where['waktu >='] = $req['awal'];
+        }elseif ($req['awal'] == '' AND $req['akhir'] != '') {
+            $where['waktu <='] =  $req['akhir'];
         }
+
+
 
         if ($req['nis'] != '') {
             $where['pengunjung.nis ='] = $req['nis'];

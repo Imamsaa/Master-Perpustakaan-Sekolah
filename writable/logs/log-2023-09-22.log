@@ -1,0 +1,1300 @@
+INFO - 2023-09-22 01:54:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:06:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 02:06:16 --> Undefined array key "kode_penerbit"
+in APPPATH/Views/admin/penerbit/tablepenerbit.php on line 54.
+ 1 APPPATH/Views/admin/penerbit/tablepenerbit.php(54): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/penerbit/tablepenerbit.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Penerbit.php(26): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Penerbit->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 02:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:16:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:17:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:18:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 02:32:38 --> Undefined variable $penerbit
+in APPPATH/Views/admin/penerbit/editpenerbit.php on line 45.
+ 1 APPPATH/Views/admin/penerbit/editpenerbit.php(45): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/penerbit/editpenerbit.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Penerbit.php(64): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Penerbit->ubah()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 02:34:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:52:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:52:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:52:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 02:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 03:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 03:13:52 --> syntax error, unexpected token ";", expecting "]"
+in APPPATH/Controllers/Admin/Rak.php on line 22.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 03:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 03:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 03:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 03:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 03:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 03:31:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 03:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 03:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 03:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 05:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 05:20:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 05:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 05:27:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 05:27:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 05:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 05:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 05:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 05:58:35 --> syntax error, unexpected token ";", expecting variable
+in APPPATH/Controllers/Admin/Jenis.php on line 10.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 05:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 05:59:17 --> syntax error, unexpected token ")"
+in APPPATH/Views/admin/jenis/tablejenis.php on line 52.
+ 1 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Admin/Jenis.php(25): view()
+ 4 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Jenis->index()
+ 5 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 05:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:04:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:12:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 06:16:46 --> syntax error, unexpected token ";", expecting "]"
+in APPPATH/Controllers/Admin/Jenis.php on line 63.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 06:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:16:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:17:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:17:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:22:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:27:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:27:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:28:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:44:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 06:44:14 --> Call to undefined method CodeIgniter\Session\Session::to()
+in APPPATH/Controllers/Admin/Jenis.php on line 96.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Jenis->delete()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 06:44:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:44:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 06:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 08:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-22 08:40:05 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query()
+#4 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/BaseModel.php(624): CodeIgniter\Model->doFindAll()
+#6 /home/imam/projects/perpus/app/Controllers/Admin/Jenis.php(20): CodeIgniter\BaseModel->findAll()
+#7 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(919): App\Controllers\Admin\Jenis->index()
+#8 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+#9 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/imam/projects/perpus/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query()
+#3 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/BaseModel.php(624): CodeIgniter\Model->doFindAll()
+#5 /home/imam/projects/perpus/app/Controllers/Admin/Jenis.php(20): CodeIgniter\BaseModel->findAll()
+#6 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(919): App\Controllers\Admin\Jenis->index()
+#7 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+#8 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/imam/projects/perpus/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#10 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('...')
+#11 {main}
+CRITICAL - 2023-09-22 08:40:05 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(624): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Admin/Jenis.php(20): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Jenis->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 08:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 08:40:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 09:08:08 --> Class "App\Models\EmailModel" not found
+in APPPATH/Controllers/Admin/Email.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(891): App\Controllers\Admin\Email->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:08:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 09:08:30 --> Undefined array key "smtp"
+in APPPATH/Views/admin/email/index.php on line 44.
+ 1 APPPATH/Views/admin/email/index.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/email/index.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Email.php(25): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 09:12:17 --> Undefined array key "smtp"
+in APPPATH/Views/admin/email/index.php on line 44.
+ 1 APPPATH/Views/admin/email/index.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/email/index.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Email.php(25): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 09:12:17 --> Undefined array key "smtp"
+in APPPATH/Views/admin/email/index.php on line 44.
+ 1 APPPATH/Views/admin/email/index.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/email/index.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Email.php(25): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 09:12:26 --> Undefined array key "smtp"
+in APPPATH/Views/admin/email/index.php on line 44.
+ 1 APPPATH/Views/admin/email/index.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/email/index.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Email.php(25): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:13:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:14:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:23:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-22 09:23:25 --> mysqli_sql_exception: Unknown column 'csrf_test_name' in 'field list' in /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2396): CodeIgniter\Database\BaseConnection->query()
+#4 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Model.php(485): CodeIgniter\Database\BaseBuilder->replace()
+#5 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/BaseModel.php(1155): CodeIgniter\Model->doReplace()
+#6 /home/imam/projects/perpus/app/Controllers/Admin/Email.php(30): CodeIgniter\BaseModel->replace()
+#7 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(919): App\Controllers\Admin\Email->save()
+#8 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+#9 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/imam/projects/perpus/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#11 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('...')
+#12 {main}
+CRITICAL - 2023-09-22 09:23:25 --> Unknown column 'csrf_test_name' in 'field list'
+in SYSTEMPATH/Database/BaseConnection.php on line 646.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2396): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(485): CodeIgniter\Database\BaseBuilder->replace()
+ 3 SYSTEMPATH/BaseModel.php(1155): CodeIgniter\Model->doReplace()
+ 4 APPPATH/Controllers/Admin/Email.php(30): CodeIgniter\BaseModel->replace()
+ 5 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->save()
+ 6 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 09:28:27 --> Undefined variable $mail
+in APPPATH/Controllers/Admin/Email.php on line 33.
+ 1 APPPATH/Controllers/Admin/Email.php(33): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->save()
+ 3 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 09:28:48 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH/Model.php on line 380.
+ 1 SYSTEMPATH/BaseModel.php(949): CodeIgniter\Model->doUpdate()
+ 2 SYSTEMPATH/Model.php(776): CodeIgniter\BaseModel->update()
+ 3 APPPATH/Controllers/Admin/Email.php(39): CodeIgniter\Model->update()
+ 4 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->save()
+ 5 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:31:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:31:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-09-22 09:40:30 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query()
+#4 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/BaseModel.php(788): CodeIgniter\Model->doInsert()
+#6 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Model.php(715): CodeIgniter\BaseModel->insert()
+#7 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/BaseModel.php(698): CodeIgniter\Model->insert()
+#8 /home/imam/projects/perpus/app/Controllers/Admin/Email.php(38): CodeIgniter\BaseModel->save()
+#9 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(919): App\Controllers\Admin\Email->save()
+#10 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+#11 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/imam/projects/perpus/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#13 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('...')
+#14 {main}
+CRITICAL - 2023-09-22 09:40:30 --> Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH/Database/BaseConnection.php on line 646.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(788): CodeIgniter\Model->doInsert()
+ 4 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+ 5 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+ 6 APPPATH/Controllers/Admin/Email.php(38): CodeIgniter\BaseModel->save()
+ 7 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->save()
+ 8 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:41:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 09:42:02 --> There is no data to update.
+in SYSTEMPATH/BaseModel.php on line 1724.
+ 1 SYSTEMPATH/BaseModel.php(1724): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset()
+ 2 SYSTEMPATH/BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray()
+ 3 SYSTEMPATH/Model.php(776): CodeIgniter\BaseModel->update()
+ 4 APPPATH/Controllers/Admin/Email.php(38): CodeIgniter\Model->update()
+ 5 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->save()
+ 6 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 09:43:51 --> There is no data to update.
+in SYSTEMPATH/BaseModel.php on line 1724.
+ 1 SYSTEMPATH/BaseModel.php(1724): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset()
+ 2 SYSTEMPATH/BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray()
+ 3 SYSTEMPATH/Model.php(776): CodeIgniter\BaseModel->update()
+ 4 APPPATH/Controllers/Admin/Email.php(39): CodeIgniter\Model->update()
+ 5 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->save()
+ 6 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 09:44:54 --> There is no data to update.
+in SYSTEMPATH/BaseModel.php on line 1724.
+ 1 SYSTEMPATH/BaseModel.php(1724): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset()
+ 2 SYSTEMPATH/BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray()
+ 3 SYSTEMPATH/Model.php(776): CodeIgniter\BaseModel->update()
+ 4 APPPATH/Controllers/Admin/Email.php(39): CodeIgniter\Model->update()
+ 5 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Email->save()
+ 6 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 09:45:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:50:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:50:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:50:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 09:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 09:58:24 --> Undefined variable $whastapp
+in APPPATH/Views/admin/whastapp/index.php on line 44.
+ 1 APPPATH/Views/admin/whastapp/index.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/whastapp/index.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Whastapp.php(14): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\WhastApp->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 10:01:04 --> syntax error, unexpected token ";", expecting "]"
+in APPPATH/Controllers/Admin/Whastapp.php on line 23.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 10:01:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:09:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:09:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:15:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 10:29:04 --> Undefined variable $perpus
+in APPPATH/Views/admin/perpustakaan/index.php on line 44.
+ 1 APPPATH/Views/admin/perpustakaan/index.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/perpustakaan/index.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Perpustakaan.php(14): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Perpustakaan->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 10:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:38:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 10:38:34 --> Undefined array key "nama_perpus"
+in APPPATH/Controllers/Admin/Perpustakaan.php on line 32.
+ 1 APPPATH/Controllers/Admin/Perpustakaan.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Perpustakaan->save()
+ 3 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 10:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:40:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:40:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 10:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 11:33:12 --> Class "App\Model\SiswaModel" not found
+in APPPATH/Controllers/Admin/Siswa.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(891): App\Controllers\Admin\Siswa->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 11:34:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 11:43:48 --> Undefined variable $siswa
+in APPPATH/Controllers/Admin/Siswa.php on line 25.
+ 1 APPPATH/Controllers/Admin/Siswa.php(25): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->index()
+ 3 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 11:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 11:44:00 --> Undefined variable $siswa
+in APPPATH/Views/admin/siswa/tablesiswa.php on line 52.
+ 1 APPPATH/Views/admin/siswa/tablesiswa.php(52): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/siswa/tablesiswa.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Siswa.php(26): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 11:47:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 11:50:10 --> Undefined array key "nama_siswa"
+in APPPATH/Views/admin/siswa/tablesiswa.php on line 56.
+ 1 APPPATH/Views/admin/siswa/tablesiswa.php(56): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/siswa/tablesiswa.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Siswa.php(31): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->index()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 11:50:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 11:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 11:58:56 --> Undefined array key "kode_tahun"
+in APPPATH/Views/admin/siswa/addsiswa.php on line 68.
+ 1 APPPATH/Views/admin/siswa/addsiswa.php(68): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/siswa/addsiswa.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Siswa.php(50): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->tambah()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 11:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 12:02:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 12:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 12:07:51 --> Undefined variable $t
+in APPPATH/Views/admin/siswa/addsiswa.php on line 60.
+ 1 APPPATH/Views/admin/siswa/addsiswa.php(60): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/siswa/addsiswa.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Siswa.php(50): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->tambah()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 12:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 12:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 12:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 12:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 12:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 13:08:27 --> Call to a member function move() on array
+in APPPATH/Controllers/Admin/Siswa.php on line 56.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 13:09:43 --> Call to a member function move() on array
+in APPPATH/Controllers/Admin/Siswa.php on line 56.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 13:11:56 --> Call to a member function move() on array
+in APPPATH/Controllers/Admin/Siswa.php on line 56.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 13:12:46 --> Call to a member function move() on array
+in APPPATH/Controllers/Admin/Siswa.php on line 56.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 13:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:19:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:20:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:21:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:23:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:23:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 13:24:42 --> Call to undefined function App\Controllers\Admin\getFile()
+in APPPATH/Controllers/Admin/Siswa.php on line 55.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 13:29:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 13:29:11 --> Call to undefined method App\Models\SiswaModel::getvalidationRule
+in SYSTEMPATH/Model.php on line 873.
+ 1 APPPATH/Controllers/Admin/Siswa.php(55): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 3 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 13:29:27 --> Invalid max_size parameter: "1024"
+in SYSTEMPATH/Validation/FileRules.php on line 88.
+ 1 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->max_size()
+ 2 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 3 SYSTEMPATH/Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH/Controllers/Admin/Siswa.php(55): CodeIgniter\Controller->validate()
+ 5 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 6 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 13:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:31:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 13:31:47 --> Call to undefined method App\Controllers\Admin\Siswa::validator()
+in APPPATH/Controllers/Admin/Siswa.php on line 56.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 13:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:32:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:37:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:37:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:45:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-09-22 13:45:26 --> [DEPRECATED] preg_quote(): Passing null to parameter #1 ($str) of type string is deprecated in SYSTEMPATH/Validation/Validation.php on line 831.
+ 1 SYSTEMPATH/Validation/Validation.php(831): preg_quote(null, '/')
+ 2 [internal function]: CodeIgniter\Validation\Validation::CodeIgniter\Validation\{closure}('foto')
+ 3 SYSTEMPATH/Validation/Validation.php(833): array_filter([...], Object(Closure), 2)
+ 4 APPPATH/Controllers/Admin/Siswa.php(57): CodeIgniter\Validation\Validation->getError()
+ 5 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 6 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Siswa))
+ 7 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 13:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-09-22 13:45:38 --> [DEPRECATED] preg_quote(): Passing null to parameter #1 ($str) of type string is deprecated in SYSTEMPATH/Validation/Validation.php on line 831.
+ 1 SYSTEMPATH/Validation/Validation.php(831): preg_quote(null, '/')
+ 2 [internal function]: CodeIgniter\Validation\Validation::CodeIgniter\Validation\{closure}('foto')
+ 3 SYSTEMPATH/Validation/Validation.php(833): array_filter([...], Object(Closure), 2)
+ 4 APPPATH/Controllers/Admin/Siswa.php(57): CodeIgniter\Validation\Validation->getError()
+ 5 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 6 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Siswa))
+ 7 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 13:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:46:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 13:46:58 --> Call to a member function getError() on array
+in APPPATH/Views/admin/siswa/addsiswa.php on line 38.
+ 1 SYSTEMPATH/View/View.php(226): include()
+ 2 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 4 APPPATH/Controllers/Admin/Siswa.php(50): view()
+ 5 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->tambah()
+ 6 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 13:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 13:47:46 --> Array to string conversion
+in APPPATH/Views/admin/siswa/addsiswa.php on line 38.
+ 1 APPPATH/Views/admin/siswa/addsiswa.php(38): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/imam/projects/perpus/app/Views/admin/siswa/addsiswa.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Siswa.php(50): view()
+ 6 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->tambah()
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 13:48:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:48:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:49:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:51:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:51:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:51:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:52:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:52:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:53:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 13:53:03 --> Unmatched ')'
+in APPPATH/Views/admin/siswa/addsiswa.php on line 38.
+ 1 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1188): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Admin/Siswa.php(50): view()
+ 4 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->tambah()
+ 5 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 13:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 13:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:01:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:02:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:05:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:05:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:05:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:09:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:18:10 --> syntax error, unexpected token "=>", expecting ")"
+in APPPATH/Controllers/Admin/Siswa.php on line 64.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:18:57 --> The original file is not a valid file.
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 146.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(146): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH/Controllers/Admin/Siswa.php(62): CodeIgniter\HTTP\Files\UploadedFile->move()
+ 3 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 4 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:19:36 --> finfo_file(/tmp/phpYgulzN): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:20:47 --> finfo_file(/tmp/phpigbTSE): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 14:21:37 --> finfo_file(/tmp/phpOjMvR3): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 14:24:12 --> finfo_file(/tmp/phpwmMr2E): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:24:41 --> finfo_file(/tmp/phpVCX8Ut): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:27:35 --> finfo_file(/tmp/phpbIwjWN): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:28:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:29:03 --> finfo_file(/tmp/phpUY37nK): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 14:29:48 --> syntax error, unexpected variable "$foto"
+in APPPATH/Controllers/Admin/Siswa.php on line 62.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:30:26 --> finfo_file(/tmp/phpig5RTx): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:31:18 --> finfo_file(/tmp/phpVcNU7y): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 14:35:22 --> Call to undefined method CodeIgniter\HTTP\Files\UploadedFile::saveAs()
+in APPPATH/Controllers/Admin/Siswa.php on line 61.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 14:36:00 --> Call to undefined method CodeIgniter\HTTP\Files\UploadedFile::save()
+in APPPATH/Controllers/Admin/Siswa.php on line 61.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 14:38:34 --> Call to a member function getRandomName() on string
+in APPPATH/Controllers/Admin/Siswa.php on line 61.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:40:21 --> Call to a member function move() on string
+in APPPATH/Controllers/Admin/Siswa.php on line 61.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:41:23 --> The uploaded file has already been moved.
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 142.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(142): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+ 2 APPPATH/Controllers/Admin/Siswa.php(62): CodeIgniter\HTTP\Files\UploadedFile->move()
+ 3 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 4 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 14:42:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 14:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 14:51:56 --> Undefined property: CodeIgniter\HTTP\Files\UploadedFile::$getExtension
+in APPPATH/Controllers/Admin/Siswa.php on line 61.
+ 1 APPPATH/Controllers/Admin/Siswa.php(61): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 3 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 14:55:58 --> syntax error, unexpected variable "$foto", expecting ")"
+in APPPATH/Controllers/Admin/Siswa.php on line 61.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 14:56:21 --> finfo_file(/tmp/phph7H4Q7): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(72): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 15:00:32 --> finfo_file(/tmp/phpCy5Mna): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(74): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 15:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 15:00:42 --> finfo_file(/tmp/phpnUpq3z): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(74): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 15:02:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 15:02:11 --> finfo_file(/tmp/phpjkZrRM): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(74): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 15:03:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 15:03:14 --> finfo_file(/tmp/php3GzrYK): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(74): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 15:04:13 --> Call to a member function getRandomName() on array
+in APPPATH/Controllers/Admin/Siswa.php on line 61.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 15:04:49 --> finfo_file(/tmp/php8lPL6M): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(74): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 15:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 15:07:46 --> Call to a member function hasMoved() on array
+in APPPATH/Controllers/Admin/Siswa.php on line 61.
+ 1 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 2 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 15:08:06 --> finfo_file(/tmp/php92OANe): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(78): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 15:08:44 --> finfo_file(/tmp/phpJAW2py): Failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(320): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(309): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Validation/FileRules.php(143): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 SYSTEMPATH/Validation/Validation.php(309): CodeIgniter\Validation\FileRules->is_image()
+ 7 SYSTEMPATH/Validation/Validation.php(195): CodeIgniter\Validation\Validation->processRules()
+ 8 SYSTEMPATH/BaseModel.php(1495): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH/BaseModel.php(751): CodeIgniter\BaseModel->validate()
+10 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+11 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+12 APPPATH/Controllers/Admin/Siswa.php(78): CodeIgniter\BaseModel->save()
+13 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+14 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+15 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+16 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 15:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 15:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 15:15:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 15:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-09-22 23:41:10 --> Undefined variable $newName
+in APPPATH/Controllers/Admin/Siswa.php on line 77.
+ 1 APPPATH/Controllers/Admin/Siswa.php(77): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 3 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 23:42:54 --> syntax error, unexpected variable "$imgName"
+in APPPATH/Controllers/Admin/Siswa.php on line 55.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 23:43:32 --> syntax error, unexpected variable "$imgName"
+in APPPATH/Controllers/Admin/Siswa.php on line 55.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+CRITICAL - 2023-09-22 23:44:42 --> syntax error, unexpected token "(", expecting "," or ";"
+in APPPATH/Controllers/Admin/Siswa.php on line 16.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(877): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+ERROR - 2023-09-22 23:44:58 --> mysqli_sql_exception: Column 'foto' cannot be null in /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query()
+#4 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/BaseModel.php(788): CodeIgniter\Model->doInsert()
+#6 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Model.php(715): CodeIgniter\BaseModel->insert()
+#7 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/BaseModel.php(698): CodeIgniter\Model->insert()
+#8 /home/imam/projects/perpus/app/Controllers/Admin/Siswa.php(79): CodeIgniter\BaseModel->save()
+#9 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+#10 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+#11 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/imam/projects/perpus/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#13 /home/imam/projects/perpus/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('...')
+#14 {main}
+CRITICAL - 2023-09-22 23:44:58 --> Column 'foto' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 646.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(788): CodeIgniter\Model->doInsert()
+ 4 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert()
+ 5 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert()
+ 6 APPPATH/Controllers/Admin/Siswa.php(79): CodeIgniter\BaseModel->save()
+ 7 SYSTEMPATH/CodeIgniter.php(919): App\Controllers\Admin\Siswa->save()
+ 8 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/imam/projects/perpus/public/index.php')
+INFO - 2023-09-22 23:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:49:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:49:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:49:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:53:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:53:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:55:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-09-22 23:59:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -41,26 +41,26 @@ $RECYCLE.BIN/
 #-------------------------
 # These should never be under version control,
 # as it poses a security risk.
-.env
+# .env
 .vagrant
 Vagrantfile
 
 #-------------------------
 # Temporary Files
 #-------------------------
-writable/cache/*
-!writable/cache/index.html
+# writable/cache/*
+# !writable/cache/index.html
 
-writable/logs/*
-!writable/logs/index.html
+# writable/logs/*
+# !writable/logs/index.html
 
-writable/session/*
-!writable/session/index.html
+# writable/session/*
+# !writable/session/index.html
 
-writable/uploads/*
-!writable/uploads/index.html
+# writable/uploads/*
+# !writable/uploads/index.html
 
-writable/debugbar/*
+# writable/debugbar/*
 
 php_errors.log
 
@@ -78,12 +78,12 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 tests/coverage*
 
 # Don't save phpunit under version control.
-phpunit
+# phpunit
 
 #-------------------------
 # Composer
 #-------------------------
-vendor/
+# vendor/
 
 #-------------------------
 # IDE / Development Files
@@ -101,10 +101,10 @@ _modules/*
 
 # Netbeans
 nbproject/
-build/
+# build/
 nbbuild/
-dist/
-nbdist/
+# dist/
+# nbdist/
 nbactions.xml
 nb-configuration.xml
 .nb-gradle/
@@ -116,12 +116,12 @@ nb-configuration.xml
 *.sublime-workspace
 *.sublime-project
 .phpintel
-/api/
+# /api/
 
 # Visual Studio Code
 .vscode/
 
-/results/
+# /results/
 /phpunit*.xml
 /.phpunit.*.cache
 

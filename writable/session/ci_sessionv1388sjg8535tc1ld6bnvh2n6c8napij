@@ -1,0 +1,19 @@
+__ci_last_regenerate|i:1696681626;_ci_previous_url|s:32:"http://localhost:8080/index.php/";user|a:9:{s:7:"id_user";s:1:"5";s:9:"nama_user";s:12:"Imam Safii 2";s:8:"username";s:5:"admin";s:8:"password";s:60:"$2y$10$2g13J/gE4QkY3Qywiu75o.4.NIioDeyLpDY/v7RYra9/lIpSWt0VW";s:8:"nomor_wa";s:13:"6281548811047";s:10:"email_user";s:26:"imamsafii2222022@gmail.com";s:8:"id_level";s:1:"1";s:11:"alamat_user";s:21:"Desa sumber jatipohon";s:9:"foto_user";s:36:"1695795150_b3c5691de6757789abbf.jpeg";}login|b:1;siswa|a:15:{s:2:"id";s:3:"618";s:3:"nis";s:4:"4001";s:4:"nisn";s:10:"9987767001";s:10:"nama_siswa";s:10:"Nama Orang";s:10:"kode_kelas";s:8:"X MIPA 1";s:10:"kode_tahun";s:4:"2019";s:2:"wa";s:13:"6281548811047";s:5:"email";s:26:"imamsafii2222022@gmail.com";s:12:"alamat_siswa";s:25:"Jl. Raya Pahlawan No. 123";s:4:"foto";s:17:"siswa_default.jpg";s:13:"barcode_siswa";s:1756:"<div style="font-size:0;position:relative;width:114px;height:30px;">
+<div style="background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0">&nbsp;</div>
+<div style="background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0">&nbsp;</div>
+<div style="background-color:black;width:6px;height:30px;position:absolute;left:12px;top:0">&nbsp;</div>
+<div style="background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0">&nbsp;</div>
+<div style="background-color:black;width:2px;height:30px;position:absolute;left:32px;top:0">&nbsp;</div>
+<div style="background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0">&nbsp;</div>
+<div style="background-color:black;width:4px;height:30px;position:absolute;left:44px;top:0">&nbsp;</div>
+<div style="background-color:black;width:4px;height:30px;position:absolute;left:52px;top:0">&nbsp;</div>
+<div style="background-color:black;width:4px;height:30px;position:absolute;left:58px;top:0">&nbsp;</div>
+<div style="background-color:black;width:2px;height:30px;position:absolute;left:66px;top:0">&nbsp;</div>
+<div style="background-color:black;width:4px;height:30px;position:absolute;left:74px;top:0">&nbsp;</div>
+<div style="background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0">&nbsp;</div>
+<div style="background-color:black;width:4px;height:30px;position:absolute;left:88px;top:0">&nbsp;</div>
+<div style="background-color:black;width:6px;height:30px;position:absolute;left:98px;top:0">&nbsp;</div>
+<div style="background-color:black;width:2px;height:30px;position:absolute;left:106px;top:0">&nbsp;</div>
+<div style="background-color:black;width:4px;height:30px;position:absolute;left:110px;top:0">&nbsp;</div>
+</div>
+";s:10:"nama_kelas";s:8:"X MIPA 1";s:10:"nama_tahun";s:9:"2019/2020";s:5:"aktif";s:10:"2019-07-01";s:10:"kadaluarsa";s:10:"2023-11-30";}__ci_vars|a:2:{s:5:"siswa";s:3:"old";s:9:"kotaktime";s:3:"old";}kotaktime|a:3:{s:6:"status";s:7:"success";s:5:"title";s:8:"Berhasil";s:7:"message";s:25:"Selamat Datang Nama Orang";}
